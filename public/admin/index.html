@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ZIS Admin</title>
+<link rel="icon" href="/assets/logo-256.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<main class="login" id="loginView" hidden>
+  <form class="login-card" id="loginForm">
+    <img src="/assets/logo-256.jpg" alt="" width="64" height="64">
+    <h1>ZIS Admin</h1>
+    <p class="muted">Zafar International School boshqaruv paneli</p>
+    <label class="field"><span>Login</span><input name="username" autocomplete="username" required></label>
+    <label class="field"><span>Parol</span><input name="password" type="password" autocomplete="current-password" required></label>
+    <p class="form-error" id="loginError" role="alert"></p>
+    <button class="btn primary" type="submit">Kirish</button>
+    <a class="muted small" href="/">← Saytga qaytish</a>
+  </form>
+</main>
+
+<!-- APP -->
+<div class="shell" id="appView" hidden>
+  <aside class="side">
+    <a class="brand" href="/" target="_blank" rel="noopener"><img src="/assets/logo-256.jpg" alt="" width="40" height="40"><span><b>ZAFAR</b><small>admin panel</small></span></a>
+    <nav class="tabs" id="tabs">
+      <button data-view="dashboard" class="on"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zM13 21h8V11h-8zM3 21h8v-6H3zM13 3v6h8V3z"/></svg>Bosh sahifa</button>
+      <button data-view="applications"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg>Arizalar <i class="badge" id="newBadge" hidden></i></button>
+      <button data-view="news"><svg viewBox="0 0 24 24"><path d="M4 4h13v16H6a2 2 0 0 1-2-2zM17 8h3v10a2 2 0 0 1-2 2M8 8h5M8 12h5M8 16h3"/></svg>Yangiliklar</button>
+      <button data-view="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Sozlamalar</button>
+    </nav>
+    <div class="side-foot">
+      <span class="muted small" id="whoami"></span>
+      <button class="btn ghost small" id="logoutBtn">Chiqish</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <!-- DASHBOARD -->
+    <section class="view" id="view-dashboard">
+      <header class="head"><div><h1>Bosh sahifa</h1><p class="muted">Arizalar va sayt holati</p></div></header>
+      <div class="kpis" id="kpis"></div>
+      <div class="grid2">
+        <div class="card"><h2>So'nggi 14 kun</h2><div class="bars" id="dailyChart"></div></div>
+        <div class="card"><h2>Holat bo'yicha</h2><div id="statusBreak"></div></div>
+        <div class="card"><h2>Sinflar bo'yicha</h2><div id="gradeBreak"></div></div>
+        <div class="card"><h2>Telegram</h2><div id="tgStatus"></div></div>
+      </div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section class="view" id="view-applications" hidden>
+      <header class="head">
+        <div><h1>Arizalar</h1><p class="muted" id="appCount"></p></div>
+        <a class="btn ghost" id="csvLink" href="/api/admin/applications.csv">CSV yuklab olish</a>
+      </header>
+      <div class="toolbar">
+        <label class="field grow"><span class="sr">Qidirish</span><input id="appSearch" type="search" placeholder="Ism yoki telefon bo'yicha qidirish"></label>
+        <label class="field"><span class="sr">Holat</span><select id="appStatus"><option value="">Barcha holatlar</option></select></label>
+        <label class="field"><span class="sr">Sinf</span><select id="appGrade"><option value="">Barcha sinflar</option></select></label>
+      </div>
+      <div class="table-wrap"><table class="table" id="appTable">
+        <thead><tr><th>№</th><th>Sana</th><th>Ota-ona</th><th>Telefon</th><th>Farzand</th><th>Sinf</th><th>Holat</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <div class="empty" id="appEmpty" hidden></div>
+      <div class="pager" id="appPager"></div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="view" id="view-news" hidden>
+      <header class="head">
+        <div><h1>Yangiliklar</h1><p class="muted">Saytdagi "So'nggi yangiliklar" bo'limi. Mahkamlangan yangilik birinchi va katta chiqadi.</p></div>
+        <div class="row">
+          <button class="btn ghost" id="importBtn">Telegramdan import</button>
+          <button class="btn primary" id="newNewsBtn">+ Yangi yangilik</button>
+        </div>
+      </header>
+      <div class="seg" id="newsFilter" role="group" aria-label="Filtr">
+        <button data-f="" aria-pressed="true">Barchasi</button><button data-f="published" aria-pressed="false">Saytda</button><button data-f="hidden" aria-pressed="false">Yashirin</button>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+      <div class="empty" id="newsEmpty" hidden></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="view" id="view-settings" hidden>
+      <header class="head"><div><h1>Sozlamalar</h1></div></header>
+      <div class="grid2">
+        <form class="card" id="pwForm">
+          <h2>Parolni o'zgartirish</h2>
+          <label class="field"><span>Joriy parol</span><input name="current" type="password" autocomplete="current-password" required></label>
+          <label class="field"><span>Yangi parol (kamida 10 belgi)</span><input name="next" type="password" autocomplete="new-password" minlength="10" required></label>
+          <label class="field"><span>Yangi parolni takrorlang</span><input name="again" type="password" autocomplete="new-password" minlength="10" required></label>
+          <p class="form-error" id="pwError" role="alert"></p>
+          <button class="btn primary" type="submit">Parolni saqlash</button>
+        </form>
+        <div class="card">
+          <h2>Telegram xabarnomalari</h2>
+          <p class="muted" id="tgInfo"></p>
+          <button class="btn ghost" id="tgTestBtn">Test xabar yuborish</button>
+          <h2 style="margin-top:28px">Kanal importi</h2>
+          <p class="muted" id="importInfo"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- NEWS EDITOR -->
+<dialog class="modal" id="newsDialog">
+  <form id="newsForm" method="dialog">
+    <header class="modal-head"><h2 id="newsDialogTitle">Yangi yangilik</h2><button type="button" class="icon-btn" data-close aria-label="Yopish">×</button></header>
+    <div class="modal-body">
+      <label class="field"><span>Sarlavha</span><input name="title" maxlength="160" required></label>
+      <label class="field"><span>Matn</span><textarea name="body" rows="6" maxlength="5000"></textarea></label>
+      <div class="row2">
+        <label class="field"><span>Sana</span><input name="published_at" type="date" required></label>
+        <label class="field"><span>Havola (ixtiyoriy)</span><input name="link" type="url" placeholder="https://t.me/zafar_international_school/..."></label>
+      </div>
+      <div class="field"><span>Rasm (JPG, PNG yoki WEBP, 5 MB gacha)</span>
+        <div class="img-pick"><img id="newsPreview" alt="" hidden><input name="image" type="file" accept="image/jpeg,image/png,image/webp"></div>
+        <label class="check" id="removeImageWrap" hidden><input type="checkbox" name="remove_image" value="1"> Rasmni olib tashlash</label>
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" name="published" value="1" checked> Saytda ko'rsatish</label>
+        <label class="check"><input type="checkbox" name="pinned" value="1"> Mahkamlash (birinchi chiqadi)</label>
+      </div>
+      <p class="form-error" id="newsError" role="alert"></p>
+    </div>
+    <footer class="modal-foot"><button type="button" class="btn ghost" data-close>Bekor qilish</button><button class="btn primary" type="submit" id="newsSave">Saqlash</button></footer>
+  </form>
+</dialog>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="/admin/admin.js" defer></script>
+</body>
+</html>
