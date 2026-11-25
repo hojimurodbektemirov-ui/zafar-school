@@ -254,11 +254,25 @@ form.apply h3{font-size:22px}
 .ok{display:none;background:#E6FAF1;border:1px solid var(--code);color:#0F5137;padding:14px 16px;border-radius:12px;font-size:15px}
 .ok.show{display:block}
 
-footer{background:#082824;color:#7FA59B;padding:40px 0;font-size:14.5px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-footer nav{display:flex;gap:20px}
+footer{background:#082824;color:#7FA59B;font-size:14.5px}
 footer a{text-decoration:none;color:#CFE3DC}
 footer a:hover{color:var(--gold)}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;padding:40px 0 32px}
+.foot-brand{display:flex;align-items:center;gap:12px;color:#fff}
+.foot-brand img{width:40px;height:40px;border-radius:11px}
+.foot-brand b{font-family:var(--display);font-size:15px;display:block;line-height:1.1}
+.foot-brand small{font-family:var(--mono);font-size:12px;color:#7FA59B}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:13.5px}
+.dev-sign{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:#B3CFC6;padding:8px 14px 8px 10px;border-radius:12px;border:1px solid rgba(139,232,154,.22);background:rgba(255,255,255,.03);position:relative;overflow:hidden;transition:border-color .3s ease, box-shadow .3s ease, color .3s ease}
+.dev-sign::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(139,232,154,.18) 50%,transparent 70%);transform:translateX(-100%);transition:transform .8s ease}
+.dev-sign:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(45,180,65,.12),0 10px 30px -10px rgba(45,180,65,.5);color:#fff}
+.dev-sign:hover::before{transform:translateX(100%)}
+.dev-sign .tag{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--gold);color:var(--ink);font-weight:700;font-size:12px}
+.dev-sign b{color:#fff;font-weight:600}
+.dev-sign b em{font-style:normal;background:linear-gradient(90deg,var(--mint,#8BE89A),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dev-sign .caret{width:7px;height:15px;background:var(--code);display:inline-block;animation:blink 1s steps(1) infinite;margin-left:-4px}
+@media (max-width:600px){.foot-bottom{flex-direction:column;align-items:flex-start;padding-bottom:88px}}
 
 
 /* hero visual */
@@ -989,8 +1003,14 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Zafar International School · Xalqaro ta'limga milliy yondashuv</span>
-    <nav><a href="#yonalish">Yo'nalishlar</a><a href="#qabul">Qabul</a><a href="#aloqa">Aloqa</a></nav>
+    <div class="foot-top">
+      <a class="foot-brand" href="#top"><img src="assets/logo-256.jpg" alt=""><span><b>ZAFAR</b><small>Xalqaro ta'limga milliy yondashuv</small></span></a>
+      <nav aria-label="Pastki menyu"><a href="#yonalish">Yo'nalishlar</a><a href="#sat-ap">SAT · AP</a><a href="#ustozlar">Ustozlar</a><a href="#qabul">Qabul</a><a href="#aloqa">Aloqa</a></nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ZIS. All rights reserved.</span>
+      <a class="dev-sign" href="http://xojimurodbektemirov.uz/" target="_blank" rel="noopener" title="Sayt muallifi"><span class="tag">&lt;/&gt;</span><span>Developed by <b><em>Master Xojimurod</em></b></span><i class="caret" aria-hidden="true"></i></a>
+    </div>
   </div>
 </footer>
 
