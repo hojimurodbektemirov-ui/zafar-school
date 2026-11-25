@@ -334,8 +334,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 
 .avatar{overflow:hidden}
 .avatar img{width:64px;height:64px;object-fit:cover;border-radius:18px}
-.teacher.join{grid-column:span 2}
-@media (max-width:1080px){.teacher.join{grid-column:auto}}
+
 .teacher.join{background:var(--ink);color:#fff;border-color:var(--ink)}
 .teacher.join p{color:#B3CFC6}.teacher.join .role{color:var(--gold)}
 .teacher.join a{color:var(--gold);font-weight:700}
@@ -385,15 +384,23 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 .road div::before{counter-increment:r;content:counter(r);width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ink);border:2px solid var(--gold);font-family:var(--display);font-weight:800;font-size:20px;color:var(--gold);position:relative;margin-bottom:16px}
 .road h4{font-family:var(--display);font-size:16px;margin-bottom:6px}
 .road p{font-size:14.5px;color:#B3CFC6}
-.expert{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:linear-gradient(120deg,rgba(45,180,65,.22),rgba(255,255,255,.04));border:1px solid rgba(139,232,154,.35);border-radius:28px;padding:30px 34px}
-.expert .ph{width:120px;height:120px;border-radius:30px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:48px;position:relative;overflow:hidden}
-.expert .ph img{width:100%;height:100%;object-fit:cover}
-.expert .ph::after{content:"SAT · AP";position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;font-weight:600;background:var(--ink);color:var(--code);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.expert{margin-top:22px;display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center;background:linear-gradient(120deg,rgba(45,180,65,.2),rgba(255,255,255,.04));border:1px solid rgba(139,232,154,.35);border-radius:32px;padding:30px}
+.expert .ph{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.expert .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.expert .ph figcaption{position:absolute;left:14px;bottom:14px;background:var(--ink);color:var(--code);font-family:var(--mono);font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid rgba(139,232,154,.4)}
 .expert small{font-family:var(--mono);color:var(--code);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.expert h3{font-size:30px;margin:6px 0 8px}
-.expert p{color:#CFE3DC;max-width:560px}
-@media (max-width:980px){.exam-grid{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr;row-gap:28px}.road::before{display:none}.expert{grid-template-columns:auto 1fr}.expert .btn{grid-column:1/-1;justify-content:center}}
-@media (max-width:600px){.gauge{grid-template-columns:1fr;justify-items:center}.exam-card{padding:24px}.ap-subjects{grid-template-columns:1fr}.road{grid-template-columns:1fr}.expert{grid-template-columns:1fr;text-align:left}.expert .ph{width:96px;height:96px;font-size:38px}}
+.expert h3{font-size:clamp(26px,3vw,38px);margin:8px 0 10px}
+.expert p{color:#CFE3DC;max-width:620px}
+.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 18px}
+.ex-stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}
+.ex-stats b{display:block;font-family:var(--display);font-weight:800;font-size:30px;color:var(--gold);line-height:1}
+.ex-stats b small{font-size:15px;color:#B3CFC6;font-family:var(--display);letter-spacing:0;text-transform:none}
+.ex-stats span{display:block;font-size:13.5px;color:#CFE3DC;margin-top:8px;line-height:1.35}
+.ex-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ex-tags span{font-size:13.5px;font-weight:700;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.ex-tags span.hl{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+@media (max-width:980px){.exam-grid{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr;row-gap:28px}.road::before{display:none}.expert{grid-template-columns:240px 1fr;gap:28px}.ex-stats{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.gauge{grid-template-columns:1fr;justify-items:center}.exam-card{padding:24px}.ap-subjects{grid-template-columns:1fr}.road{grid-template-columns:1fr}.expert{grid-template-columns:1fr;padding:20px}.expert .ph{max-width:280px;width:100%;margin:0 auto}.expert .btn{width:100%;justify-content:center}}
 
 /* ---------- visual polish ---------- */
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--code));z-index:60;transition:width .1s linear}
@@ -627,13 +634,20 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     </div>
 
     <div class="expert spot reveal">
-      <div class="ph" aria-hidden="true">B</div>
+      <figure class="ph"><img src="assets/photos/baxriddin.jpg" alt="Baxriddin Davlatmurodov" loading="lazy"><figcaption>SAT Math · 800/800</figcaption></figure>
       <div>
-        <small>Mutaxassis</small>
-        <h3>Baxriddin</h3>
-        <p>SAT va AP yo'nalishi mutaxassisi. O'quvchilarni diagnostikadan imtihon kunigacha olib boradi va har biri uchun individual tayyorgarlik rejasini tuzadi.</p>
+        <small>Mutaxassis · Matematika va SAT Math</small>
+        <h3>Baxriddin Davlatmurodov</h3>
+        <p>Matematika, fizika va muhandislik mutaxassisi. 5 yillik tajriba. Target International School va Qorako'l xususiy maktablarida faoliyat yuritgan. O'quvchilarning matematikani chuqur va tizimli o'zlashtirishiga yo'naltirilgan ta'lim tizimlarini ishlab chiqqan.</p>
+        <div class="ex-stats">
+          <div><b>800<small>/800</small></b><span>SAT Math sertifikati</span></div>
+          <div><b>100</b><span>o'quvchini SAT Math'da 700+ natijaga olib chiqqan</span></div>
+          <div><b>200+</b><span>o'quvchining universitetlarga kirishiga yordam bergan</span></div>
+          <div><b>5</b><span>yillik pedagogik tajriba</span></div>
+        </div>
+        <div class="ex-tags"><span class="hl">SAT Math — 800/800</span><span class="hl">Matematika — A+</span><span>Milliy va xalqaro universitetlar</span></div>
+        <a class="btn btn-gold" href="#aloqa" data-consult="SAT/AP bo'yicha konsultatsiya kerak (Baxriddin Davlatmurodov)">Konsultatsiyaga yozilish</a>
       </div>
-      <a class="btn btn-gold" href="#aloqa" data-consult="SAT/AP bo'yicha konsultatsiya kerak">Konsultatsiyaga yozilish</a>
     </div>
   </div>
 </section>
@@ -811,7 +825,8 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
       <article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/ruxsora-ustoz.jpg" alt="" style="object-position:50% 30%"></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boshlang'ich sinf</div><p>O'yin, amaliy mashg'ulot va interaktiv usullar: bola javobni o'zi topadi.</p></div></article>
       <article class="teacher spot reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boshlang'ich sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
       <article class="teacher spot reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar g'olibi.</p></div></article>
-<article class="teacher spot reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Boshlang'ich sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvchan va o'ziga ishongan shaxs tarbiyalaydi.</p></div></article>
+<article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/baxriddin-sq.jpg" alt=""></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 o'quvchini SAT Math'da 700+ natijaga olib chiqqan, 5 yillik tajriba.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Boshlang'ich sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvchan va o'ziga ishongan shaxs tarbiyalaydi.</p></div></article>
       <article class="teacher join spot reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qo'shiling</h3><div class="role">Ochiq vakansiyalar</div><p>Raqobatbardosh maosh, KPI bonus, bepul treninglar va tushlik. <a href="https://t.me/HRD_ZIS" target="_blank" rel="noopener">@HRD_ZIS →</a></p></div></article>
     </div>
   </div>

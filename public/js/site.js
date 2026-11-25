@@ -53,7 +53,8 @@
       ['','SAT     : '],['s','400–1600 (R&W + Math)\n'],
       ['','AP      : '],['s','1–5 ball, universitet krediti\n'],
       ['','reja    : '],['s','diagnostika → mock → imtihon\n'],
-      ['','mentor  : '],['k','Baxriddin\n'],
+      ['','mentor  : '],['k','Baxriddin Davlatmurodov\n'],
+      ['','natija  : '],['s','SAT Math 800/800 · 100 o\'quvchi 700+\n'],
       ['c','# → batafsil: #sat-ap bo\'limi\n']
     ],
     qabul: [
