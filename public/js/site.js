@@ -99,6 +99,12 @@
   track.innerHTML = html + html;
 
 
+  /* ---------- photo fallback: show initials if an image is missing ---------- */
+  document.querySelectorAll('img[data-fallback]').forEach(img=>{
+    const swap=()=>{ const box=img.parentElement; box.classList.add('noimg'); box.dataset.initials=img.dataset.fallback; img.remove(); };
+    if (img.complete && img.naturalWidth===0 && img.getAttribute('src')) swap(); else img.addEventListener('error',swap);
+  });
+
   /* ---------- SAT calculator ---------- */
   const rw=document.getElementById('satRW'), mt=document.getElementById('satM');
   if (rw && mt){

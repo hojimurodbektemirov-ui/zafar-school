@@ -388,6 +388,10 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 .expert .ph{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .expert .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .expert .ph figcaption{position:absolute;left:14px;bottom:14px;background:var(--ink);color:var(--code);font-family:var(--mono);font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid rgba(139,232,154,.4)}
+.expert .ph.noimg{background:linear-gradient(140deg,var(--gold),#1E8F31);display:grid;place-items:center}
+.noimg::before{content:attr(data-initials);font-family:var(--display);font-weight:800;color:var(--ink);line-height:1}
+.expert .ph.noimg::before{font-size:96px}
+.avatar.noimg{background:var(--gold)}.avatar.noimg::before{font-size:22px}
 .expert small{font-family:var(--mono);color:var(--code);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .expert h3{font-size:clamp(26px,3vw,38px);margin:8px 0 10px}
 .expert p{color:#CFE3DC;max-width:620px}
@@ -634,7 +638,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     </div>
 
     <div class="expert spot reveal">
-      <figure class="ph"><img src="assets/photos/expert-bd.jpg" alt="Baxriddin Davlatmurodov" loading="lazy"><figcaption>SAT Math · 800/800</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/expert-bd.jpg" alt="Baxriddin Davlatmurodov" loading="lazy" data-fallback="BD"><figcaption>SAT Math · 800/800</figcaption></figure>
       <div>
         <small>Mutaxassis · Matematika va SAT Math</small>
         <h3>Baxriddin Davlatmurodov</h3>
@@ -825,7 +829,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
       <article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/ruxsora-ustoz.jpg" alt="" style="object-position:50% 30%"></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boshlang'ich sinf</div><p>O'yin, amaliy mashg'ulot va interaktiv usullar: bola javobni o'zi topadi.</p></div></article>
       <article class="teacher spot reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boshlang'ich sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
       <article class="teacher spot reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar g'olibi.</p></div></article>
-<article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/expert-bd-sq.jpg" alt=""></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 o'quvchini SAT Math'da 700+ natijaga olib chiqqan, 5 yillik tajriba.</p></div></article>
+<article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/expert-bd-sq.jpg" alt="" data-fallback="BD"></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 o'quvchini SAT Math'da 700+ natijaga olib chiqqan, 5 yillik tajriba.</p></div></article>
       <article class="teacher spot reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Boshlang'ich sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvchan va o'ziga ishongan shaxs tarbiyalaydi.</p></div></article>
       <article class="teacher join spot reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qo'shiling</h3><div class="role">Ochiq vakansiyalar</div><p>Raqobatbardosh maosh, KPI bonus, bepul treninglar va tushlik. <a href="https://t.me/HRD_ZIS" target="_blank" rel="noopener">@HRD_ZIS →</a></p></div></article>
     </div>
