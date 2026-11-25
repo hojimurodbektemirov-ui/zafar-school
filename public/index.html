@@ -61,7 +61,7 @@ section{padding:110px 0}
 .menu a:hover{opacity:1;color:var(--gold)}
 .nav .btn{padding:11px 18px;font-size:15px}
 .burger{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
-@media (max-width:980px){
+@media (max-width:1140px){
   .menu{position:fixed;top:76px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:12px 24px 24px;transform:translateY(-130%);transition:transform .3s ease}
   .menu.open{transform:none}
   .menu a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:17px}
@@ -344,6 +344,70 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 @media (max-width:700px){.news{grid-template-columns:1fr}.post.feature{grid-column:auto;flex-direction:column}.post.feature img{width:100%;min-height:0;aspect-ratio:4/3;height:auto}.post.feature .body{padding:22px 24px 24px}.post.feature h3{font-size:20px}.reel{flex-basis:150px}}
 @media (max-width:600px){.gallery{columns:2;column-gap:10px}.gallery figure{margin-bottom:10px;border-radius:14px}.gallery figcaption{font-size:13px;padding:30px 10px 10px}.gallery figcaption small{display:none}}
 
+
+/* ---------- SAT / AP ---------- */
+.exams{background:radial-gradient(900px 500px at 90% 0%,#1B6158 0%,transparent 60%),radial-gradient(700px 500px at 0% 100%,#145049 0%,transparent 60%),var(--ink);color:#fff;position:relative;overflow:hidden}
+.exams::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(#000,transparent 85%)}
+.exams .wrap{position:relative}
+.exams .lead{color:#B3CFC6}
+.exams .eyebrow{color:var(--gold)}
+.exam-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:56px}
+.exam-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:34px;position:relative;overflow:hidden}
+.exam-card .badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--code);text-transform:uppercase}
+.exam-card h3{font-size:30px;margin:12px 0 8px}
+.exam-card>p{color:#B3CFC6}
+.gauge{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;margin-top:26px}
+.gauge svg{width:240px;height:150px;overflow:visible}
+.gauge .track{fill:none;stroke:rgba(255,255,255,.1);stroke-width:18;stroke-linecap:round}
+.gauge .val{fill:none;stroke:url(#gaugeGrad);stroke-width:18;stroke-linecap:round;transition:stroke-dashoffset .5s cubic-bezier(.2,.7,.2,1)}
+.gauge .total{font-family:var(--display);font-weight:800;font-size:44px;fill:#fff}
+.gauge .cap{font-family:var(--mono);font-size:12px;fill:#7FA59B}
+.sliders{display:grid;gap:18px}
+.slider label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.slider label b{font-family:var(--mono);color:var(--code)}
+.slider input{width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
+.sat-level{margin-top:6px;font-size:14.5px;color:#CFE3DC;min-height:44px}
+.sat-level b{color:var(--gold)}
+.facts-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.facts-row span{font-size:13.5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:7px 12px;border-radius:999px}
+.ap-scale{display:flex;gap:10px;margin-top:24px}
+.ap-scale button{flex:1;aspect-ratio:1;border-radius:18px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#fff;font-family:var(--display);font-weight:800;font-size:30px;cursor:pointer;transition:background .2s ease, transform .2s ease}
+.ap-scale button:hover{transform:translateY(-3px)}
+.ap-scale button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ap-desc{margin-top:14px;min-height:48px;color:#CFE3DC;font-size:15px}
+.ap-desc b{color:#fff}
+.ap-subjects{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+.ap-subjects span{font-size:14px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);display:flex;gap:8px;align-items:center}
+.ap-subjects span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--code);flex:none}
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;position:relative;counter-reset:r}
+.road::before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:linear-gradient(90deg,var(--gold),var(--code));opacity:.6}
+.road div{position:relative;padding-right:18px}
+.road div::before{counter-increment:r;content:counter(r);width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ink);border:2px solid var(--gold);font-family:var(--display);font-weight:800;font-size:20px;color:var(--gold);position:relative;margin-bottom:16px}
+.road h4{font-family:var(--display);font-size:16px;margin-bottom:6px}
+.road p{font-size:14.5px;color:#B3CFC6}
+.expert{margin-top:22px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:linear-gradient(120deg,rgba(45,180,65,.22),rgba(255,255,255,.04));border:1px solid rgba(139,232,154,.35);border-radius:28px;padding:30px 34px}
+.expert .ph{width:120px;height:120px;border-radius:30px;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:48px;position:relative;overflow:hidden}
+.expert .ph img{width:100%;height:100%;object-fit:cover}
+.expert .ph::after{content:"SAT · AP";position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;font-weight:600;background:var(--ink);color:var(--code);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.expert small{font-family:var(--mono);color:var(--code);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.expert h3{font-size:30px;margin:6px 0 8px}
+.expert p{color:#CFE3DC;max-width:560px}
+@media (max-width:980px){.exam-grid{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr;row-gap:28px}.road::before{display:none}.expert{grid-template-columns:auto 1fr}.expert .btn{grid-column:1/-1;justify-content:center}}
+@media (max-width:600px){.gauge{grid-template-columns:1fr;justify-items:center}.exam-card{padding:24px}.ap-subjects{grid-template-columns:1fr}.road{grid-template-columns:1fr}.expert{grid-template-columns:1fr;text-align:left}.expert .ph{width:96px;height:96px;font-size:38px}}
+
+/* ---------- visual polish ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--code));z-index:60;transition:width .1s linear}
+.to-top{position:fixed;right:20px;bottom:20px;width:52px;height:52px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease, transform .3s ease;z-index:40}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.hero .aurora{position:absolute;inset:-20%;pointer-events:none;background:radial-gradient(40% 35% at 75% 30%,rgba(45,180,65,.28),transparent 70%),radial-gradient(30% 30% at 20% 80%,rgba(108,184,255,.14),transparent 70%);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-4%,3%) scale(1.08)}}
+.exam-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.exam-chips a{font-family:var(--mono);font-size:13px;font-weight:600;text-decoration:none;color:#fff;padding:7px 12px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);transition:background .2s ease}
+.exam-chips a:hover{background:var(--gold);color:var(--ink)}
+.spot{position:relative}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(45,180,65,.16),transparent 45%)}
+.spot:hover::after{opacity:1}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
 .reveal.in{opacity:1;transform:none}
@@ -388,6 +452,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 </head>
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap">
@@ -397,6 +462,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     </a>
     <ul class="menu" id="menu">
       <li><a href="#yonalish">Yo'nalishlar</a></li>
+      <li><a href="#sat-ap">SAT · AP</a></li>
       <li><a href="#yutuqlar">Yutuqlar</a></li>
       <li><a href="#lavhalar">Lavhalar</a></li>
       <li><a href="#yangiliklar">Yangiliklar</a></li>
@@ -413,6 +479,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -424,6 +491,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn-ghost" href="tel:+998781137773">78 113 77 73</a>
         </div>
+        <div class="exam-chips" aria-label="Xalqaro dasturlar"><a href="#sat-ap">SAT</a><a href="#sat-ap">AP</a><a href="#yonalish">IELTS</a><a href="#yonalish">IT · Python</a></div>
       </div>
 
       <div class="hero-visual">
@@ -435,6 +503,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
           <button data-cmd="about" class="on">zis --about</button>
           <button data-cmd="it">zis --it</button>
           <button data-cmd="english">zis --english</button>
+          <button data-cmd="sat">zis --sat</button>
           <button data-cmd="qabul">zis --qabul</button>
         </div>
       </div>
@@ -464,7 +533,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     <p class="lead reveal">Biz bolani faqat imtihonga emas, dunyo bilan erkin muloqot qilishga va texnologiya yaratishga tayyorlaymiz. Ildizi esa ona tilida qoladi.</p>
 
     <div class="pillars">
-      <article class="pillar it reveal">
+      <article class="pillar it spot reveal">
         <span class="tag">01 · Information Technology</span>
         <h3>IT va informatika</h3>
         <p>Kompyuter sinfida amaliy darslar: bola texnologiyadan foydalanibgina qolmay, uni o'zi yaratishni o'rganadi. Mantiqiy fikrlash va masala yechish har kungi mashg'ulot.</p>
@@ -476,7 +545,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
         </ul>
         <span class="glyph">&lt;/&gt;</span>
       </article>
-      <article class="pillar reveal">
+      <article class="pillar spot reveal">
         <span class="tag">02 · Real English Environment</span>
         <h3>Ingliz tili</h3>
         <p>Ingliz tilini shunchaki o'rganmaydi, uni amalda ishlatadi. Pre-School'dan boshlab har kuni.</p>
@@ -484,10 +553,11 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
           <li>IELTS 7.5 natijali instructor</li>
           <li>Speaking va Listening klublari</li>
           <li>Xalqaro mehmonlar bilan jonli muloqot</li>
+          <li>SAT va AP imtihonlariga tayyorlov</li>
         </ul>
         <span class="glyph">Aa</span>
       </article>
-      <article class="pillar reveal">
+      <article class="pillar spot reveal">
         <span class="tag">03 · Milliy yondashuv</span>
         <h3>Ildiz va tarbiya</h3>
         <p>Dunyo tillarini o'rgatamiz, lekin ildizi ona tilida ekanini unutmaymiz. Ingliz va rus tillari barcha sinflarda teng o'qitiladi.</p>
@@ -498,6 +568,72 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
         </ul>
         <span class="glyph">Oʻ</span>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- SAT / AP -->
+<section class="exams" id="sat-ap">
+  <div class="wrap">
+    <span class="eyebrow reveal">Xalqaro imtihonlar</span>
+    <h2 class="reveal">SAT va AP: dunyo universitetlariga yo'l</h2>
+    <p class="lead reveal">AQSh va dunyoning yetakchi universitetlari qabulda SAT natijasini so'raydi, AP fanlari esa o'qishni boshlamasdan oldin universitet kreditini olishga imkon beradi. ZIS'da bu yo'lga tizimli tayyorlaymiz.</p>
+
+    <div class="exam-grid">
+      <article class="exam-card spot reveal">
+        <span class="badge">● SAT · Digital</span>
+        <h3>Ballingizni sinab ko'ring</h3>
+        <p>SAT ikki bo'limdan iborat. Har biri 200–800 ball, jami 400–1600. Slayderlarni suring:</p>
+        <div class="gauge">
+          <svg viewBox="0 0 240 150" role="img" aria-label="SAT umumiy ball ko'rsatkichi">
+            <defs><linearGradient id="gaugeGrad" x1="0" x2="1"><stop offset="0" stop-color="#8BE89A"/><stop offset="1" stop-color="#2DB441"/></linearGradient></defs>
+            <path class="track" d="M20 130 A100 100 0 0 1 220 130"/>
+            <path class="val" id="gaugeVal" d="M20 130 A100 100 0 0 1 220 130" pathLength="100" stroke-dasharray="100" stroke-dashoffset="50"/>
+            <text class="total" id="satTotal" x="120" y="118" text-anchor="middle">1200</text>
+            <text class="cap" x="20" y="148" text-anchor="middle">400</text>
+            <text class="cap" x="220" y="148" text-anchor="middle">1600</text>
+          </svg>
+          <div class="sliders">
+            <div class="slider"><label for="satRW">Reading &amp; Writing <b id="satRWv">600</b></label><input type="range" id="satRW" min="200" max="800" step="10" value="600"></div>
+            <div class="slider"><label for="satM">Math <b id="satMv">600</b></label><input type="range" id="satM" min="200" max="800" step="10" value="600"></div>
+            <p class="sat-level" id="satLevel" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="facts-row"><span>⏱ ~2 soat 14 daqiqa</span><span>💻 Kompyuterda, adaptiv</span><span>📅 Yiliga bir necha marta</span><span>🎓 College Board</span></div>
+      </article>
+
+      <article class="exam-card spot reveal">
+        <span class="badge">● AP · Advanced Placement</span>
+        <h3>Universitet fanlari, maktabdayoq</h3>
+        <p>AP imtihoni 1 dan 5 gacha baholanadi. Ballni bosing:</p>
+        <div class="ap-scale" id="apScale" role="group" aria-label="AP ball shkalasi">
+          <button type="button" data-s="1" aria-pressed="false">1</button><button type="button" data-s="2" aria-pressed="false">2</button><button type="button" data-s="3" aria-pressed="false">3</button><button type="button" data-s="4" aria-pressed="false">4</button><button type="button" data-s="5" aria-pressed="true">5</button>
+        </div>
+        <p class="ap-desc" id="apDesc" aria-live="polite"></p>
+        <div class="ap-subjects" aria-label="IT va ingliz tili yo'nalishiga mos AP fanlari">
+          <span>Computer Science Principles</span><span>Computer Science A</span><span>Calculus AB</span><span>English Language</span><span>Statistics</span><span>Physics 1</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="exam-card reveal" style="margin-top:22px">
+      <span class="badge">● Tayyorgarlik yo'li</span>
+      <div class="road">
+        <div><h4>Diagnostika</h4><p>Boshlang'ich test: kuchli va zaif tomonlarni aniqlaymiz.</p></div>
+        <div><h4>Poydevor</h4><p>Ingliz tili, matematika va mantiq bo'yicha mustahkam baza.</p></div>
+        <div><h4>Strategiya va mock testlar</h4><p>Real formatdagi sinov imtihonlari, vaqtni boshqarish.</p></div>
+        <div><h4>Imtihon va universitet</h4><p>Ro'yxatdan o'tish, imtihon va universitetga ariza bosqichlari.</p></div>
+      </div>
+    </div>
+
+    <div class="expert spot reveal">
+      <div class="ph" aria-hidden="true">B</div>
+      <div>
+        <small>Mutaxassis</small>
+        <h3>Baxriddin</h3>
+        <p>SAT va AP yo'nalishi mutaxassisi. O'quvchilarni diagnostikadan imtihon kunigacha olib boradi va har biri uchun individual tayyorgarlik rejasini tuzadi.</p>
+      </div>
+      <a class="btn btn-gold" href="#aloqa" data-consult="SAT/AP bo'yicha konsultatsiya kerak">Konsultatsiyaga yozilish</a>
     </div>
   </div>
 </section>
@@ -554,7 +690,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     <h2 class="reveal">Birinchi yilning o'zidayoq</h2>
     <p class="lead reveal">Maktab 2026-yil sentyabrda eshiklarini ochdi. Mana bir necha oydagi natijalar.</p>
     <div class="bento">
-      <div class="tile gold wide tall reveal">
+      <div class="tile spot gold wide tall reveal">
         <div>
           <div class="big">TOP-10</div>
           <h3>IRN imtihonida respublika bo'yicha 4-o'rin</h3>
@@ -562,23 +698,23 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
         </div>
         <span class="src">// noyabr 2026</span>
       </div>
-      <div class="tile reveal">
+      <div class="tile spot reveal">
         <div><div class="big">12</div><h3>grant g'olibi</h3><p>Bosh grant: 8-sinf o'quvchisi, 85,61 ball, o'qish butunlay bepul.</p></div>
       </div>
-      <div class="tile reveal">
+      <div class="tile spot reveal">
         <div><div class="big">284</div><h3>nomzod test topshirdi</h3><p>"ZIS Iqtidor Granti"ga 400 dan ortiq o'quvchi ro'yxatdan o'tdi.</p></div>
       </div>
-      <div class="tile wide reveal">
+      <div class="tile spot wide reveal">
         <div><h3>🤝 Andijon davlat chet tillari instituti bilan hamkorlik memorandumi</h3><p>Ingliz tili ta'limi sifatini yangi bosqichga olib chiqish uchun rasmiy hamkorlik.</p></div>
         <span class="src">// partnership</span>
       </div>
-      <div class="tile reveal">
+      <div class="tile spot reveal">
         <div><h3>🇨🇦 Kanadalik professor</h3><p>Mr. Louis Schilder o'quvchilar bilan ingliz tilida erkin suhbat qurdi.</p></div>
       </div>
-      <div class="tile reveal">
+      <div class="tile spot reveal">
         <div><h3>🥉 Xalqaro gimnastika</h3><p>Samarqanddagi musobaqada 1-sinf o'quvchimiz 3-o'rinni egalladi.</p></div>
       </div>
-      <div class="tile wide reveal">
+      <div class="tile spot wide reveal">
         <div><div class="big">50+</div><h3>o'quvchi IRN olimpiadasida qatnashdi</h3><p>Olimpiada uchun barcha adabiyotlar olib kelinib, o'quv dasturi asosida maxsus tayyorgarlik o'tkazildi.</p></div>
       </div>
     </div>
@@ -669,14 +805,14 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
     <h2 class="reveal">Kuchli ustozlar, kuchli kelajak</h2>
     <p class="lead reveal">Har shanba ustoz va xodimlar uchun trening o'tkaziladi. Biz bolani "ro'yxatdagi raqam" deb emas, alohida shaxs deb ko'ramiz.</p>
     <div class="teachers">
-      <article class="teacher reveal"><div class="avatar"><img src="assets/photos/muhayyo-ustoz.jpg" alt="" style="object-position:44% 30%"></div><div><h3>Rahimova Muhayyo Dilmurodovna</h3><div class="role">Ona tili va adabiyot · oliy toifa</div><p>"Yil o'qituvchisi – 2026" Respublika ko'rik-tanlovi g'olibi, Milliy sertifikat A+. 18 yillik tajriba.</p></div></article>
-      <article class="teacher reveal"><div class="avatar"><img src="assets/photos/abboskhon-ustoz.jpg" alt="" style="object-position:50% 40%"></div><div><h3>Abboskhon Sharafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking ko'nikmalari.</p></div></article>
-      <article class="teacher reveal"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Abdurahimova Shoira Shamsiddinovna</h3><div class="role">Boshlang'ich sinf</div><p>22 yillik tajriba. Har bir bolaning o'rganish tezligiga mos individual yondashuv.</p></div></article>
-      <article class="teacher reveal"><div class="avatar"><img src="assets/photos/ruxsora-ustoz.jpg" alt="" style="object-position:50% 30%"></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boshlang'ich sinf</div><p>O'yin, amaliy mashg'ulot va interaktiv usullar: bola javobni o'zi topadi.</p></div></article>
-      <article class="teacher reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boshlang'ich sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
-      <article class="teacher reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar g'olibi.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Boshlang'ich sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvchan va o'ziga ishongan shaxs tarbiyalaydi.</p></div></article>
-      <article class="teacher join reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qo'shiling</h3><div class="role">Ochiq vakansiyalar</div><p>Raqobatbardosh maosh, KPI bonus, bepul treninglar va tushlik. <a href="https://t.me/HRD_ZIS" target="_blank" rel="noopener">@HRD_ZIS →</a></p></div></article>
+      <article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/muhayyo-ustoz.jpg" alt="" style="object-position:44% 30%"></div><div><h3>Rahimova Muhayyo Dilmurodovna</h3><div class="role">Ona tili va adabiyot · oliy toifa</div><p>"Yil o'qituvchisi – 2026" Respublika ko'rik-tanlovi g'olibi, Milliy sertifikat A+. 18 yillik tajriba.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/abboskhon-ustoz.jpg" alt="" style="object-position:50% 40%"></div><div><h3>Abboskhon Sharafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking ko'nikmalari.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Abdurahimova Shoira Shamsiddinovna</h3><div class="role">Boshlang'ich sinf</div><p>22 yillik tajriba. Har bir bolaning o'rganish tezligiga mos individual yondashuv.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar"><img src="assets/photos/ruxsora-ustoz.jpg" alt="" style="object-position:50% 30%"></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boshlang'ich sinf</div><p>O'yin, amaliy mashg'ulot va interaktiv usullar: bola javobni o'zi topadi.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boshlang'ich sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
+      <article class="teacher spot reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar g'olibi.</p></div></article>
+<article class="teacher spot reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Boshlang'ich sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvchan va o'ziga ishongan shaxs tarbiyalaydi.</p></div></article>
+      <article class="teacher join spot reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qo'shiling</h3><div class="role">Ochiq vakansiyalar</div><p>Raqobatbardosh maosh, KPI bonus, bepul treninglar va tushlik. <a href="https://t.me/HRD_ZIS" target="_blank" rel="noopener">@HRD_ZIS →</a></p></div></article>
     </div>
   </div>
 </section>
@@ -829,6 +965,8 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
   <video class="vb-frame" id="vbVideo" controls playsinline preload="none"></video>
   <div class="vb-foot"><span id="vbCap"></span><a id="vbLink" target="_blank" rel="noopener">Telegram'da ochish →</a></div>
 </dialog>
+
+<button class="to-top" id="toTop" aria-label="Sahifa boshiga qaytish">↑</button>
 
 <footer>
   <div class="wrap">

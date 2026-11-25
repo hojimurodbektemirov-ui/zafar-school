@@ -1,3 +1,5 @@
+# Saytning frontend qismini GitHub Pages'ga avtomatik joylaydi (public/ papkasi).
+# Backend (arizalar bazasi, admin panel) bu yerda ishlamaydi: unga server kerak (README'ga qarang).
 name: GitHub Pages
 
 on:

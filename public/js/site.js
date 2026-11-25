@@ -47,6 +47,15 @@
       ['','instructor: '],['k','IELTS 7.5 · Speaking 8.5\n'],
       ['','partner   : '],['k','Andijon davlat chet tillari instituti\n']
     ],
+    sat: [
+      ['p','$ '],['k','zis --sat\n'],
+      ['c','# SAT · AP tayyorlov\n'],
+      ['','SAT     : '],['s','400–1600 (R&W + Math)\n'],
+      ['','AP      : '],['s','1–5 ball, universitet krediti\n'],
+      ['','reja    : '],['s','diagnostika → mock → imtihon\n'],
+      ['','mentor  : '],['k','Baxriddin\n'],
+      ['c','# → batafsil: #sat-ap bo\'limi\n']
+    ],
     qabul: [
       ['p','$ '],['k','zis --qabul 2026-2027\n'],
       ['','[1] ariza        '],['s','✓ ochiq\n'],
@@ -83,10 +92,54 @@
   run('about');
 
   /* marquee */
-  const mq = [['Knowledge','bilim'],['Future','kelajak'],['Code','kod'],['Victory','zafar'],['Dream','orzu'],['Teacher','ustoz'],['Friendship','do\'stlik'],['Algorithm','algoritm']];
+  const mq = [['Knowledge','bilim'],['Future','kelajak'],['Code','kod'],['Victory','zafar'],['Dream','orzu'],['Teacher','ustoz'],['Friendship','do\'stlik'],['Algorithm','algoritm'],['SAT','universitet sari'],['AP','advanced placement']];
   const track = document.getElementById('marquee');
   const html = mq.map(([e,u]) => `<span>${e} <small>= ${u}</small> ✦</span>`).join('');
   track.innerHTML = html + html;
+
+
+  /* ---------- SAT calculator ---------- */
+  const rw=document.getElementById('satRW'), mt=document.getElementById('satM');
+  if (rw && mt){
+    const gv=document.getElementById('gaugeVal'), tot=document.getElementById('satTotal'), lvl=document.getElementById('satLevel');
+    const levels=[[1500,"<b>Juda kuchli natija</b>: dunyoning eng nufuzli universitetlari darajasi."],[1350,"<b>Kuchli natija</b>: ko'plab yetakchi universitetlar uchun raqobatbardosh."],[1150,"<b>Yaxshi natija</b>: tizimli tayyorgarlik bilan yanada oshirish mumkin."],[0,"<b>Boshlang'ich daraja</b>: diagnostika va poydevor bosqichidan boshlaymiz."]];
+    const upd=()=>{ const a=+rw.value, b=+mt.value, t=a+b;
+      document.getElementById('satRWv').textContent=a; document.getElementById('satMv').textContent=b;
+      tot.textContent=t; gv.style.strokeDashoffset=String(100-((t-400)/1200)*100);
+      lvl.innerHTML=levels.find(([min])=>t>=min)[1]; };
+    rw.addEventListener('input',upd); mt.addEventListener('input',upd); upd();
+  }
+
+  /* ---------- AP score scale (official College Board descriptors) ---------- */
+  const apBox=document.getElementById('apScale');
+  if (apBox){
+    const AP={5:["Extremely well qualified","Ko'plab universitetlar kredit beradi yoki fanni o'tkazadi."],4:["Very well qualified","Aksariyat universitetlar kredit beradi."],3:["Qualified","Ko'p universitetlarda kredit uchun yetarli."],2:["Possibly qualified","Kamdan-kam hollarda kredit beriladi."],1:["No recommendation","Kredit berilmaydi: qayta tayyorlanib topshirish mumkin."]};
+    const desc=document.getElementById('apDesc');
+    const pick=(n)=>{ apBox.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.s===String(n))));
+      desc.innerHTML=`<b>${n} — ${AP[n][0]}.</b> ${AP[n][1]}`; };
+    apBox.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.s))); pick(5);
+  }
+
+  /* ---------- consultation button pre-fills the form ---------- */
+  document.querySelectorAll('[data-consult]').forEach(a=>a.addEventListener('click',()=>{
+    const m=document.getElementById('message'); if (m && !m.value) m.value=a.dataset.consult;
+    setTimeout(()=>document.getElementById('parent')?.focus({preventScroll:true}),600);
+  }));
+
+  /* ---------- spotlight hover on cards ---------- */
+  if (!reduce && matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.spot').forEach(el=>el.addEventListener('pointermove',e=>{
+      const r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
+    }));
+  }
+
+  /* ---------- scroll progress + back to top ---------- */
+  const bar=document.getElementById('progress'), top=document.getElementById('toTop');
+  const onScrollUi=()=>{ const h=document.documentElement.scrollHeight-innerHeight;
+    if (bar) bar.style.width=(h>0? (scrollY/h)*100 : 0)+'%';
+    if (top) top.classList.toggle('show', scrollY>innerHeight*1.2); };
+  addEventListener('scroll',onScrollUi,{passive:true}); onScrollUi();
+  top?.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
 
   /* counters */
   const counters = document.querySelectorAll('[data-count]');
@@ -234,6 +287,8 @@
       if (res.ok){
         form.reset(); setErrors({});
         showMsg(`Rahmat! Arizangiz qabul qilindi${data.id ? ' (№ ' + data.id + ')' : ''}. Aloqa markazimiz tez orada siz bilan bog'lanadi.`);
+      } else if ([404, 405, 501].includes(res.status)){
+        await telegramFallback(f); // static hosting (e.g. GitHub Pages): no API server
       } else if (res.status === 400 && data.fields){ setErrors(data.fields); showMsg(data.error, true); }
       else showMsg(data.error || "Xatolik yuz berdi. Iltimos, 78 113 77 73 raqamiga qo'ng'iroq qiling.", true);
     } catch (_){
