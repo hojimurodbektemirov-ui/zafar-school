@@ -181,8 +181,7 @@
 
   /* reels scroll */
   const reels=document.getElementById('reels');
-  document.getElementById('rPrev').onclick=()=>reels.scrollBy({left:-400,behavior:reduce?'auto':'smooth'});
-  document.getElementById('rNext').onclick=()=>reels.scrollBy({left:400,behavior:reduce?'auto':'smooth'});
+
 
 
 
@@ -218,25 +217,32 @@
     document.querySelectorAll('#tFilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     tcards.forEach(c => { c.hidden = b.dataset.f !== 'all' && c.dataset.cat !== b.dataset.f; });
   }));
-  /* teachers row: arrows + drag by hand (mouse); touch scrolls natively */
-  const tg = document.getElementById('tGrid'), tPrev = document.getElementById('tPrev'), tNext = document.getElementById('tNext');
-  if (tg){
-    const cards = () => [...tg.querySelectorAll('.tcard')].filter(c => !c.hidden);
-    const idx = () => { const l = tg.scrollLeft, cs = cards(); let best = 0;
-      cs.forEach((c, i) => { if (Math.abs(c.offsetLeft - tg.firstElementChild.offsetLeft - l) < Math.abs(cs[best].offsetLeft - tg.firstElementChild.offsetLeft - l)) best = i; }); return best; };
-    const go = i => { const cs = cards(); if (!cs.length) return; i = Math.max(0, Math.min(cs.length - 1, i));
-      tg.scrollTo({left: cs[i].offsetLeft - cs[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth'}); };
-    const upd = () => { if (!tPrev) return; tPrev.disabled = tg.scrollLeft < 4; tNext.disabled = tg.scrollLeft + tg.clientWidth >= tg.scrollWidth - 4; };
-    tPrev && tPrev.addEventListener('click', () => go(idx() - 1));
-    tNext && tNext.addEventListener('click', () => go(idx() + 1));
-    tg.addEventListener('scroll', upd, {passive:true}); addEventListener('resize', upd); upd();
-    document.querySelectorAll('#tFilter button').forEach(b => b.addEventListener('click', () => { tg.scrollLeft = 0; setTimeout(upd, 60); }));
+  /* horizontal rows (teachers, gallery, videos): arrows + drag by hand; touch scrolls natively */
+  function makeRow(track, prev, next, filterBtns){
+    if (!track) return;
+    const items = () => [...track.children].filter(c => c.offsetParent !== null);
+    const gap = () => parseFloat(getComputedStyle(track).columnGap) || 0;
+    const idx = () => { const cs = items(); if (!cs.length) return 0; const base = cs[0].offsetLeft, l = track.scrollLeft; let best = 0;
+      cs.forEach((c, i) => { if (Math.abs(c.offsetLeft - base - l) < Math.abs(cs[best].offsetLeft - base - l)) best = i; }); return best; };
+    const go = i => { const cs = items(); if (!cs.length) return; i = Math.max(0, Math.min(cs.length - 1, i));
+      track.scrollTo({left: cs[i].offsetLeft - cs[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth'}); };
+    const upd = () => { if (!prev) return; prev.disabled = track.scrollLeft < 4; next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; };
+    prev && prev.addEventListener('click', () => go(idx() - 1));
+    next && next.addEventListener('click', () => go(idx() + 1));
+    track.addEventListener('scroll', upd, {passive:true}); addEventListener('resize', upd); addEventListener('load', upd); upd();
+    track.querySelectorAll('img').forEach(i => i.addEventListener('load', upd));
+    if (window.ResizeObserver) new ResizeObserver(upd).observe(track);
+    (filterBtns || []).forEach(b => b.addEventListener('click', () => { track.scrollLeft = 0; setTimeout(upd, 60); }));
     let down = false, sx = 0, sl = 0, moved = false;
-    tg.addEventListener('mousedown', e => { if (e.button !== 0) return; down = true; moved = false; sx = e.clientX; sl = tg.scrollLeft; if (!e.target.closest('button')) e.preventDefault(); });
-    addEventListener('mousemove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4 && !moved){ moved = true; tg.classList.add('dragging'); } if (moved) tg.scrollLeft = sl - dx; });
-    addEventListener('mouseup', () => { if (!down) return; down = false; if (moved){ tg.classList.remove('dragging'); const dir = tg.scrollLeft > sl ? 0.35 : -0.35; go(Math.round(idx() + dir)); } });
-    tg.addEventListener('click', e => { if (moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+    track.addEventListener('mousedown', e => { if (e.button !== 0) return; down = true; moved = false; sx = e.clientX; sl = track.scrollLeft; if (!e.target.closest('button')) e.preventDefault(); });
+    addEventListener('mousemove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4 && !moved){ moved = true; track.classList.add('dragging'); } if (moved) track.scrollLeft = sl - dx; });
+    addEventListener('mouseup', () => { if (!down) return; down = false; if (moved){ track.classList.remove('dragging'); go(Math.round(idx() + (track.scrollLeft > sl ? 0.35 : -0.35))); } });
+    track.addEventListener('click', e => { if (moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
   }
+  const $id = id => document.getElementById(id);
+  makeRow($id('tGrid'), $id('tPrev'), $id('tNext'), [...document.querySelectorAll('#tFilter button')]);
+  makeRow($id('gallery'), $id('gPrev'), $id('gNext'), [...document.querySelectorAll('#chips button')]);
+  makeRow($id('reels'), $id('rPrev'), $id('rNext'));
   const tdlg = document.getElementById('tdlg');
   if (tdlg){
     tcards.forEach(c => c.querySelector('.t-open').addEventListener('click', () => {

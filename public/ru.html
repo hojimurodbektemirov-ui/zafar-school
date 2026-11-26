@@ -289,13 +289,17 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 @media (max-width:600px){.hero-visual{padding-top:0}.hero-photo{display:none}.hero-visual .term{width:100%}.sticker{display:none}}
 
 /* gallery */
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.g-bar{margin-top:32px}
 .chips button{font:inherit;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--text)}
 .chips button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.gallery{columns:4 240px;column-gap:16px;margin-top:32px}
-.gallery figure{break-inside:avoid;margin:0 0 16px;position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--paper-2)}
+.row-scroll{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;user-select:none;padding-bottom:6px}
+.row-scroll::-webkit-scrollbar{display:none}
+.row-scroll.dragging{cursor:grabbing;scroll-snap-type:none}
+.row-scroll img{-webkit-user-drag:none;pointer-events:none}
+.gallery figure{flex:0 0 auto;height:380px;margin:0;position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--paper-2);scroll-snap-align:start}
 .gallery figure.hide{display:none}
-.gallery img{width:100%;height:auto;transition:transform .5s ease}
+.gallery img{height:100%;width:auto;max-width:none;transition:transform .5s ease}
 .gallery figure:hover img{transform:scale(1.04)}
 .gallery figcaption{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;color:#fff;font-weight:700;font-size:15px;background:linear-gradient(transparent,rgba(5,30,27,.85))}
 .gallery figcaption small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;opacity:.8}
@@ -357,7 +361,7 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 
 @media (max-width:1080px){.news{grid-template-columns:1fr 1fr}.post.feature{grid-column:span 2}}
 @media (max-width:700px){.news{grid-template-columns:1fr}.post.feature{grid-column:auto;flex-direction:column}.post.feature img{width:100%;min-height:0;aspect-ratio:4/3;height:auto}.post.feature .body{padding:22px 24px 24px}.post.feature h3{font-size:20px}.reel{flex-basis:150px}}
-@media (max-width:600px){.gallery{columns:2;column-gap:10px}.gallery figure{margin-bottom:10px;border-radius:14px}.gallery figcaption{font-size:13px;padding:30px 10px 10px}.gallery figcaption small{display:none}}
+@media (max-width:600px){.gallery figure{height:280px;border-radius:14px}.gallery figcaption{font-size:13px;padding:30px 10px 10px}.gallery figcaption small{display:none}.g-bar .t-nav{display:none}}
 
 
 /* ---------- SAT / AP ---------- */
@@ -850,13 +854,16 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 <div class="wrap">
 <h2 class="reveal">Кадры из школьной жизни</h2>
 <p class="lead reveal">Всё — из нашего Telegram-канала: уроки, достижения и будни. Нажмите на фото, чтобы увеличить.</p>
-<div aria-label="Фильтр фотографий" class="chips reveal" id="chips" role="group">
+<div class="t-bar g-bar">
+<div aria-label="Фильтр фотографий" class="chips" id="chips" role="group">
 <button aria-pressed="true" data-f="all">Все</button>
 <button aria-pressed="false" data-f="Darslar">Уроки</button>
 <button aria-pressed="false" data-f="Yutuqlar">Достижения</button>
 <button aria-pressed="false" data-f="Hayot">Жизнь школы</button>
 </div>
-<div class="gallery" id="gallery">
+<div class="t-nav"><button aria-label="Назад" id="gPrev" type="button">←</button><button aria-label="Вперёд" id="gNext" type="button">→</button></div>
+</div>
+<div class="gallery row-scroll" id="gallery">
 <figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/250"><img alt="Путь на олимпиаду IRN" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/><figcaption>Путь на олимпиаду IRN<small>17 октября · 50+ учеников</small></figcaption></figure>
 <figure class="reveal" data-cat="Darslar" data-link="https://t.me/zafar_international_school/254"><img alt="Урок изобразительного искусства" loading="lazy" src="assets/photos/sanat-darsi-1.jpg"/><figcaption>Урок изобразительного искусства<small>с Ойгул Фазилжановной</small></figcaption></figure>
 <figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/339"><img alt="IRN: специальный приз школе" loading="lazy" src="assets/photos/irn-sovrin.jpg"/><figcaption>IRN: специальный приз школе<small>13 ноября · TOP-10, 4-е место</small></figcaption></figure>
@@ -882,7 +889,7 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 </div>
 <div class="reel-nav"><button aria-label="Назад" id="rPrev">←</button><button aria-label="Вперёд" id="rNext">→</button></div>
 </div>
-<div class="reels" id="reels">
+<div class="reels row-scroll" id="reels">
 <button class="reel" data-link="https://t.me/zafar_international_school/115" data-src="assets/videos/ochilish.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/ochilish.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Открытие школы<small>2 сентября 2026</small></span></button>
 <button class="reel" data-link="https://t.me/zafar_international_school/154" data-src="assets/videos/it-5sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/it-5sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Урок IT в 5 классе<small>Grade 5 IT Lesson</small></span></button>
 <button class="reel" data-link="https://t.me/zafar_international_school/153" data-src="assets/videos/english-7sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/english-7sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Английский в 7 классе<small>English lesson</small></span></button>
@@ -927,7 +934,7 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 </div>
 <div class="t-nav"><button aria-label="Назад" id="tPrev" type="button">←</button><button aria-label="Вперёд" id="tNext" type="button">→</button></div>
 </div>
-<div class="tgrid" id="tGrid">
+<div class="tgrid row-scroll" id="tGrid">
 <article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/100">
 <div class="t-cred"><b>2026</b><span>Учитель года — победитель республики</span></div>
 <div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/muhayyo.jpg" width="72"/><div><h3>Рахимова Мухайё Дилмуродовна</h3><p class="role">Родной язык и литература · высшая категория</p></div></div>
@@ -1168,6 +1175,6 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 </div>
 </footer>
 <script defer src="js/t.ru.js?v=c2deed4a"></script>
-<script defer="" src="js/site.js?v=fcdb5930"></script>
+<script defer="" src="js/site.js?v=c68e648c"></script>
 </body>
 </html>
