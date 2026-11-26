@@ -29,6 +29,29 @@ Sayt: http://localhost:3000, admin panel: http://localhost:3000/admin.
 > Mahalliy sinov uchun `.env` da `NODE_ENV=development` qilib qo'ysangiz, `SESSION_SECRET` va `ADMIN_PASSWORD` majburiy bo'lmaydi.
 > Parol berilmasa, server birinchi ishga tushganda tasodifiy parol yaratib, konsolga chiqaradi.
 
+## Uch til: O'zbek (yangi alifbo), Русский, English
+
+Sayt uch sahifadan iborat: `public/index.html` (o'zbekcha, takomillashgan lotin alifbosida: Ö, Ğ, Ş, Ç),
+`public/ru.html` va `public/en.html`. Ular **qo'lda tahrirlanmaydi**, bitta manbadan yig'iladi:
+
+| Fayl | Nima uchun |
+|---|---|
+| `site/index.src.html` | Sahifaning yagona manbasi (o'zbekcha, odatiy lotin yozuvida yoziladi) |
+| `site/i18n.json` | Har bir matn bo'lagining ruscha va inglizcha tarjimasi |
+| `site/strings.py` | JavaScript ichidagi matnlar (terminal, SAT/AP, forma xabarlari) |
+| `site/build_i18n.py` | Uch sahifani yig'adi; o'zbekchani avtomatik yangi alifboga o'giradi |
+
+Matnni o'zgartirish tartibi:
+
+```bash
+pip install beautifulsoup4          # bir marta
+python3 site/extract.py             # tarjimasi yo'q bo'laklar site/todo.json ga yoziladi
+python3 site/build_i18n.py          # tarjima yetishmasa yoki HTML teglari mos kelmasa, xato bilan to'xtaydi
+```
+
+Yangi alifbo qoidasi: `O‘o‘ → Öö`, `G‘g‘ → Ğğ`, `Sh → Ş`, `Ch → Ç`. Inglizcha so'zlar (English, School, Speaking...)
+va havolalar o'zgarmaydi; istisnolar ro'yxati `site/i18n_core.py` dagi `KEEP` to'plamida.
+
 ## Telegram botni ulash (arizalar Telegram'ga kelishi uchun)
 
 1. Telegramda **@BotFather** ga `/newbot` yozing, bot yarating va **tokenni** oling.
@@ -89,7 +112,8 @@ sqlite3 data/zis.db ".backup data/backup-$(date +%F).db"
 | `npm run dev` | Kod o'zgarganda avtomatik qayta yuklanadigan rejim |
 | `npm test` | Avtomatik testlar (16 ta) |
 | `npm run reset-password -- admin YangiParol123` | Admin parolini tiklash (parol unutilganda) |
-| `python3 build.py` | Serversiz ko'rish uchun bitta `zafar-school.html` fayl yaratish |
+| `python3 site/build_i18n.py` | Uch tilli sahifalarni qayta yig'ish |
+| `python3 build.py` | Serversiz ko'rish uchun bitta `zafar-school.html` fayl yaratish (o'zbekcha) |
 
 ## Loyiha tuzilmasi
 
@@ -100,7 +124,8 @@ src/            server kodi
   routes/         public.js (sayt API), admin.js (admin API)
   importer.js     Telegram kanal importi
   telegram.js     Bot API orqali xabar yuborish
-public/         sayt fayllari (index.html, js/, assets/, admin/)
+site/           sahifa manbasi va tarjimalar (index.src.html, i18n.json, strings.py)
+public/         yig'ilgan sayt (index.html, ru.html, en.html, js/, assets/, admin/)
 test/           avtomatik testlar
 data/           baza va yuklangan rasmlar (gitga kirmaydi)
 ```

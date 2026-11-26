@@ -1,0 +1,103 @@
+"""Strings used by public/js/site.js, per language.
+Uzbek is written in the current Latin alphabet; the build converts it to the improved alphabet."""
+
+def term(lang):
+    L = {
+        'uz': dict(motto='"Xalqaro ta\'limga milliy yondashuv"', opened='2026, Oltinko\'l', grades='Pre-School, 1–8',
+                   rank='IRN TOP-10 → 4-o\'rin 🏆', itc='# 5-sinf IT darsidan', fo=('kun', 'maktab_yili', "o'rgan", 'mantiq', 'yarat', 'loyiha', 'sina', 'olimpiada'),
+                   itres='# → natija: kelajak kasbi ✓', partner='Andijon davlat chet tillari instituti',
+                   satc='# SAT · AP tayyorlov', ap='1–5 ball, universitet krediti', plan='diagnostika → mock → imtihon',
+                   res="SAT Math 800/800 · 100 o'quvchi 700+", more="# → batafsil: #sat-ap bo'limi",
+                   k=('[1] ariza        ', '✓ ochiq', '[2] akademik test ', '3 imkoniyat', '[3] suhbat       ', 'ota-ona + bola', '[4] shartnoma    ', '→ xush kelibsiz!'),
+                   lab=('motto   : ', 'ochilgan: ', 'sinflar : ', 'fokus   : ', 'reyting : ', 'reja    : ', 'mentor  : ', 'natija  : ')),
+        'ru': dict(motto='"Международное образование с национальным подходом"', opened='2026, Алтынкуль', grades='Pre-School, 1–8',
+                   rank='IRN TOP-10 → 4-е место 🏆', itc='# с урока IT в 5 классе', fo=('день', 'учебный_год', 'учись', 'логика', 'создавай', 'проект', 'проверяй', 'олимпиада'),
+                   itres='# → итог: профессия будущего ✓', partner='Андижанский гос. институт иностранных языков',
+                   satc='# подготовка к SAT · AP', ap='1–5 баллов, кредиты университета', plan='диагностика → пробные → экзамен',
+                   res='SAT Math 800/800 · 100 учеников 700+', more='# → подробнее: раздел #sat-ap',
+                   k=('[1] заявка       ', '✓ открыта', '[2] тест         ', '3 попытки', '[3] собеседование ', 'родитель + ребёнок', '[4] договор      ', '→ добро пожаловать!'),
+                   lab=('девиз   : ', 'открыта : ', 'классы  : ', 'фокус   : ', 'рейтинг : ', 'план    : ', 'ментор  : ', 'итог    : ')),
+        'en': dict(motto='"International education, national roots"', opened="2026, Oltinko'l", grades='Pre-School, 1–8',
+                   rank='IRN TOP-10 → 4th place 🏆', itc='# from a grade 5 IT lesson', fo=('day', 'school_year', 'learn', 'logic', 'build', 'project', 'test', 'olympiad'),
+                   itres='# → result: a career for the future ✓', partner='Andijan State Institute of Foreign Languages',
+                   satc='# SAT · AP preparation', ap='scores 1–5, university credit', plan='diagnostics → mocks → exam',
+                   res='SAT Math 800/800 · 100 students 700+', more='# → details: #sat-ap section',
+                   k=('[1] application  ', '✓ open', '[2] academic test ', '3 attempts', '[3] interview    ', 'parent + child', '[4] contract     ', '→ welcome!'),
+                   lab=('motto   : ', 'opened  : ', 'grades  : ', 'focus   : ', 'ranking : ', 'plan    : ', 'mentor  : ', 'result  : ')),
+    }[lang]
+    f = L['fo']; lab = L['lab']; k = L['k']
+    return {
+        'about': [['p', '$ '], ['k', 'zis --about\n'], ['c', '# Zafar International School\n'],
+                  ['', lab[0]], ['s', L['motto'] + '\n'], ['', lab[1]], ['s', L['opened'] + '\n'],
+                  ['', lab[2]], ['s', L['grades'] + '\n'], ['', lab[3]], ['s', '["IT", "English", "Math"]\n'],
+                  ['', lab[4]], ['s', L['rank'] + '\n']],
+        'it': [['p', '$ '], ['k', 'zis --it\n'], ['c', L['itc'] + '\n'],
+               ['k', 'for '], ['', f[0] + ' '], ['k', 'in '], ['s', f[1]], ['', ':\n'],
+               ['', f'    {f[2]}('], ['s', f'"{f[3]}"'], ['', ')\n'],
+               ['', f'    {f[4]}('], ['s', f'"{f[5]}"'], ['', ')\n'],
+               ['', f'    {f[6]}('], ['s', f'"{f[7]}"'], ['', ')\n'],
+               ['c', L['itres'] + '\n']],
+        'english': [['p', '$ '], ['k', 'zis --english\n'], ['c', '# Real English Environment\n'],
+                    ['', '> Hello! How was your day?\n'], ['s', '< It was amazing, teacher!\n'],
+                    ['s', '< We spoke with a professor from Canada.\n'],
+                    ['', 'instructor: '], ['k', 'IELTS 7.5 · Speaking 8.5\n'],
+                    ['', 'partner   : '], ['k', L['partner'] + '\n']],
+        'sat': [['p', '$ '], ['k', 'zis --sat\n'], ['c', L['satc'] + '\n'],
+                ['', 'SAT     : '], ['s', '400–1600 (R&W + Math)\n'],
+                ['', 'AP      : '], ['s', L['ap'] + '\n'],
+                ['', lab[5]], ['s', L['plan'] + '\n'],
+                ['', lab[6]], ['k', ('Бахриддин Давлатмуродов' if lang == 'ru' else 'Baxriddin Davlatmurodov') + '\n'],
+                ['', lab[7]], ['s', L['res'] + '\n'], ['c', L['more'] + '\n']],
+        'qabul': [['p', '$ '], ['k', 'zis --qabul 2026-2027\n'],
+                  ['', k[0]], ['s', k[1] + '\n'], ['', k[2]], ['s', k[3] + '\n'],
+                  ['', k[4]], ['s', k[5] + '\n'], ['', k[6]], ['s', k[7] + '\n'],
+                  ['c', '# 📞 78 113 77 73 · @ZISaloqa\n']],
+    }
+
+DATA = {
+ 'swap': {'uz': ['kod', 'Python', 'HTML', 'algoritm', 'robot'],
+          'ru': ['кода', 'Python', 'HTML', 'алгоритмов', 'роботов'],
+          'en': ['code', 'Python', 'HTML', 'algorithms', 'robotics']},
+ 'marquee': {'uz': ['bilim', 'kelajak', 'kod', 'zafar', 'orzu', 'ustoz', "do'stlik", 'algoritm', 'universitet sari', 'advanced placement'],
+             'ru': ['знание', 'будущее', 'код', 'победа', 'мечта', 'учитель', 'дружба', 'алгоритм', 'путь в университет', 'advanced placement'],
+             'en': ['bilim', 'kelajak', 'kod', 'zafar', 'orzu', 'ustoz', "do'stlik", 'algoritm', 'universitet sari', 'advanced placement']},
+ 'satLevels': {'uz': ["<b>Juda kuchli natija</b>: dunyoning eng nufuzli universitetlari darajasi.", "<b>Kuchli natija</b>: ko'plab yetakchi universitetlar uchun raqobatbardosh.", "<b>Yaxshi natija</b>: tizimli tayyorgarlik bilan yanada oshirish mumkin.", "<b>Boshlang'ich daraja</b>: diagnostika va poydevor bosqichidan boshlaymiz."],
+               'ru': ["<b>Очень сильный результат</b>: уровень самых престижных университетов мира.", "<b>Сильный результат</b>: конкурентоспособен для многих ведущих университетов.", "<b>Хороший результат</b>: системная подготовка поможет поднять его выше.", "<b>Начальный уровень</b>: начнём с диагностики и фундамента."],
+               'en': ["<b>Outstanding</b>: the level of the world's most selective universities.", "<b>Strong</b>: competitive for many leading universities.", "<b>Good</b>: structured preparation can push it higher.", "<b>Starting point</b>: we begin with diagnostics and the foundation stage."]},
+ 'ap': {'uz': ["Ko'plab universitetlar kredit beradi yoki fanni o'tkazadi.", "Aksariyat universitetlar kredit beradi.", "Ko'p universitetlarda kredit uchun yetarli.", "Kamdan-kam hollarda kredit beriladi.", "Kredit berilmaydi: qayta tayyorlanib topshirish mumkin."],
+        'ru': ["Многие университеты засчитывают кредит или освобождают от курса.", "Большинство университетов засчитывают кредит.", "Достаточно для кредита во многих университетах.", "Кредит засчитывают редко.", "Кредит не засчитывается: можно подготовиться и сдать снова."],
+        'en': ["Many universities grant credit or let students skip the course.", "Most universities grant credit.", "Enough for credit at many universities.", "Credit is rarely granted.", "No credit: students can prepare and retake it."]},
+ 'wotd': {'uz': ["Zafar, g'alaba", 'Qiziquvchan', 'Algoritm', "O'ziga ishongan", 'Jamoaviy ish', 'Kashf etmoq', 'Xatoni tuzatmoq', 'Minnatdor'],
+          'ru': ['Победа', 'Любознательный', 'Алгоритм', 'Уверенный в себе', 'Командная работа', 'Открывать', 'Исправлять ошибку', 'Благодарный'],
+          'en': ['Success in a contest', 'Eager to learn', 'Step-by-step instructions', 'Sure of yourself', 'Working well together', 'To find something new', 'To find and fix errors', 'Thankful']},
+ 'months': {'uz': ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentyabr', 'oktabr', 'noyabr', 'dekabr'],
+            'ru': ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+            'en': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']},
+ 'more': {'uz': 'Batafsil', 'ru': 'Подробнее', 'en': 'Read more'},
+ 'form': {
+  'uz': dict(note="Ariza matni nusxalanadi va @ZISaloqa Telegram chati ochiladi: uni u yerga joylab yuboring.",
+             errParent="Ota-ona ismini kiriting.", errChild='Farzand ismini kiriting.', errPhone="Telefon raqamini to'liq kiriting: +998 XX XXX XX XX.",
+             fb="Assalomu alaykum! Qabulga ariza:\nOta-ona: {parent}\nTelefon: {phone}\nFarzand: {child}\nSinf: {grade}", fbNote='\nIzoh: {note}',
+             fbDone="Ariza matni nusxalandi. Ochilgan @ZISaloqa chatiga joylab yuboring yoki 78 113 77 73 raqamiga qo'ng'iroq qiling.",
+             ok="Rahmat! Arizangiz qabul qilindi{id}. Aloqa markazimiz tez orada siz bilan bog'lanadi.", check="Ma'lumotlarni tekshiring.",
+             err="Xatolik yuz berdi. Iltimos, 78 113 77 73 raqamiga qo'ng'iroq qiling.", sending='Yuborilmoqda…', submit='Arizani yuborish'),
+  'ru': dict(note="Текст заявки скопируется и откроется чат @ZISaloqa в Telegram: вставьте его туда и отправьте.",
+             errParent='Введите имя родителя.', errChild='Введите имя ребёнка.', errPhone='Введите номер полностью: +998 XX XXX XX XX.',
+             fb="Здравствуйте! Заявка на поступление:\nРодитель: {parent}\nТелефон: {phone}\nРебёнок: {child}\nКласс: {grade}", fbNote='\nКомментарий: {note}',
+             fbDone='Текст заявки скопирован. Вставьте его в открывшийся чат @ZISaloqa или позвоните 78 113 77 73.',
+             ok='Спасибо! Заявка принята{id}. Наш контакт-центр скоро свяжется с вами.', check='Проверьте данные.',
+             err='Произошла ошибка. Пожалуйста, позвоните 78 113 77 73.', sending='Отправляем…', submit='Отправить заявку'),
+  'en': dict(note='The application text is copied and the @ZISaloqa Telegram chat opens: paste it there and send.',
+             errParent="Enter the parent's name.", errChild="Enter the child's name.", errPhone='Enter the full number: +998 XX XXX XX XX.',
+             fb="Hello! Application for admission:\nParent: {parent}\nPhone: {phone}\nChild: {child}\nGrade: {grade}", fbNote='\nNote: {note}',
+             fbDone='Application copied. Paste it into the @ZISaloqa chat that opened, or call 78 113 77 73.',
+             ok='Thank you! Your application has been received{id}. Our contact centre will be in touch soon.', check='Please check the details.',
+             err='Something went wrong. Please call 78 113 77 73.', sending='Sending…', submit='Send application'),
+ },
+}
+
+def for_lang(lang):
+    out = {k: v[lang] for k, v in DATA.items()}
+    out['term'] = term(lang)
+    out['lang'] = lang
+    return out

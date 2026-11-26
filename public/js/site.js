@@ -1,6 +1,7 @@
 /* Zafar International School — sayt skripti */
 (function(){
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const T = window.ZIS_T || {}; const LANG = T.lang || document.documentElement.lang || 'uz';
 
   /* nav */
   const nav = document.getElementById('nav');
@@ -14,58 +15,12 @@
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
 
   /* swapping word in headline */
-  const words = ['kod','Python','HTML','algoritm','robot'];
+  const words = T.swap;
   let wi = 0; const sw = document.getElementById('swap');
   if (!reduce) setInterval(() => { wi = (wi+1) % words.length; sw.textContent = words[wi]; }, 2200);
 
   /* terminal */
-  const scripts = {
-    about: [
-      ['p','$ '],['k','zis --about\n'],
-      ['c','# Zafar International School\n'],
-      ['','motto   : '],['s','"Xalqaro ta\'limga milliy yondashuv"\n'],
-      ['','ochilgan: '],['s','2026, Oltinko\'l\n'],
-      ['','sinflar : '],['s','Pre-School, 1–8\n'],
-      ['','fokus   : '],['s','["IT", "English", "Math"]\n'],
-      ['','reyting : '],['s','IRN TOP-10 → 4-o\'rin 🏆\n']
-    ],
-    it: [
-      ['p','$ '],['k','zis --it\n'],
-      ['c','# 5-sinf IT darsidan\n'],
-      ['k','for '],['','kun '],['k','in '],['s','maktab_yili'],['',':\n'],
-      ['','    o\'rgan('],['s','"mantiq"'],['',")\n"],
-      ['','    yarat('],['s','"loyiha"'],['',")\n"],
-      ['','    sina('],['s','"olimpiada"'],['',")\n"],
-      ['c','# → natija: kelajak kasbi ✓\n']
-    ],
-    english: [
-      ['p','$ '],['k','zis --english\n'],
-      ['c','# Real English Environment\n'],
-      ['','> Hello! How was your day?\n'],
-      ['s','< It was amazing, teacher!\n'],
-      ['s','< We spoke with a professor from Canada.\n'],
-      ['','instructor: '],['k','IELTS 7.5 · Speaking 8.5\n'],
-      ['','partner   : '],['k','Andijon davlat chet tillari instituti\n']
-    ],
-    sat: [
-      ['p','$ '],['k','zis --sat\n'],
-      ['c','# SAT · AP tayyorlov\n'],
-      ['','SAT     : '],['s','400–1600 (R&W + Math)\n'],
-      ['','AP      : '],['s','1–5 ball, universitet krediti\n'],
-      ['','reja    : '],['s','diagnostika → mock → imtihon\n'],
-      ['','mentor  : '],['k','Baxriddin Davlatmurodov\n'],
-      ['','natija  : '],['s','SAT Math 800/800 · 100 o\'quvchi 700+\n'],
-      ['c','# → batafsil: #sat-ap bo\'limi\n']
-    ],
-    qabul: [
-      ['p','$ '],['k','zis --qabul 2026-2027\n'],
-      ['','[1] ariza        '],['s','✓ ochiq\n'],
-      ['','[2] akademik test '],['s','3 imkoniyat\n'],
-      ['','[3] suhbat       '],['s','ota-ona + bola\n'],
-      ['','[4] shartnoma    '],['s','→ xush kelibsiz!\n'],
-      ['c','# 📞 78 113 77 73 · @ZISaloqa\n']
-    ]
-  };
+  const scripts = T.term;
   const body = document.getElementById('termBody');
   let timer = null;
   function run(name){
@@ -93,7 +48,8 @@
   run('about');
 
   /* marquee */
-  const mq = [['Knowledge','bilim'],['Future','kelajak'],['Code','kod'],['Victory','zafar'],['Dream','orzu'],['Teacher','ustoz'],['Friendship','do\'stlik'],['Algorithm','algoritm'],['SAT','universitet sari'],['AP','advanced placement']];
+  const mqEn = ['Knowledge','Future','Code','Victory','Dream','Teacher','Friendship','Algorithm','SAT','AP'];
+  const mq = mqEn.map((e,i) => [e, T.marquee[i]]);
   const track = document.getElementById('marquee');
   const html = mq.map(([e,u]) => `<span>${e} <small>= ${u}</small> ✦</span>`).join('');
   track.innerHTML = html + html;
@@ -109,7 +65,7 @@
   const rw=document.getElementById('satRW'), mt=document.getElementById('satM');
   if (rw && mt){
     const gv=document.getElementById('gaugeVal'), tot=document.getElementById('satTotal'), lvl=document.getElementById('satLevel');
-    const levels=[[1500,"<b>Juda kuchli natija</b>: dunyoning eng nufuzli universitetlari darajasi."],[1350,"<b>Kuchli natija</b>: ko'plab yetakchi universitetlar uchun raqobatbardosh."],[1150,"<b>Yaxshi natija</b>: tizimli tayyorgarlik bilan yanada oshirish mumkin."],[0,"<b>Boshlang'ich daraja</b>: diagnostika va poydevor bosqichidan boshlaymiz."]];
+    const levels=[1500,1350,1150,0].map((min,i)=>[min,T.satLevels[i]]);
     const upd=()=>{ const a=+rw.value, b=+mt.value, t=a+b;
       document.getElementById('satRWv').textContent=a; document.getElementById('satMv').textContent=b;
       tot.textContent=t; gv.style.strokeDashoffset=String(100-((t-400)/1200)*100);
@@ -120,7 +76,7 @@
   /* ---------- AP score scale (official College Board descriptors) ---------- */
   const apBox=document.getElementById('apScale');
   if (apBox){
-    const AP={5:["Extremely well qualified","Ko'plab universitetlar kredit beradi yoki fanni o'tkazadi."],4:["Very well qualified","Aksariyat universitetlar kredit beradi."],3:["Qualified","Ko'p universitetlarda kredit uchun yetarli."],2:["Possibly qualified","Kamdan-kam hollarda kredit beriladi."],1:["No recommendation","Kredit berilmaydi: qayta tayyorlanib topshirish mumkin."]};
+    const AP={}; ['Extremely well qualified','Very well qualified','Qualified','Possibly qualified','No recommendation'].forEach((d,i)=>{ AP[5-i]=[d,T.ap[i]]; });
     const desc=document.getElementById('apDesc');
     const pick=(n)=>{ apBox.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.s===String(n))));
       desc.innerHTML=`<b>${n} — ${AP[n][0]}.</b> ${AP[n][1]}`; };
@@ -165,15 +121,15 @@
 
   /* word of the day */
   const W = [
-    ['Victory','/ˈvɪk.tər.i/','Zafar, g\'alaba','Every lesson is a small victory.'],
-    ['Curious','/ˈkjʊə.ri.əs/','Qiziquvchan','Curious students ask great questions.'],
-    ['Algorithm','/ˈæl.ɡə.rɪ.ðəm/','Algoritm','We wrote an algorithm to sort numbers.'],
-    ['Confident','/ˈkɒn.fɪ.dənt/','O\'ziga ishongan','She is confident when she speaks English.'],
-    ['Teamwork','/ˈtiːm.wɜːk/','Jamoaviy ish','Teamwork makes our projects better.'],
-    ['Discover','/dɪˈskʌv.ər/','Kashf etmoq','Children discover answers themselves.'],
-    ['Debug','/ˌdiːˈbʌɡ/','Xatoni tuzatmoq','Let\'s debug the code together.'],
-    ['Grateful','/ˈɡreɪt.fəl/','Minnatdor','We are grateful to our teachers.']
-  ];
+    ['Victory','/ˈvɪk.tər.i/','Every lesson is a small victory.'],
+    ['Curious','/ˈkjʊə.ri.əs/','Curious students ask great questions.'],
+    ['Algorithm','/ˈæl.ɡə.rɪ.ðəm/','We wrote an algorithm to sort numbers.'],
+    ['Confident','/ˈkɒn.fɪ.dənt/','She is confident when she speaks English.'],
+    ['Teamwork','/ˈtiːm.wɜːk/','Teamwork makes our projects better.'],
+    ['Discover','/dɪˈskʌv.ər/','Children discover answers themselves.'],
+    ['Debug','/ˌdiːˈbʌɡ/','Let\'s debug the code together.'],
+    ['Grateful','/ˈɡreɪt.fəl/','We are grateful to our teachers.']
+  ].map((r,i) => [r[0], r[1], T.wotd[i], r[2]]);
   let w = new Date().getDate() % W.length;
   const flip = document.getElementById('flip');
   function showW(){
@@ -229,6 +185,32 @@
   document.getElementById('rNext').onclick=()=>reels.scrollBy({left:400,behavior:reduce?'auto':'smooth'});
 
 
+
+  /* ---------- questions as a Telegram-style chat ---------- */
+  const qa = document.getElementById('qaData'), chips = document.getElementById('qChips'), chat = document.getElementById('chat');
+  if (qa && chips && chat){
+    const sec = qa.closest('.chat-sec'); sec.classList.add('js-chat');
+    const pairs = [...qa.querySelectorAll('dt')].map(dt => [dt.textContent.trim(), dt.nextElementSibling.textContent.trim()]);
+    const typingLabel = sec.querySelector('.typing-label')?.textContent || '';
+    const now = () => new Date().toLocaleTimeString(LANG==='en'?'en-GB':LANG, {hour:'2-digit', minute:'2-digit'});
+    chat.querySelectorAll('.msg').forEach(m => m.dataset.t = now());
+    const add = (cls, text) => { const m = document.createElement('div'); m.className = 'msg ' + cls; m.textContent = text; m.dataset.t = now(); chat.appendChild(m); chat.scrollTop = chat.scrollHeight; return m; };
+    let busy = false;
+    pairs.forEach(([q, a], i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = q; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', () => {
+        if (busy) return; busy = true;
+        chips.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+        add('out', q);
+        if (reduce){ add('in', a); busy = false; return; }
+        const t = document.createElement('div'); t.className = 'msg in typing'; t.setAttribute('aria-label', typingLabel);
+        t.innerHTML = '<i></i><i></i><i></i>'; chat.appendChild(t); chat.scrollTop = chat.scrollHeight;
+        setTimeout(() => { t.remove(); add('in', a); busy = false; }, 650 + Math.min(1200, a.length * 6));
+      });
+      chips.appendChild(b);
+    });
+  }
+
   /* ---------- API integration ---------- */
   // When the page is served by the ZIS server, the form and news use the API.
   // Opened as a plain file (file://), it falls back to the Telegram flow and the static news cards.
@@ -236,8 +218,12 @@
 
   /* news from the server */
   const newsEl = document.getElementById('news');
-  const fmtDate = d => { const m=['yanvar','fevral','mart','aprel','may','iyun','iyul','avgust','sentyabr','oktabr','noyabr','dekabr'];
-    const [y,mo,da] = String(d).split('-').map(Number); return mo ? `${da}-${m[mo-1]}, ${y}` : ''; };
+  const fmtDate = d => { const m=T.months; const [y,mo,da] = String(d).split('-').map(Number); if (!mo) return '';
+    return LANG==='uz' ? `${da}-${m[mo-1]}, ${y}` : `${da} ${m[mo-1]} ${y}`; };
+  // Server news are stored in the current Latin alphabet; show them in the improved one on the Uzbek page.
+  const toNew = t => LANG!=='uz' ? t : String(t)
+    .replace(/([Oo])[‘’ʻʼ'`]/g,(m,o)=>o==='O'?'Ö':'ö').replace(/([Gg])[‘’ʻʼ'`]/g,(m,g)=>g==='G'?'Ğ':'ğ')
+    .replace(/SH/g,'Ş').replace(/S[hH]/g,'Ş').replace(/sh/g,'ş').replace(/CH/g,'Ç').replace(/C[hH]/g,'Ç').replace(/ch/g,'ç');
   function newsCard(n, feature){
     const a = document.createElement('a');
     a.className = 'post in' + (feature ? ' feature' : '');
@@ -245,12 +231,12 @@
     if (n.image){ const img = document.createElement('img'); img.src = n.image; img.alt = ''; img.loading = 'lazy'; a.appendChild(img); }
     const body = document.createElement('div'); body.className = 'body';
     const t = document.createElement('time'); t.dateTime = n.published_at; t.textContent = fmtDate(n.published_at);
-    const h = document.createElement('h3'); h.textContent = n.title;
-    const p = document.createElement('p'); const txt = String(n.body||'').replace(/\s+/g,' ').trim(); p.textContent = txt.length > 190 ? txt.slice(0,187).replace(/\s+\S*$/,'') + '…' : txt;
-    const more = document.createElement('span'); more.className = 'more'; more.textContent = n.link ? "Batafsil →" : '';
+    const h = document.createElement('h3'); h.textContent = toNew(n.title);
+    const p = document.createElement('p'); const txt = String(n.body||'').replace(/\s+/g,' ').trim(); p.textContent = toNew(txt.length > 190 ? txt.slice(0,187).replace(/\s+\S*$/,'') + '…' : txt);
+    const more = document.createElement('span'); more.className = 'more'; more.textContent = n.link ? T.more : '';
     body.append(t, h, p, more); a.appendChild(body); return a;
   }
-  if (API !== null && newsEl){
+  if (API !== null && newsEl && LANG === 'uz'){
     fetch(API + '/api/news?limit=8').then(r => r.ok ? r.json() : null).then(d => {
       if (!d || !d.items || !d.items.length) return;
       newsEl.replaceChildren(...d.items.map((n,i) => newsCard(n, i === 0)));
@@ -259,23 +245,26 @@
 
   /* application form */
   const form = document.getElementById('apply'), ok = document.getElementById('ok'), btn = document.getElementById('applyBtn');
-  if (API === null) document.getElementById('formNote').textContent = "Ariza matni nusxalanadi va @ZISaloqa Telegram chati ochiladi: uni u yerga joylab yuboring.";
+  const F = T.form;
+  if (API === null) document.getElementById('formNote').textContent = F.note;
   const showMsg = (text, isErr) => { ok.textContent = text; ok.classList.toggle('error', !!isErr); ok.classList.add('show'); };
   const setErrors = (errs) => form.querySelectorAll('.err').forEach(el => {
     const msg = errs[el.dataset.for] || ''; el.textContent = msg; el.closest('.field').classList.toggle('invalid', !!msg);
   });
   function localCheck(f){
     const errs = {};
-    if (String(f.get('parent')||'').trim().length < 2) errs.parent = "Ota-ona ismini kiriting.";
-    if (String(f.get('child')||'').trim().length < 2) errs.child = 'Farzand ismini kiriting.';
+    if (String(f.get('parent')||'').trim().length < 2) errs.parent = F.errParent;
+    if (String(f.get('child')||'').trim().length < 2) errs.child = F.errChild;
     const d = String(f.get('phone')||'').replace(/\D/g,'');
-    if (!(d.length === 9 || (d.length === 12 && d.startsWith('998')))) errs.phone = "Telefon raqamini to'liq kiriting: +998 XX XXX XX XX.";
+    if (!(d.length === 9 || (d.length === 12 && d.startsWith('998')))) errs.phone = F.errPhone;
     return errs;
   }
   async function telegramFallback(f){
-    const text = `Assalomu alaykum! Qabulga ariza:\nOta-ona: ${f.get('parent')}\nTelefon: ${f.get('phone')}\nFarzand: ${f.get('child')}\nSinf: ${f.get('grade')}` + (f.get('message') ? `\nIzoh: ${f.get('message')}` : '');
+    const gradeLabel = form.querySelector('#grade option:checked')?.textContent || f.get('grade');
+    const fill = (t, o) => t.replace(/\{(\w+)\}/g, (_, k) => o[k] ?? '');
+    const text = fill(F.fb, {parent:f.get('parent'), phone:f.get('phone'), child:f.get('child'), grade:gradeLabel}) + (f.get('message') ? fill(F.fbNote, {note:f.get('message')}) : '');
     try { await navigator.clipboard.writeText(text); } catch(_) {}
-    showMsg("Ariza matni nusxalandi. Ochilgan @ZISaloqa chatiga joylab yuboring yoki 78 113 77 73 raqamiga qo'ng'iroq qiling.");
+    showMsg(F.fbDone);
     window.open('https://t.me/ZISaloqa', '_blank', 'noopener');
   }
   form.querySelectorAll('input').forEach(i => i.addEventListener('input', () => {
@@ -287,19 +276,19 @@
     const errs = localCheck(f); setErrors(errs);
     if (Object.keys(errs).length){ ok.classList.remove('show'); form.querySelector('.field.invalid input')?.focus(); return; }
     if (API === null) return telegramFallback(f);
-    btn.disabled = true; btn.textContent = 'Yuborilmoqda…';
+    btn.disabled = true; btn.textContent = F.sending;
     try {
       const res = await fetch(API + '/api/applications', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(Object.fromEntries(f)) });
       const data = await res.json().catch(() => ({}));
       if (res.ok){
         form.reset(); setErrors({});
-        showMsg(`Rahmat! Arizangiz qabul qilindi${data.id ? ' (№ ' + data.id + ')' : ''}. Aloqa markazimiz tez orada siz bilan bog'lanadi.`);
+        showMsg(F.ok.replace('{id}', data.id ? ' (№ ' + data.id + ')' : ''));
       } else if ([404, 405, 501].includes(res.status)){
         await telegramFallback(f); // static hosting (e.g. GitHub Pages): no API server
-      } else if (res.status === 400 && data.fields){ setErrors(data.fields); showMsg(data.error, true); }
-      else showMsg(data.error || "Xatolik yuz berdi. Iltimos, 78 113 77 73 raqamiga qo'ng'iroq qiling.", true);
+      } else if (res.status === 400 && data.fields){ const loc={}; for (const k of Object.keys(data.fields)) loc[k] = {parent:F.errParent, child:F.errChild, phone:F.errPhone}[k] || data.fields[k]; setErrors(loc); showMsg(F.check, true); }
+      else showMsg(LANG==='uz' && data.error ? data.error : F.err, true);
     } catch (_){
       await telegramFallback(f);
-    } finally { btn.disabled = false; btn.textContent = 'Arizani yuborish'; }
+    } finally { btn.disabled = false; btn.textContent = F.submit; }
   });
 })();

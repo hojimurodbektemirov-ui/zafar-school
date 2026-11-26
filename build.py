@@ -7,8 +7,8 @@ PUB = os.path.join(ROOT, 'public')
 MIME = {'jpg': 'image/jpeg', 'png': 'image/png', 'svg': 'image/svg+xml', 'mp4': 'video/mp4'}
 
 s = open(os.path.join(PUB, 'index.html'), encoding='utf-8').read()
-js = open(os.path.join(PUB, 'js', 'site.js'), encoding='utf-8').read()
-s = s.replace('<script src="js/site.js" defer></script>', '<script>\n' + js + '\n</script>')
+SCRIPT = re.compile(r'<script\b[^>]*\bsrc="js/([\w.]+\.js)"[^>]*>\s*</script>')
+s = SCRIPT.sub(lambda m: '<script>\n' + open(os.path.join(PUB, 'js', m.group(1)), encoding='utf-8').read() + '\n</script>', s)
 for ref in sorted(set(re.findall(r'assets/[\w\-./]+\.(?:jpg|png|svg|mp4)', s))):
     data = base64.b64encode(open(os.path.join(PUB, ref), 'rb').read()).decode()
     s = s.replace(ref, f'data:{MIME[ref.rsplit(".", 1)[1]]};base64,{data}')
