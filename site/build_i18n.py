@@ -8,6 +8,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from i18n_core import units, skip_el, to_new_alphabet, ATTRS, norm
 import strings
+import teachers
 
 ROOT = os.path.dirname(HERE)
 PUB = os.path.join(ROOT, 'public')
@@ -121,6 +122,10 @@ if __name__ == '__main__':
     build_strings()
     for lang, page in PAGES.items():
         html = translate(lang, tr)
+        btn = 'Batafsil' if lang == 'uz' else tr['Batafsil'][lang]
+        mark = html[html.index('<!--USTOZLAR'):]
+        mark = mark[:mark.index('-->') + 3]
+        html = html.replace(mark, teachers.cards(lang, btn, to_new_alphabet).lstrip(), 1)
         open(os.path.join(PUB, page), 'w', encoding='utf-8').write(html)
         print(f'public/{page}: {len(html)//1024} KB')
     print('public/js/t.{uz,ru,en}.js written')

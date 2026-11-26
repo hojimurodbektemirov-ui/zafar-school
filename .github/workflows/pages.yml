@@ -24,6 +24,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # ustozlar.json va tarjimalardan uz/ru/en sahifalarini qayta yig'adi
+      - run: pip install beautifulsoup4 && python site/build_i18n.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
