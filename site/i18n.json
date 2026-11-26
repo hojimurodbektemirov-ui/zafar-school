@@ -1446,5 +1446,157 @@
  "Zafar International School — IT va ingliz tili maktabi": {
   "ru": "Zafar International School — школа IT и английского",
   "en": "Zafar International School: IT and English school"
+ },
+ "<a href=\"#kun\">Bir kun</a><a href=\"#talim\">Ta'lim</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#ustozlar\">Ustozlar</a><a href=\"#qabul\">Qabul</a><a href=\"#aloqa\">Aloqa</a>": {
+  "ru": "<a href=\"#kun\">Один день</a><a href=\"#talim\">Обучение</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#ustozlar\">Учителя</a><a href=\"#qabul\">Приём</a><a href=\"#aloqa\">Контакты</a>",
+  "en": "<a href=\"#kun\">A day</a><a href=\"#talim\">Learning</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#ustozlar\">Teachers</a><a href=\"#qabul\">Admissions</a><a href=\"#aloqa\">Contact</a>"
+ },
+ "2026–2027 o'quv yili: qabul ochiq": {
+  "ru": "Приём на 2026–2027 учебный год открыт",
+  "en": "Admissions for 2026–2027 are open"
+ },
+ "Kelajak shu yerda boshlanadi": {
+  "ru": "Будущее начинается здесь",
+  "en": "The future starts here"
+ },
+ "Oltinko'ldagi xalqaro maktab: IT, ingliz tili va SAT/AP. Pre-School va 1–8-sinflar.": {
+  "ru": "Международная школа в Алтынкуле: IT, английский и SAT/AP. Pre-School и 1–8 классы.",
+  "en": "An international school in Oltinko'l: IT, English and SAT/AP. Pre-School and grades 1–8."
+ },
+ "<a class=\"btn btn-green\" href=\"#aloqa\">Qabulga yozilish</a><a class=\"btn btn-glass\" href=\"tel:+998781137773\">78 113 77 73</a>": {
+  "ru": "<a class=\"btn btn-green\" href=\"#aloqa\">Записаться</a><a class=\"btn btn-glass\" href=\"tel:+998781137773\">78 113 77 73</a>",
+  "en": "<a class=\"btn btn-green\" href=\"#aloqa\">Apply now</a><a class=\"btn btn-glass\" href=\"tel:+998781137773\">78 113 77 73</a>"
+ },
+ "<i aria-hidden=\"true\"></i><span>IT darsini<br/>videoda ko'ring</span>": {
+  "ru": "<i aria-hidden=\"true\"></i><span>Урок IT<br/>на видео</span>",
+  "en": "<i aria-hidden=\"true\"></i><span>Watch an IT<br/>lesson</span>"
+ },
+ "<b>TOP-10</b><span>IRN imtihonida respublika bo'yicha 4-o'rin</span>": {
+  "ru": "<b>TOP-10</b><span>4-е место в республике по экзамену IRN</span>",
+  "en": "<b>TOP-10</b><span>4th place nationwide in the IRN exam</span>"
+ },
+ "<b>18</b><span>o'quvchi sinfda: har biriga alohida e'tibor</span>": {
+  "ru": "<b>18</b><span>учеников в классе: внимание каждому</span>",
+  "en": "<b>18</b><span>students per class: attention for each</span>"
+ },
+ "<b>800/800</b><span>SAT Math natijali mutaxassis</span>": {
+  "ru": "<b>800/800</b><span>специалист с результатом SAT Math</span>",
+  "en": "<b>800/800</b><span>SAT Math specialist on staff</span>"
+ },
+ "<b>100 mln</b><span>so'mlik iqtidor granti fondi</span>": {
+  "ru": "<b>100 млн</b><span>сумов — фонд гранта для одарённых</span>",
+  "en": "<b>100 mln</b><span>so'm talent grant fund</span>"
+ },
+ "ZIS'da bir kun": {
+  "ru": "Один день в ZIS",
+  "en": "A day at ZIS"
+ },
+ "Nonushtadan uyga ketguncha: har bir soat o'ylangan. Lentani yon tomonga suring.": {
+  "ru": "От завтрака до возвращения домой каждый час продуман. Листайте ленту в сторону.",
+  "en": "From breakfast to home time, every hour is planned. Scroll the strip sideways."
+ },
+ "Kutib olish va nonushta": {
+  "ru": "Встреча и завтрак",
+  "en": "Welcome and breakfast"
+ },
+ "Interaktiv darslar boshlanadi": {
+  "ru": "Начало интерактивных уроков",
+  "en": "Interactive lessons begin"
+ },
+ "Kompyuter sinfi: mantiq va loyihalar": {
+  "ru": "Компьютерный класс: логика и проекты",
+  "en": "Computer lab: logic and projects"
+ },
+ "Ingliz tili: speaking va listening": {
+  "ru": "Английский: speaking и listening",
+  "en": "English: speaking and listening"
+ },
+ "Muvozanatli issiq tushlik": {
+  "ru": "Сбалансированный горячий обед",
+  "en": "A balanced hot lunch"
+ },
+ "Shanba": {
+  "ru": "Суббота",
+  "en": "Saturday"
+ },
+ "Sayohatlar, olimpiadalar va tadbirlar": {
+  "ru": "Поездки, олимпиады и мероприятия",
+  "en": "Trips, olympiads and events"
+ },
+ "Afternoon snack va uyga": {
+  "ru": "Afternoon snack и домой",
+  "en": "Afternoon snack, then home"
+ },
+ "6 yosh": {
+  "ru": "6 лет",
+  "en": "Age 6"
+ },
+ "Pre-School: poydevor yili": {
+  "ru": "Pre-School: год фундамента",
+  "en": "Pre-School: the foundation year"
+ },
+ "Bir yilda bola 1-sinf davlat dasturini tugatadi va kuchli ingliz tili bilimiga ega bo'ladi. Guruhda 18 nafardan ortiq bola bo'lmaydi.": {
+  "ru": "За год ребёнок проходит государственную программу 1 класса и получает сильную базу английского. В группе не больше 18 детей.",
+  "en": "In one year children complete the national grade 1 curriculum and build strong English. No more than 18 children per group."
+ },
+ "Tushunib o'qiydigan bolalar": {
+  "ru": "Дети, которые понимают, а не зубрят",
+  "en": "Children who understand, not memorise"
+ },
+ "Tayyor javob berilmaydi: bola o'zi izlanadi va amalda sinab ko'radi. 22 yillik tajribali ustozlar har bir bolaning sur'atiga moslashadi.": {
+  "ru": "Готовых ответов не дают: ребёнок сам ищет и проверяет на практике. Учителя с опытом 22 года подстраиваются под темп каждого.",
+  "en": "No ready-made answers: children search and test ideas themselves. Teachers with 22 years of experience follow each child's pace."
+ },
+ "IT, matematika va olimpiadalar": {
+  "ru": "IT, математика и олимпиады",
+  "en": "IT, maths and olympiads"
+ },
+ "Chuqurlashtirilgan IT, matematika va ingliz tili. 50 dan ortiq o'quvchi IRN olimpiadasida qatnashdi, 12 nafari iqtidor grantini yutdi.": {
+  "ru": "Углублённые IT, математика и английский. Более 50 учеников участвовали в олимпиаде IRN, 12 выиграли грант.",
+  "en": "In-depth IT, maths and English. More than 50 students took part in the IRN Olympiad and 12 won a talent grant."
+ },
+ "Tayyorgarlik yo'li": {
+  "ru": "Путь подготовки",
+  "en": "Preparation path"
+ },
+ "Maktab hayoti videoda": {
+  "ru": "Жизнь школы на видео",
+  "en": "School life on video"
+ },
+ "Asosiy menyu": {
+  "ru": "Главное меню",
+  "en": "Main menu"
+ },
+ "ZIS o'quvchilari sertifikatlarini ko'tarib turibdi": {
+  "ru": "Ученики ZIS поднимают свои сертификаты",
+  "en": "ZIS students holding up their certificates"
+ },
+ "Pre-School o'quvchilari": {
+  "ru": "Ученики Pre-School",
+  "en": "Pre-School students"
+ },
+ "Boshlang'ich sinf darsi": {
+  "ru": "Урок в начальной школе",
+  "en": "A primary school lesson"
+ },
+ "Yuqori sinf IT darsi": {
+  "ru": "Урок IT в старших классах",
+  "en": "An upper-grade IT lesson"
+ },
+ "Kompyuter sinfidagi IT darsi": {
+  "ru": "Урок IT в компьютерном классе",
+  "en": "An IT lesson in the computer lab"
+ },
+ "Ingliz tili darsi": {
+  "ru": "Урок английского",
+  "en": "An English lesson"
+ },
+ "Davlat bayrog'i kuni": {
+  "ru": "День государственного флага",
+  "en": "National Flag Day"
+ },
+ "IRN olimpiadasi jamoasi": {
+  "ru": "Команда на олимпиаде IRN",
+  "en": "Our IRN Olympiad team"
  }
 }

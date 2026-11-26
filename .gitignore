@@ -4,3 +4,4 @@ data/
 zafar-school.html
 __pycache__/
 site/todo.json
+*.bak
