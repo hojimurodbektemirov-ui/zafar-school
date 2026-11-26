@@ -218,20 +218,23 @@
     document.querySelectorAll('#tFilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     tcards.forEach(c => { c.hidden = b.dataset.f !== 'all' && c.dataset.cat !== b.dataset.f; });
   }));
-  /* teachers row: arrows, mouse drag, keyboard */
+  /* teachers row: arrows + drag by hand (mouse); touch scrolls natively */
   const tg = document.getElementById('tGrid'), tPrev = document.getElementById('tPrev'), tNext = document.getElementById('tNext');
   if (tg){
-    const step = () => { const c = tg.querySelector('.tcard:not([hidden])'); return c ? c.getBoundingClientRect().width + 18 : 300; };
+    const cards = () => [...tg.querySelectorAll('.tcard')].filter(c => !c.hidden);
+    const idx = () => { const l = tg.scrollLeft, cs = cards(); let best = 0;
+      cs.forEach((c, i) => { if (Math.abs(c.offsetLeft - tg.firstElementChild.offsetLeft - l) < Math.abs(cs[best].offsetLeft - tg.firstElementChild.offsetLeft - l)) best = i; }); return best; };
+    const go = i => { const cs = cards(); if (!cs.length) return; i = Math.max(0, Math.min(cs.length - 1, i));
+      tg.scrollTo({left: cs[i].offsetLeft - cs[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth'}); };
     const upd = () => { if (!tPrev) return; tPrev.disabled = tg.scrollLeft < 4; tNext.disabled = tg.scrollLeft + tg.clientWidth >= tg.scrollWidth - 4; };
-    tPrev?.addEventListener('click', () => tg.scrollBy({left:-step(), behavior:reduce?'auto':'smooth'}));
-    tNext?.addEventListener('click', () => tg.scrollBy({left:step(), behavior:reduce?'auto':'smooth'}));
+    tPrev && tPrev.addEventListener('click', () => go(idx() - 1));
+    tNext && tNext.addEventListener('click', () => go(idx() + 1));
     tg.addEventListener('scroll', upd, {passive:true}); addEventListener('resize', upd); upd();
-    document.querySelectorAll('#tFilter button').forEach(b => b.addEventListener('click', () => { tg.scrollLeft = 0; setTimeout(upd, 50); }));
-    // drag with the mouse (touch already scrolls natively)
+    document.querySelectorAll('#tFilter button').forEach(b => b.addEventListener('click', () => { tg.scrollLeft = 0; setTimeout(upd, 60); }));
     let down = false, sx = 0, sl = 0, moved = false;
-    tg.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0 || e.target.closest('button')) return; down = true; moved = false; sx = e.clientX; sl = tg.scrollLeft; });
-    addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4){ moved = true; tg.classList.add('dragging'); } tg.scrollLeft = sl - dx; });
-    addEventListener('pointerup', () => { if (!down) return; down = false; if (moved){ tg.classList.remove('dragging'); const w = step(); tg.scrollTo({left:Math.round(tg.scrollLeft / w) * w, behavior:reduce?'auto':'smooth'}); } });
+    tg.addEventListener('mousedown', e => { if (e.button !== 0) return; down = true; moved = false; sx = e.clientX; sl = tg.scrollLeft; if (!e.target.closest('button')) e.preventDefault(); });
+    addEventListener('mousemove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4 && !moved){ moved = true; tg.classList.add('dragging'); } if (moved) tg.scrollLeft = sl - dx; });
+    addEventListener('mouseup', () => { if (!down) return; down = false; if (moved){ tg.classList.remove('dragging'); const dir = tg.scrollLeft > sl ? 0.35 : -0.35; go(Math.round(idx() + dir)); } });
     tg.addEventListener('click', e => { if (moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
   }
   const tdlg = document.getElementById('tdlg');

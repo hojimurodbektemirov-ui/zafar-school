@@ -86,9 +86,15 @@ def translate(lang, tr):
         if a.get('hreflang') == lang:
             a['aria-current'] = 'page'
     site_js = soup.find('script', src='js/site.js')
-    site_js.insert_before(soup.new_tag('script', src=f'js/t.{lang}.js', defer=None))
+    site_js.insert_before(soup.new_tag('script', src=f'js/t.{lang}.js?v={ver(f"t.{lang}.js")}', defer=None))
     site_js.insert_before('\n')
+    site_js['src'] = f'js/site.js?v={ver("site.js")}'
     return str(soup)
+
+def ver(name):
+    # short content hash so browsers fetch the new file after every change
+    import hashlib
+    return hashlib.md5(open(os.path.join(PUB, 'js', name), 'rb').read()).hexdigest()[:8]
 
 def build_strings():
     for lang in PAGES:
@@ -112,9 +118,9 @@ if __name__ == '__main__':
     if not os.path.exists(I18N_PATH):
         seed()
     tr = json.load(open(I18N_PATH, encoding='utf-8'))
+    build_strings()
     for lang, page in PAGES.items():
         html = translate(lang, tr)
         open(os.path.join(PUB, page), 'w', encoding='utf-8').write(html)
         print(f'public/{page}: {len(html)//1024} KB')
-    build_strings()
     print('public/js/t.{uz,ru,en}.js written')
