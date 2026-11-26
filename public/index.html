@@ -495,6 +495,49 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
   footer{padding-bottom:70px}
 }
 
+
+/* ---------- teachers (credential-first cards) ---------- */
+.t-filter{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 26px}
+.t-filter button{font:inherit;font-weight:700;font-size:14.5px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--text)}
+.t-filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.tcard[hidden]{display:none}
+.t-cred{background:var(--ink);color:#fff;padding:22px 22px 52px;min-height:140px}
+.t-cred b{display:block;font-family:var(--display);font-size:clamp(30px,2.6vw,40px);line-height:1;color:var(--code);letter-spacing:-.01em}
+.t-cred span{display:block;margin-top:8px;font-size:14px;color:#CFE3DC;line-height:1.35}
+.t-who{padding:0 20px;margin-top:-38px}
+.t-who img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:4px solid var(--card);flex:none;background:var(--paper-2)}
+.t-who h3{font-size:16px;line-height:1.25;margin-top:12px}
+.t-who .role{font-size:13px;color:var(--gold-d);font-weight:700;margin-top:3px}
+.tcard ul{list-style:none;padding:14px 20px 0;display:grid;gap:6px;flex:1}
+.tcard li{font-size:14px;color:var(--muted);padding-left:14px;position:relative}
+.tcard li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.t-open{margin:16px 20px 20px;align-self:flex-start;font:inherit;font-weight:700;font-size:14px;color:var(--ink);background:var(--paper-2);border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+.t-open:hover{background:var(--ink);color:#fff}
+.t-join{margin-top:18px;background:var(--paper-2);border-radius:22px;padding:24px 28px}
+.t-join h3{font-size:20px}
+.t-join .role{font-weight:700;color:var(--gold-d);font-size:14px;margin:4px 0 6px}
+.t-join p{color:var(--muted)}
+.t-join a{color:var(--ink);font-weight:700}
+dialog.tdlg{margin:auto;width:min(94vw,560px);border-radius:24px;background:var(--card);padding:0;overflow:hidden}
+dialog.tdlg::backdrop{background:rgba(4,22,20,.75)}
+.td-in{padding:28px;display:grid;gap:16px}
+.td-head{display:flex;gap:16px;align-items:center}
+.td-head img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none}
+.td-head h3{font-size:22px;line-height:1.2}
+.td-head .role{color:var(--gold-d);font-weight:700;font-size:14.5px;margin-top:4px}
+dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
+#tdBio{color:var(--muted)}
+#tdList{list-style:none;display:grid;gap:6px}
+#tdList li{padding-left:14px;position:relative}
+#tdList li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+#tdLink{justify-self:start}
+#tdLink[hidden]{display:none}
+@media (max-width:1050px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 10px;scroll-padding:0 16px;scrollbar-width:none}.tcard{flex:0 0 80%;scroll-snap-align:center}.t-cred{min-height:0}}
+@media (max-width:440px){.brand small{display:none}}
+
 /* reveal */
 .reveal{}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -871,17 +914,68 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 <div class="wrap">
 <h2 class="reveal">Kuçli ustozlar, kuçli kelajak</h2>
 <p class="lead reveal">Har şanba ustoz va xodimlar uçun trening ötkaziladi. Biz bolani "röyxatdagi raqam" deb emas, alohida şaxs deb köramiz.</p>
-<div class="teachers">
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/muhayyo-ustoz.jpg" style="object-position:44% 30%"/></div><div><h3>Rahimova Muhayyo Dilmurodovna</h3><div class="role">Ona tili va adabiyot · oliy toifa</div><p>"Yil öqituvçisi – 2026" Respublika körik-tanlovi ğolibi, Milliy sertifikat A+. 18 yillik tajriba.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/abboskhon-ustoz.jpg" style="object-position:50% 40%"/></div><div><h3>Abboskhon Şarafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking könikmalari.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Abdurahimova Şoira Şamsiddinovna</h3><div class="role">Boşlanğiç sinf</div><p>22 yillik tajriba. Har bir bolaning örganiş tezligiga mos individual yondaşuv.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/ruxsora-ustoz.jpg" style="object-position:50% 30%"/></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boşlanğiç sinf</div><p>Öyin, amaliy maşğulot va interaktiv usullar: bola javobni özi topadi.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boşlanğiç sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar ğolibi.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" data-fallback="BD" src="assets/photos/expert-bd-sq.jpg"/></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 öquvçini SAT Math'da 700+ natijaga olib çiqqan, 5 yillik tajriba.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulçexra Muhammadjonova</h3><div class="role">Boşlanğiç sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvçan va öziga işongan şaxs tarbiyalaydi.</p></div></article>
-<article class="teacher join reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qöşiling</h3><div class="role">Oçiq vakansiyalar</div><p>Raqobatbardoş maoş, KPI bonus, bepul treninglar va tuşlik. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></article>
+<div aria-label="Ustozlarni saralaş" class="t-filter" id="tFilter" role="group">
+<button aria-pressed="true" data-f="all" type="button">Barçasi</button><button aria-pressed="false" data-f="boshl" type="button">Boşlanğiç sinf</button><button aria-pressed="false" data-f="til" type="button">Tillar</button><button aria-pressed="false" data-f="math" type="button">Matematika va SAT</button><button aria-pressed="false" data-f="sanat" type="button">San'at</button>
 </div>
+<div class="tgrid" id="tGrid">
+<article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/100">
+<div class="t-cred"><b>2026</b><span>Yil öqituvçisi — Respublika ğolibi</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/muhayyo.jpg" width="72"/><div><h3>Rahimova Muhayyo Dilmurodovna</h3><p class="role">Ona tili va adabiyot · oliy toifa</p></div></div>
+<ul><li>18 yillik pedagogik tajriba</li><li>Milliy sertifikat A+</li></ul>
+<p class="t-bio" hidden="">"Yil öqituvçisi – 2026" Respublika körik-tanlovi ğolibi, Milliy sertifikat A+. 18 yillik tajriba.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/140">
+<div class="t-cred"><b>7.5</b><span>IELTS · Speaking 8.5</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/abboskhon.jpg" width="72"/><div><h3>Abboskhon Şarafutdinov</h3><p class="role">English instructor</p></div></div>
+<ul><li>Erkin muloqot va Speaking klubi</li><li>IELTS imtihoniga tayyorlov</li></ul>
+<p class="t-bio" hidden="">IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking könikmalari.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="math">
+<div class="t-cred"><b>800</b><span>SAT Math · 800/800</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/baxriddin.jpg" width="72"/><div><h3>Baxriddin Davlatmurodov</h3><p class="role">Matematika va SAT Math</p></div></div>
+<ul><li>100 öquvçi SAT Math'da 700+</li><li>200+ öquvçi universitetlarda</li></ul>
+<p class="t-bio" hidden="">SAT Math 800/800, Matematika A+. 100 öquvçini SAT Math'da 700+ natijaga olib çiqqan, 5 yillik tajriba.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/174">
+<div class="t-cred"><b>22 yil</b><span>pedagogik tajriba</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/shoira.jpg" width="72"/><div><h3>Abdurahimova Şoira Şamsiddinovna</h3><p class="role">Boşlanğiç sinf</p></div></div>
+<ul><li>Interfaol metodlar</li><li>Öyinli ta'lim va loyiha işlari</li></ul>
+<p class="t-bio" hidden="">22 yillik tajriba. Har bir bolaning örganiş tezligiga mos individual yondaşuv.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/76">
+<div class="t-cred"><b>27 yil</b><span>pedagogik tajriba</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/gulchexra.jpg" width="72"/><div><h3>Gulçexra Muhammadjonova</h3><p class="role">Boşlanğiç sinf</p></div></div>
+<ul><li>Mustaqil fikrlaşni örgatadi</li><li>Har bir bolaga alohida yondaşuv</li></ul>
+<p class="t-bio" hidden="">27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvçan va öziga işongan şaxs tarbiyalaydi.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/77">
+<div class="t-cred"><b>TIMSS</b><span>uslubidagi mini-testlar</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/piroya.jpg" width="72"/><div><h3>Dehqonova Piroya Erkinovna</h3><p class="role">Boşlanğiç sinf</p></div></div>
+<ul><li>7 yillik tajriba</li><li>Vizual materiallar va motivatsiya</li></ul>
+<p class="t-bio" hidden="">7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/89">
+<div class="t-cred"><b>Öyin</b><span>bola javobni özi topadi</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/ruxsora.jpg" width="72"/><div><h3>Ruxsora Abdujalilova</h3><p class="role">Boşlanğiç sinf</p></div></div>
+<ul><li>Murakkab mavzuni sodda tilda</li><li>Interaktiv usullar va amaliyot</li></ul>
+<p class="t-bio" hidden="">Öyin, amaliy maşğulot va interaktiv usullar: bola javobni özi topadi.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+<article class="tcard" data-cat="sanat" data-link="https://t.me/zafar_international_school/254">
+<div class="t-cred"><b>Zulfiya</b><span>nomidagi davlat mukofoti sovrindori</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/oygul.jpg" width="72"/><div><h3>Oygul Faziljanovna</h3><p class="role">Tasviriy san'at</p></div></div>
+<ul><li>17 yillik tajribali rassom</li><li>Xalqaro tanlovlar ğolibi</li></ul>
+<p class="t-bio" hidden="">Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar ğolibi.</p>
+<button class="t-open" type="button">Batafsil</button>
+</article>
+</div>
+<div class="t-join"><div><h3>Jamoamizga qöşiling</h3><div class="role">Oçiq vakansiyalar</div><p>Raqobatbardoş maoş, KPI bonus, bepul treninglar va tuşlik. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></div>
 </div>
 </section>
 <!-- WORD OF THE DAY -->
@@ -1034,6 +1128,16 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 </form>
 </div>
 </section>
+<dialog aria-labelledby="tdName" class="tdlg" id="tdlg">
+<button aria-label="Yopiş" class="lb-close" id="tdClose" type="button">×</button>
+<div class="td-in">
+<div class="td-head"><img alt="" height="120" id="tdImg" width="120"/><div><h3 id="tdName"></h3><p class="role" id="tdRole"></p></div></div>
+<div class="t-cred" id="tdCred"></div>
+<p id="tdBio"></p>
+<ul id="tdList"></ul>
+<a class="btn btn-gold" id="tdLink" rel="noopener" target="_blank">Video tanişuvni köriş</a>
+</div>
+</dialog>
 <dialog aria-label="Rasmni kattalaştirib köriş" class="lb" id="lb">
 <button aria-label="Yopiş" class="lb-close" id="lbClose">×</button>
 <button aria-label="Oldingi rasm" class="lb-nav lb-prev" id="lbPrev">←</button>

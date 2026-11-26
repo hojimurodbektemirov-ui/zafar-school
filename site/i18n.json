@@ -1606,5 +1606,125 @@
  "IT va ingliz tiliga ixtisoslashgan xususiy maktab: Pre-School va 1–8-sinflar. Birinchi yilning o'zidayoq respublika TOP-10 maktablari qatorida.": {
   "ru": "Частная школа с углублённым IT и английским: Pre-School и 1–8 классы. Уже в первый год — в республиканском TOP-10 школ.",
   "en": "A private school specialising in IT and English: Pre-School and grades 1–8. In the national TOP-10 schools in its very first year."
+ },
+ "Tillar": {
+  "ru": "Языки",
+  "en": "Languages"
+ },
+ "Matematika va SAT": {
+  "ru": "Математика и SAT",
+  "en": "Maths and SAT"
+ },
+ "San'at": {
+  "ru": "Искусство",
+  "en": "Art"
+ },
+ "<b>2026</b><span>Yil o'qituvchisi — Respublika g'olibi</span>": {
+  "ru": "<b>2026</b><span>Учитель года — победитель республики</span>",
+  "en": "<b>2026</b><span>National Teacher of the Year winner</span>"
+ },
+ "18 yillik pedagogik tajriba": {
+  "ru": "18 лет педагогического опыта",
+  "en": "18 years of teaching experience"
+ },
+ "Milliy sertifikat A+": {
+  "ru": "Национальный сертификат A+",
+  "en": "National Certificate A+"
+ },
+ "Batafsil": {
+  "ru": "Подробнее",
+  "en": "Read more"
+ },
+ "<b>7.5</b><span>IELTS · Speaking 8.5</span>": {
+  "ru": "<b>7.5</b><span>IELTS · Speaking 8.5</span>",
+  "en": "<b>7.5</b><span>IELTS · Speaking 8.5</span>"
+ },
+ "Erkin muloqot va Speaking klubi": {
+  "ru": "Свободное общение и Speaking-клуб",
+  "en": "Free conversation and a Speaking club"
+ },
+ "IELTS imtihoniga tayyorlov": {
+  "ru": "Подготовка к экзамену IELTS",
+  "en": "IELTS exam preparation"
+ },
+ "<b>800</b><span>SAT Math · 800/800</span>": {
+  "ru": "<b>800</b><span>SAT Math · 800/800</span>",
+  "en": "<b>800</b><span>SAT Math · 800/800</span>"
+ },
+ "100 o'quvchi SAT Math'da 700+": {
+  "ru": "100 учеников с SAT Math 700+",
+  "en": "100 students at 700+ in SAT Math"
+ },
+ "200+ o'quvchi universitetlarda": {
+  "ru": "200+ учеников в университетах",
+  "en": "200+ students in universities"
+ },
+ "<b>22 yil</b><span>pedagogik tajriba</span>": {
+  "ru": "<b>22 года</b><span>педагогического опыта</span>",
+  "en": "<b>22 years</b><span>of teaching experience</span>"
+ },
+ "Interfaol metodlar": {
+  "ru": "Интерактивные методы",
+  "en": "Interactive methods"
+ },
+ "O'yinli ta'lim va loyiha ishlari": {
+  "ru": "Обучение в игре и проектная работа",
+  "en": "Learning through play and project work"
+ },
+ "<b>27 yil</b><span>pedagogik tajriba</span>": {
+  "ru": "<b>27 лет</b><span>педагогического опыта</span>",
+  "en": "<b>27 years</b><span>of teaching experience</span>"
+ },
+ "Mustaqil fikrlashni o'rgatadi": {
+  "ru": "Учит самостоятельно мыслить",
+  "en": "Teaches children to think for themselves"
+ },
+ "Har bir bolaga alohida yondashuv": {
+  "ru": "Индивидуальный подход к каждому ребёнку",
+  "en": "An individual approach to every child"
+ },
+ "<b>TIMSS</b><span>uslubidagi mini-testlar</span>": {
+  "ru": "<b>TIMSS</b><span>мини-тесты в формате TIMSS</span>",
+  "en": "<b>TIMSS</b><span>style mini tests</span>"
+ },
+ "7 yillik tajriba": {
+  "ru": "7 лет опыта",
+  "en": "7 years of experience"
+ },
+ "Vizual materiallar va motivatsiya": {
+  "ru": "Визуальные материалы и мотивация",
+  "en": "Visual materials and motivation"
+ },
+ "<b>O'yin</b><span>bola javobni o'zi topadi</span>": {
+  "ru": "<b>Игра</b><span>ребёнок сам находит ответ</span>",
+  "en": "<b>Play</b><span>children find the answer themselves</span>"
+ },
+ "Murakkab mavzuni sodda tilda": {
+  "ru": "Сложная тема — простым языком",
+  "en": "Hard topics in simple words"
+ },
+ "Interaktiv usullar va amaliyot": {
+  "ru": "Интерактивные методы и практика",
+  "en": "Interactive methods and practice"
+ },
+ "<b>Zulfiya</b><span>nomidagi davlat mukofoti sovrindori</span>": {
+  "ru": "<b>Зульфия</b><span>лауреат государственной премии имени Зульфии</span>",
+  "en": "<b>Zulfiya</b><span>State Prize laureate</span>"
+ },
+ "17 yillik tajribali rassom": {
+  "ru": "Художник с 17-летним опытом",
+  "en": "An artist with 17 years of experience"
+ },
+ "Xalqaro tanlovlar g'olibi": {
+  "ru": "Победитель международных конкурсов",
+  "en": "Winner of international contests"
+ },
+ "Video tanishuvni ko'rish": {
+  "ru": "Смотреть видеознакомство",
+  "en": "Watch the video introduction"
+ },
+ "Ustozlarni saralash": {
+  "ru": "Фильтр учителей",
+  "en": "Filter teachers"
  }
 }

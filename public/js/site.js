@@ -211,6 +211,30 @@
     });
   }
 
+
+  /* ---------- teachers: subject filter + profile dialog ---------- */
+  const tcards = [...document.querySelectorAll('#tGrid .tcard')];
+  document.querySelectorAll('#tFilter button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#tFilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    tcards.forEach(c => { c.hidden = b.dataset.f !== 'all' && c.dataset.cat !== b.dataset.f; });
+  }));
+  const tdlg = document.getElementById('tdlg');
+  if (tdlg){
+    tcards.forEach(c => c.querySelector('.t-open').addEventListener('click', () => {
+      document.getElementById('tdImg').src = c.querySelector('.t-who img').src;
+      document.getElementById('tdName').textContent = c.querySelector('h3').textContent;
+      document.getElementById('tdRole').textContent = c.querySelector('.role').textContent;
+      document.getElementById('tdCred').innerHTML = c.querySelector('.t-cred').innerHTML;
+      document.getElementById('tdBio').textContent = c.querySelector('.t-bio').textContent;
+      document.getElementById('tdList').innerHTML = c.querySelector('ul').innerHTML;
+      const link = document.getElementById('tdLink');
+      link.hidden = !c.dataset.link; if (c.dataset.link) link.href = c.dataset.link;
+      tdlg.showModal();
+    }));
+    document.getElementById('tdClose').onclick = () => tdlg.close();
+    tdlg.addEventListener('click', e => { if (e.target === tdlg) tdlg.close(); });
+  }
+
   /* ---------- API integration ---------- */
   // When the page is served by the ZIS server, the form and news use the API.
   // Opened as a plain file (file://), it falls back to the Telegram flow and the static news cards.

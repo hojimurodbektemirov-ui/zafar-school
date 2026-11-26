@@ -495,6 +495,49 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
   footer{padding-bottom:70px}
 }
 
+
+/* ---------- teachers (credential-first cards) ---------- */
+.t-filter{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 26px}
+.t-filter button{font:inherit;font-weight:700;font-size:14.5px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--text)}
+.t-filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.tcard[hidden]{display:none}
+.t-cred{background:var(--ink);color:#fff;padding:22px 22px 52px;min-height:140px}
+.t-cred b{display:block;font-family:var(--display);font-size:clamp(30px,2.6vw,40px);line-height:1;color:var(--code);letter-spacing:-.01em}
+.t-cred span{display:block;margin-top:8px;font-size:14px;color:#CFE3DC;line-height:1.35}
+.t-who{padding:0 20px;margin-top:-38px}
+.t-who img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:4px solid var(--card);flex:none;background:var(--paper-2)}
+.t-who h3{font-size:16px;line-height:1.25;margin-top:12px}
+.t-who .role{font-size:13px;color:var(--gold-d);font-weight:700;margin-top:3px}
+.tcard ul{list-style:none;padding:14px 20px 0;display:grid;gap:6px;flex:1}
+.tcard li{font-size:14px;color:var(--muted);padding-left:14px;position:relative}
+.tcard li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.t-open{margin:16px 20px 20px;align-self:flex-start;font:inherit;font-weight:700;font-size:14px;color:var(--ink);background:var(--paper-2);border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+.t-open:hover{background:var(--ink);color:#fff}
+.t-join{margin-top:18px;background:var(--paper-2);border-radius:22px;padding:24px 28px}
+.t-join h3{font-size:20px}
+.t-join .role{font-weight:700;color:var(--gold-d);font-size:14px;margin:4px 0 6px}
+.t-join p{color:var(--muted)}
+.t-join a{color:var(--ink);font-weight:700}
+dialog.tdlg{margin:auto;width:min(94vw,560px);border-radius:24px;background:var(--card);padding:0;overflow:hidden}
+dialog.tdlg::backdrop{background:rgba(4,22,20,.75)}
+.td-in{padding:28px;display:grid;gap:16px}
+.td-head{display:flex;gap:16px;align-items:center}
+.td-head img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none}
+.td-head h3{font-size:22px;line-height:1.2}
+.td-head .role{color:var(--gold-d);font-weight:700;font-size:14.5px;margin-top:4px}
+dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
+#tdBio{color:var(--muted)}
+#tdList{list-style:none;display:grid;gap:6px}
+#tdList li{padding-left:14px;position:relative}
+#tdList li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+#tdLink{justify-self:start}
+#tdLink[hidden]{display:none}
+@media (max-width:1050px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 10px;scroll-padding:0 16px;scrollbar-width:none}.tcard{flex:0 0 80%;scroll-snap-align:center}.t-cred{min-height:0}}
+@media (max-width:440px){.brand small{display:none}}
+
 /* reveal */
 .reveal{}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -869,17 +912,68 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 <div class="wrap">
 <h2 class="reveal">Strong teachers, strong future</h2>
 <p class="lead reveal">Every Saturday our teachers and staff train together. We see each child as an individual, not a number on a list.</p>
-<div class="teachers">
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/muhayyo-ustoz.jpg" style="object-position:44% 30%"/></div><div><h3>Muhayyo Rahimova</h3><div class="role">Uzbek language and literature · highest category</div><p>Winner of the national Teacher of the Year 2026 contest, National Certificate A+. 18 years of experience.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/abboskhon-ustoz.jpg" style="object-position:50% 40%"/></div><div><h3>Abboskhon Sharafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Free conversation, Listening and Speaking skills.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Shoira Abdurahimova</h3><div class="role">Primary teacher</div><p>22 years of experience. An individual approach that follows each child's pace.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/ruxsora-ustoz.jpg" style="object-position:50% 30%"/></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Primary teacher</div><p>Games, practice and interactive methods: children find the answer themselves.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Piroya Dehqonova</h3><div class="role">Primary teacher</div><p>7 years of experience. Innovative methods, TIMSS-style mini tests and visual materials.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Fine art</div><p>Laureate of the Zulfiya State Prize, an artist with 17 years of experience and winner of international contests.</p></div></article>
-<article class="teacher reveal"><div class="avatar"><img alt="" data-fallback="BD" src="assets/photos/expert-bd-sq.jpg"/></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Maths and SAT Math</div><p>SAT Math 800/800, Mathematics A+. Coached 100 students to 700+ in SAT Math; 5 years of experience.</p></div></article>
-<article class="teacher reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulchexra Muhammadjonova</h3><div class="role">Primary teacher</div><p>27 years of experience. She raises curious, confident learners rather than grade-chasers.</p></div></article>
-<article class="teacher join reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Join our team</h3><div class="role">Open positions</div><p>Competitive salary, KPI bonuses, free training and lunch. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></article>
+<div aria-label="Filter teachers" class="t-filter" id="tFilter" role="group">
+<button aria-pressed="true" data-f="all" type="button">All</button><button aria-pressed="false" data-f="boshl" type="button">Primary teacher</button><button aria-pressed="false" data-f="til" type="button">Languages</button><button aria-pressed="false" data-f="math" type="button">Maths and SAT</button><button aria-pressed="false" data-f="sanat" type="button">Art</button>
 </div>
+<div class="tgrid" id="tGrid">
+<article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/100">
+<div class="t-cred"><b>2026</b><span>National Teacher of the Year winner</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/muhayyo.jpg" width="72"/><div><h3>Muhayyo Rahimova</h3><p class="role">Uzbek language and literature · highest category</p></div></div>
+<ul><li>18 years of teaching experience</li><li>National Certificate A+</li></ul>
+<p class="t-bio" hidden="">Winner of the national Teacher of the Year 2026 contest, National Certificate A+. 18 years of experience.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/140">
+<div class="t-cred"><b>7.5</b><span>IELTS · Speaking 8.5</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/abboskhon.jpg" width="72"/><div><h3>Abboskhon Sharafutdinov</h3><p class="role">English instructor</p></div></div>
+<ul><li>Free conversation and a Speaking club</li><li>IELTS exam preparation</li></ul>
+<p class="t-bio" hidden="">IELTS 7.5, Speaking 8.5. Free conversation, Listening and Speaking skills.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="math">
+<div class="t-cred"><b>800</b><span>SAT Math · 800/800</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/baxriddin.jpg" width="72"/><div><h3>Baxriddin Davlatmurodov</h3><p class="role">Maths and SAT Math</p></div></div>
+<ul><li>100 students at 700+ in SAT Math</li><li>200+ students in universities</li></ul>
+<p class="t-bio" hidden="">SAT Math 800/800, Mathematics A+. Coached 100 students to 700+ in SAT Math; 5 years of experience.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/174">
+<div class="t-cred"><b>22 years</b><span>of teaching experience</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/shoira.jpg" width="72"/><div><h3>Shoira Abdurahimova</h3><p class="role">Primary teacher</p></div></div>
+<ul><li>Interactive methods</li><li>Learning through play and project work</li></ul>
+<p class="t-bio" hidden="">22 years of experience. An individual approach that follows each child's pace.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/76">
+<div class="t-cred"><b>27 years</b><span>of teaching experience</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/gulchexra.jpg" width="72"/><div><h3>Gulchexra Muhammadjonova</h3><p class="role">Primary teacher</p></div></div>
+<ul><li>Teaches children to think for themselves</li><li>An individual approach to every child</li></ul>
+<p class="t-bio" hidden="">27 years of experience. She raises curious, confident learners rather than grade-chasers.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/77">
+<div class="t-cred"><b>TIMSS</b><span>style mini tests</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/piroya.jpg" width="72"/><div><h3>Piroya Dehqonova</h3><p class="role">Primary teacher</p></div></div>
+<ul><li>7 years of experience</li><li>Visual materials and motivation</li></ul>
+<p class="t-bio" hidden="">7 years of experience. Innovative methods, TIMSS-style mini tests and visual materials.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="boshl" data-link="https://t.me/zafar_international_school/89">
+<div class="t-cred"><b>Play</b><span>children find the answer themselves</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/ruxsora.jpg" width="72"/><div><h3>Ruxsora Abdujalilova</h3><p class="role">Primary teacher</p></div></div>
+<ul><li>Hard topics in simple words</li><li>Interactive methods and practice</li></ul>
+<p class="t-bio" hidden="">Games, practice and interactive methods: children find the answer themselves.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+<article class="tcard" data-cat="sanat" data-link="https://t.me/zafar_international_school/254">
+<div class="t-cred"><b>Zulfiya</b><span>State Prize laureate</span></div>
+<div class="t-who"><img alt="" height="72" loading="lazy" src="assets/teachers/oygul.jpg" width="72"/><div><h3>Oygul Faziljanovna</h3><p class="role">Fine art</p></div></div>
+<ul><li>An artist with 17 years of experience</li><li>Winner of international contests</li></ul>
+<p class="t-bio" hidden="">Laureate of the Zulfiya State Prize, an artist with 17 years of experience and winner of international contests.</p>
+<button class="t-open" type="button">Read more</button>
+</article>
+</div>
+<div class="t-join"><div><h3>Join our team</h3><div class="role">Open positions</div><p>Competitive salary, KPI bonuses, free training and lunch. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></div>
 </div>
 </section>
 <!-- WORD OF THE DAY -->
@@ -1025,6 +1119,16 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 </form>
 </div>
 </section>
+<dialog aria-labelledby="tdName" class="tdlg" id="tdlg">
+<button aria-label="Close" class="lb-close" id="tdClose" type="button">×</button>
+<div class="td-in">
+<div class="td-head"><img alt="" height="120" id="tdImg" width="120"/><div><h3 id="tdName"></h3><p class="role" id="tdRole"></p></div></div>
+<div class="t-cred" id="tdCred"></div>
+<p id="tdBio"></p>
+<ul id="tdList"></ul>
+<a class="btn btn-gold" id="tdLink" rel="noopener" target="_blank">Watch the video introduction</a>
+</div>
+</dialog>
 <dialog aria-label="Enlarged photo" class="lb" id="lb">
 <button aria-label="Close" class="lb-close" id="lbClose">×</button>
 <button aria-label="Previous photo" class="lb-nav lb-prev" id="lbPrev">←</button>
