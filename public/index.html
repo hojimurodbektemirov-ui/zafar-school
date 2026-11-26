@@ -2,434 +2,663 @@
 
 <html lang="uz">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Zafar International School (ZIS) — Oltinköl tumanidagi xususiy maktab. IT va ingliz tiliga ixtisoslaşgan. Pre-School va 1–8-sinflar. Xalqaro ta'limga milliy yondaşuv." name="description"/><meta content="Zafar International School" property="og:title"/><meta content="Xalqaro ta'limga milliy yondaşuv. IT + English. Pre-School va 1–8-sinflarga qabul oçiq." property="og:description"/><meta content="#0E3D38" name="theme-color"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Zafar International School — IT va ingliz tili maktabi</title>
+<meta content="Zafar International School (ZIS) — Oltinköl tumanidagi xususiy maktab. IT va ingliz tiliga ixtisoslaşgan. Pre-School va 1–8-sinflar. Xalqaro ta'limga milliy yondaşuv." name="description"/>
+<meta content="Zafar International School" property="og:title"/>
+<meta content="Xalqaro ta'limga milliy yondaşuv. IT + English. Pre-School va 1–8-sinflarga qabul oçiq." property="og:description"/>
+<meta content="#0E3D38" name="theme-color"/>
 <link href="assets/logo-256.jpg" rel="icon" type="image/jpeg"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&amp;family=Golos+Text:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
 <style>
-:root{--paper:#FFFFFF;--ink:#14231F;--green:#0E3D38;--green-2:#145049;--brass:#8F6E3A;--brass-l:#D2B47C;--sage:#EEF3EF;--sage-2:#E2EAE4;--line:#DCE3DE;--muted:#56665F;--soft:#B9CCC6;
-  --gold:var(--brass);--code:#D2B47C;--serif:"Literata",Georgia,serif;--sans:"Golos Text",system-ui,sans-serif}
+:root{
+  --ink:#0E3D38; --ink-2:#145049; --ink-3:#1B6158;
+  --paper:#F2F5F0; --paper-2:#E4EBE2; --card:#FFFFFF;
+  --text:#14213D; --muted:#5A6478; --line:#D2DCCF;
+  --gold:#2DB441; --gold-d:#17772A;
+  --code:#8BE89A; --sky:#6CB8FF; --coral:#FF7A59;
+  --radius:20px; --max:1200px;
+  --display:"Unbounded",system-ui,sans-serif;
+  --body:"Manrope",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;overflow-x:hidden}
-img{display:block;max-width:100%}
+body{font-family:var(--body);color:var(--text);background:var(--paper);line-height:1.6;font-size:17px;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
 a{color:inherit}
-button{font:inherit}
-:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.14;letter-spacing:-.01em;color:var(--green)}
-h2{font-size:clamp(30px,4vw,46px)}
-section{padding:96px 0}
-.lede,.lead{color:var(--muted);font-size:18.5px;max-width:620px;margin-top:14px}
-.sec-head{margin-bottom:44px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:4px;font-weight:600;text-decoration:none;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:background .2s ease}
-.btn-green,.btn-gold{background:var(--brass);color:#fff}
-.btn-green:hover,.btn-gold:hover{background:#7A5C2E}
-.btn-glass,.btn-ghost{border-color:var(--green);color:var(--green);background:transparent}
-.btn-glass:hover,.btn-ghost:hover{background:var(--sage)}
-.btn-ink{background:var(--green);color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);display:inline-flex;gap:8px;align-items:center}
+.eyebrow::before{content:"//";color:var(--muted)}
+.wins .eyebrow,.contact .eyebrow{color:var(--gold)}
+.wins .eyebrow::before,.contact .eyebrow::before{color:#7FA59B}
+h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,52px);margin:14px 0 18px}
+h3{font-size:20px}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:640px}
+section{padding:110px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px;font-family:var(--body);transition:transform .2s ease, background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#3CC651}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-ink{background:var(--ink);color:#fff}
 
-/* masthead */
-.hdr{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
-.hdr .wrap{display:flex;align-items:center;gap:24px;height:78px}
-.mark{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;white-space:nowrap}
-.mark img{width:44px;height:44px;border-radius:10px}
-.mark span{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--green)}
-.menu{display:flex;gap:24px;font-weight:500;font-size:15.5px}
-.menu a{text-decoration:none;white-space:nowrap}
-.menu a:hover{color:var(--brass)}
-.lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:4px;padding:3px}
-.lang a{font-size:12.5px;font-weight:600;text-decoration:none;padding:6px 9px;border-radius:3px;line-height:1;color:var(--muted)}
-.lang a[aria-current="page"]{background:var(--green);color:#fff}
-.burger{display:none;width:44px;height:44px;border-radius:4px;border:1px solid var(--line);background:#fff;color:var(--green);cursor:pointer;place-items:center}
-.burger svg{width:20px;height:20px}
-@media (max-width:1100px){
-  .menu{display:none;position:fixed;top:78px;left:0;right:0;flex-direction:column;gap:0;background:#fff;padding:4px 24px 22px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px rgba(0,0,0,.25)}
-  .menu.open{display:flex}
-  .menu a{padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
-  .burger{display:grid}
-  .hdr-cta{display:none}
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease, box-shadow .3s ease}
+.nav.scrolled{background:rgba(14,61,56,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand img{width:44px;height:44px;border-radius:12px}
+.brand b{font-family:var(--display);font-size:16px;letter-spacing:.02em;display:block;line-height:1.1}
+.brand small{font-size:12px;opacity:.7;font-family:var(--mono)}
+.menu{display:flex;gap:24px;list-style:none}
+.menu a,.nav .btn,.brand small,.brand b{white-space:nowrap}
+.menu a{color:#fff;text-decoration:none;font-weight:600;font-size:15px;opacity:.85}
+.menu a:hover{opacity:1;color:var(--gold)}
+.nav .btn{padding:11px 18px;font-size:15px}
+.burger{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
+@media (max-width:1140px){
+  .menu{position:fixed;top:76px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:12px 24px 24px;transform:translateY(-130%);transition:transform .3s ease}
+  .menu.open{transform:none}
+  .menu a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:17px}
+  .burger{display:block}
+  .nav .btn{display:none}
 }
-@media (max-width:560px){.mark span{display:none}.hdr .wrap{gap:12px}}
 
-/* hero */
-.hero{padding:0}
-.hero-bg{width:100%;height:min(76vh,720px);min-height:440px;object-fit:cover;object-position:center 32%}
-.hero-card{position:relative;margin:-200px 0 0;background:#fff;max-width:780px;padding:46px 52px 44px;border-top:4px solid var(--brass)}
-.hero-tag{display:inline-block;font-size:14.5px;font-weight:600;color:var(--brass);margin-bottom:14px}
-.hero h1{font-size:clamp(38px,5.4vw,64px)}
-.hero-lead{font-size:19px;color:var(--muted);margin:18px 0 28px;max-width:580px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-.play{display:flex;align-items:center;gap:12px;margin-top:26px;color:var(--green);background:none;border:0;cursor:pointer;font-weight:600;font-size:15.5px;text-align:left;line-height:1.35}
-.play i{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--green);display:grid;place-items:center;flex:none}
-.play i::after{content:"";border-left:13px solid var(--green);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
-.play br{display:none}
-.play:hover i{background:var(--sage)}
-@media (max-width:700px){.hero-card{margin-top:-80px;padding:28px 22px}.hero-bg{min-height:320px;height:50vh}}
+/* ---------- HERO ---------- */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:150px 0 0}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 70% 30%,#000 30%,transparent 75%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;background:rgba(45,180,65,.16);color:#8BE89A;border:1px solid rgba(45,180,65,.45);padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--code);box-shadow:0 0 0 4px rgba(139,232,154,.25);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(139,232,154,0)}}
+.hero h1{font-size:clamp(38px,6vw,78px);margin:22px 0 22px;font-weight:800}
+.hero h1 .swap{color:var(--gold);display:inline-block;min-width:4ch}
+.hero h1 .code{font-family:var(--mono);font-weight:600;color:var(--code);font-size:.82em}
+.hero p.lead{color:#CFE3DC}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
 
-/* facts */
-.nums{padding:52px 0;border-bottom:1px solid var(--line)}
-.nums .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.nums .wrap>div{padding:0 26px;border-left:1px solid var(--line)}
-.nums .wrap>div:first-child{border-left:0;padding-left:0}
-.nums b{font-family:var(--serif);font-size:clamp(34px,3.8vw,50px);font-weight:600;color:var(--green);display:block;line-height:1}
-.nums span{display:block;margin-top:10px;color:var(--muted);font-size:15px}
-@media (max-width:820px){.nums .wrap{grid-template-columns:1fr 1fr;row-gap:30px}.nums .wrap>div:nth-child(3){border-left:0;padding-left:0}}
+/* terminal */
+.term{background:#0A2E2A;border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);overflow:hidden;font-family:var(--mono);font-size:14.5px}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.term-bar span{width:12px;height:12px;border-radius:50%;background:#FF5F57}
+.term-bar span:nth-child(2){background:#FEBC2E}.term-bar span:nth-child(3){background:#28C840}
+.term-bar em{margin-left:auto;font-style:normal;color:#7FA59B;font-size:12px}
+.term-body{padding:20px;min-height:300px;color:#D7E0F2;white-space:pre-wrap;word-break:break-word}
+.term-body .p{color:var(--code)}.term-body .k{color:var(--gold)}.term-body .c{color:#7FA59B}.term-body .s{color:var(--sky)}
+.cursor{display:inline-block;width:9px;height:18px;background:var(--code);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.term-cmds{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 20px}
+.term-cmds button{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px 12px;cursor:pointer}
+.term-cmds button:hover,.term-cmds button.on{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
-/* a day: horizontal timeline */
-.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;max-width:1180px;margin:0 auto;padding:0 24px}
-.moment{margin:0}
-.moment img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.moment figcaption{padding-top:14px;border-top:2px solid var(--brass);margin-top:14px}
-.moment time{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--brass);display:block;line-height:1.2}
-.moment span{font-size:14.5px;color:var(--muted);display:block;margin-top:4px;line-height:1.4}
-@media (max-width:1000px){.strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.moment{flex:0 0 200px;scroll-snap-align:start}}
+/* stats */
+.stats{position:relative;margin-top:90px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.12)}
+.stat{padding:30px 24px;border-right:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border-right:0}
+.stat b{font-family:var(--display);font-size:clamp(30px,3.6vw,46px);color:#fff;display:block;line-height:1}
+.stat b sup{font-size:.45em;color:var(--gold);vertical-align:top;margin-left:4px}
+.stat > span{color:#A9C7BE;font-size:14.5px;display:block;margin-top:10px}
 
-/* stages */
-.stages{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.split .pic img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.split .age{display:block;margin:20px 0 6px;color:var(--brass);font-weight:600;font-size:14.5px}
-.split h3{font-size:25px;margin-bottom:10px}
-.split p{color:var(--muted)}
-@media (max-width:860px){.stages{grid-template-columns:1fr;gap:40px}.split .pic img{aspect-ratio:16/10}}
+/* marquee */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0;font-family:var(--display);font-weight:700;font-size:20px}
+.marquee-track{display:inline-flex;gap:48px;animation:scroll 40s linear infinite}
+.marquee-track span{display:inline-flex;gap:12px;align-items:center}
+.marquee-track small{font-family:var(--mono);font-weight:400;font-size:14px;opacity:.7}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-/* focus: ruled rows */
-.focus{background:var(--sage)}
-.focus-grid{border-top:1px solid #C9D6CE}
-.focus-item{display:grid;grid-template-columns:200px 240px 1fr 1fr;gap:28px;padding:30px 0;border-bottom:1px solid #C9D6CE;align-items:start}
-.focus-item img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.focus-item h3{font-size:26px}
-.focus-item p{color:var(--muted)}
-.focus-item ul{list-style:none;display:grid;gap:8px;font-weight:500;font-size:15.5px}
-.focus-item li{padding-left:20px;position:relative}
-.focus-item li::before{content:"";position:absolute;left:0;top:12px;width:9px;height:1.5px;background:var(--brass)}
-@media (max-width:980px){.focus-item{grid-template-columns:160px 1fr}.focus-item p,.focus-item ul{grid-column:2}}
-@media (max-width:600px){.focus-item{grid-template-columns:1fr;gap:12px}.focus-item p,.focus-item ul{grid-column:auto}}
+/* ---------- PILLARS ---------- */
+.pillars{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px;margin-top:56px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px;position:relative;overflow:hidden;transition:transform .3s ease}
+.pillar:hover{transform:translateY(-4px)}
+.pillar .tag{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.pillar h3{font-size:26px;margin:14px 0 12px}
+.pillar p{color:var(--muted)}
+.pillar ul{list-style:none;margin-top:20px;display:grid;gap:10px}
+.pillar li{display:flex;gap:10px;font-weight:600;font-size:15.5px}
+.pillar li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--gold-d);margin-top:9px;flex:none}
+.pillar.it{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pillar.it p,.pillar.it .tag{color:#B3CFC6}
+.pillar.it li::before{background:var(--code)}
+.pillar .glyph{position:absolute;right:-10px;bottom:-30px;font-family:var(--display);font-size:150px;font-weight:800;opacity:.06;line-height:1}
+.pillar.it .glyph{opacity:.09;color:var(--code)}
 
-/* SAT / AP */
-.exam-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-.exam-card{background:#fff;border:1px solid var(--line);padding:32px}
-.exam-card h3{font-size:26px;margin-bottom:6px}
-.exam-card>p{color:var(--muted)}
-.gauge{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;margin-top:24px}
-.gauge svg{width:240px;height:150px;overflow:visible}
-.gauge .track{fill:none;stroke:var(--sage-2);stroke-width:16;stroke-linecap:round}
-.gauge .val{fill:none;stroke:var(--green);stroke-width:16;stroke-linecap:round;transition:stroke-dashoffset .4s ease}
-.gauge .total{font-family:var(--serif);font-weight:600;font-size:46px;fill:var(--green)}
-.gauge .cap{font-size:12px;fill:#8A9893}
-.sliders{display:grid;gap:18px}
-.slider label{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
-.slider label b{color:var(--brass)}
-.slider input{width:100%;accent-color:var(--green);height:28px;cursor:pointer}
-.sat-level{font-size:14.5px;color:var(--muted);min-height:44px}
-.sat-level b{color:var(--green)}
-.facts-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.facts-row span{font-size:13.5px;border:1px solid var(--line);padding:6px 12px;border-radius:999px;color:var(--muted)}
-.ap-scale{display:flex;gap:10px;margin-top:24px}
-.ap-scale button{flex:1;aspect-ratio:1;border:1px solid var(--line);background:#fff;color:var(--green);font-family:var(--serif);font-weight:600;font-size:30px;cursor:pointer}
-.ap-scale button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
-.ap-desc{margin-top:14px;min-height:48px;color:var(--muted);font-size:15px}
-.ap-desc b{color:var(--ink)}
-.ap-subjects{display:grid;grid-template-columns:1fr 1fr;margin-top:20px;border-top:1px solid var(--line)}
-.ap-subjects span{font-size:14.5px;padding:10px 0;border-bottom:1px solid var(--line)}
-.road-card{margin-top:24px}
-.road{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:18px;counter-reset:r}
-.road div::before{counter-increment:r;content:counter(r);display:block;font-family:var(--serif);font-size:38px;color:var(--brass);line-height:1;margin-bottom:10px}
-.road h4{font-family:var(--serif);font-size:18px;color:var(--green);margin-bottom:6px}
-.road p{font-size:14.5px;color:var(--muted)}
-.expert{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center;margin-top:64px}
-.expert .ph{margin:0;position:relative;aspect-ratio:4/5;background:var(--sage)}
-.expert .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.expert .ph figcaption{position:absolute;left:0;bottom:0;background:var(--green);color:#fff;font-weight:600;font-size:13.5px;padding:8px 14px}
-.expert small{color:var(--brass);font-weight:600;font-size:15px}
-.expert h3{font-size:clamp(30px,3.4vw,42px);margin:8px 0 14px}
-.expert p{color:var(--muted);font-family:var(--serif);font-size:19px;line-height:1.55;border-left:3px solid var(--brass);padding-left:20px}
-.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:26px 0 18px}
-.ex-stats b{display:block;font-family:var(--serif);font-size:32px;font-weight:600;color:var(--green);line-height:1}
-.ex-stats b small{font-size:16px;color:var(--muted);font-family:var(--serif)}
-.ex-stats span{display:block;font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.35}
-.ex-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.ex-tags span{font-size:13.5px;font-weight:600;padding:6px 12px;border:1px solid var(--line);color:var(--muted)}
-.ex-tags .hl{border-color:var(--brass);color:var(--brass)}
-.noimg{display:grid;place-items:center}
-.noimg::before{content:attr(data-initials);font-family:var(--serif);font-size:72px;color:var(--green)}
-@media (max-width:980px){.exam-grid{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr}.expert{grid-template-columns:1fr;gap:28px}.expert .ph{max-width:340px}.ex-stats{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.gauge{grid-template-columns:1fr;justify-items:center}.exam-card{padding:22px}.ap-subjects{grid-template-columns:1fr}.road{grid-template-columns:1fr}}
+/* ---------- DAY TIMELINE ---------- */
+.day{background:var(--paper-2)}
+.timeline{margin-top:56px;display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
+.timeline::before{content:"";position:absolute;top:22px;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px)}
+.tl{position:relative;padding:0 14px 0 0}
+.tl time{font-family:var(--mono);font-weight:600;background:var(--ink);color:var(--gold);padding:8px 12px;border-radius:10px;display:inline-block;position:relative;font-size:14px}
+.tl h3{font-size:17px;margin:18px 0 8px}
+.tl p{font-size:15px;color:var(--muted)}
 
-/* record of the first year */
-.record{background:var(--green);color:#fff}
-.record h2{color:#fff}
-.record .lede,.record .lead{color:var(--soft)}
-.wins{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
-.wins-photo{position:sticky;top:110px}
-.wins-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.win{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-top:1px solid rgba(255,255,255,.16)}
-.win b{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1;color:var(--brass-l);white-space:nowrap}
-.win h3{font-size:21px;margin-bottom:6px;color:#fff}
-.win p{color:var(--soft);font-size:15.5px}
-.also{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
-.also h3{font-size:17px;margin-bottom:4px;color:#fff}
-.also p{color:var(--soft);font-size:14.5px}
-@media (max-width:900px){.wins{grid-template-columns:1fr}.wins-photo{position:static}.wins-photo img{aspect-ratio:16/10}.also{grid-template-columns:1fr}.win{grid-template-columns:1fr;gap:8px}}
+/* ---------- LEVELS ---------- */
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.level{border-radius:var(--radius);padding:34px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.level .age{font-family:var(--mono);font-size:13px;background:var(--paper-2);padding:6px 10px;border-radius:8px;align-self:flex-start}
+.level h3{font-size:24px;margin:18px 0 10px}
+.level p{color:var(--muted);flex:1}
+.level .facts{display:flex;gap:18px;margin-top:22px;padding-top:20px;border-top:1px dashed var(--line)}
+.level .facts b{font-family:var(--display);font-size:22px;display:block}
+.level .facts span{font-size:13px;color:var(--muted)}
+.level:nth-child(1){border-top:6px solid var(--coral)}
+.level:nth-child(2){border-top:6px solid var(--sky)}
+.level:nth-child(3){border-top:6px solid var(--code)}
 
-/* video reels */
-.reels{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 24px 10px;max-width:1180px;margin:0 auto;scrollbar-width:thin}
-.reel{flex:0 0 200px;scroll-snap-align:start;position:relative;overflow:hidden;aspect-ratio:9/16;color:#fff;background:var(--green);border:0;padding:0;cursor:pointer;text-align:left}
-.reel img{width:100%;height:100%;object-fit:cover}
-.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(10,30,27,.88))}
-.reel .play{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;z-index:1;margin:0}
-.reel .play svg{width:12px;height:12px;fill:var(--green);margin-left:2px}
-.reel span{position:absolute;left:14px;right:14px;bottom:14px;z-index:1;font-weight:600;font-size:15px;line-height:1.3}
-.reel span small{display:block;font-weight:400;font-size:12.5px;opacity:.85;margin-top:4px}
+/* ---------- ACHIEVEMENTS (bento) ---------- */
+.wins{background:var(--ink);color:#fff}
+.wins .lead{color:#B3CFC6}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(190px,auto);gap:18px;margin-top:56px}
+.tile{background:var(--ink-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.tile .big{font-family:var(--display);font-size:clamp(48px,6vw,84px);font-weight:800;color:var(--gold);line-height:.95}
+.tile h3{font-size:19px;margin-top:12px}
+.tile p{color:#B3CFC6;font-size:15px;margin-top:8px}
+.tile.wide{grid-column:span 2}
+.tile.tall{grid-row:span 2}
+.tile.gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.tile.gold .big{color:var(--ink)}
+.tile.gold p{color:#0E3D38}
+.tile .src{font-family:var(--mono);font-size:12px;color:#7FA59B;margin-top:16px}
+.tile.gold .src{color:#0E3D38}
+
+/* ---------- TEACHERS ---------- */
+.teachers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.teacher{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start}
+.avatar{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:22px;color:var(--ink)}
+.teacher h3{font-size:17px}
+.teacher .role{font-size:14px;color:var(--gold-d);font-weight:700;margin:4px 0 8px}
+.teacher p{font-size:15px;color:var(--muted)}
+
+/* ---------- WORD OF THE DAY ---------- */
+.wotd{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.flip{perspective:1200px;height:300px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .7s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip.on .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:24px;padding:34px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.face.front{background:var(--ink);color:#fff}
+.face.back{background:var(--gold);color:var(--ink);transform:rotateY(180deg)}
+.face .w{font-family:var(--display);font-size:clamp(36px,5vw,58px);font-weight:800}
+.face .ph{font-family:var(--mono);opacity:.75}
+.face small{font-family:var(--mono);font-size:13px;opacity:.7}
+.face .ex{font-size:18px;font-weight:600}
+.wotd-ctrl{display:flex;gap:10px;margin-top:22px}
+.wotd-ctrl button{border:2px solid var(--ink);background:transparent;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer;font-family:var(--body);font-size:15px}
+.wotd-ctrl button:hover{background:var(--ink);color:#fff}
+
+/* ---------- PERKS ---------- */
+.perks{background:var(--paper-2)}
+.perk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.perk{background:var(--card);border-radius:18px;padding:26px;border:1px solid var(--line)}
+.perk .ic{width:48px;height:48px;border-radius:14px;background:var(--ink);display:grid;place-items:center;margin-bottom:18px}
+.perk .ic svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.perk h3{font-size:16.5px;margin-bottom:6px}
+.perk p{font-size:15px;color:var(--muted)}
+
+/* ---------- ADMISSION ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;counter-reset:s}
+.step{border:2px solid var(--ink);border-radius:var(--radius);padding:28px;position:relative;background:var(--card)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-weight:800;font-size:44px;color:var(--gold-d);line-height:1;display:block;margin-bottom:16px}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{font-size:15px;color:var(--muted)}
+.docs{margin-top:28px;background:var(--ink);color:#fff;border-radius:var(--radius);padding:30px 34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.docs h3{color:var(--gold);font-size:18px}
+.docs ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.docs li{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:8px 14px;border-radius:999px;font-size:14.5px}
+
+/* grant banner */
+.grant{margin-top:28px;border-radius:24px;background:linear-gradient(120deg,var(--gold) 0%,#6FD67E 100%);padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:34px;align-items:center;position:relative;overflow:hidden}
+.grant h3{font-size:clamp(24px,3vw,36px)}
+.grant p{margin-top:12px;color:#0E3D38}
+.grant .formula{font-family:var(--mono);background:var(--ink);color:#fff;border-radius:16px;padding:24px;font-size:14.5px;line-height:1.8}
+.grant .formula .k{color:var(--gold)}.grant .formula .c{color:#7FA59B}.grant .formula .p{color:var(--code)}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:860px;margin:48px auto 0}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;font-weight:700;font-size:18px;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:24px;line-height:1;color:var(--gold-d);transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin-top:12px;max-width:720px}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--ink);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:20px}
+.contact .lead{color:#B3CFC6}
+.info{display:grid;gap:14px;margin-top:32px}
+.info a,.info div{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid rgba(255,255,255,.12);border-radius:16px;text-decoration:none;transition:background .2s ease}
+.info a:hover{background:rgba(255,255,255,.05)}
+.info small{display:block;color:#7FA59B;font-family:var(--mono);font-size:12px}
+.info b{font-size:17px}
+.info .ic{width:44px;height:44px;border-radius:12px;background:rgba(45,180,65,.18);display:grid;place-items:center;flex:none}
+.info .ic svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+form.apply{background:#fff;color:var(--text);border-radius:24px;padding:34px;display:grid;gap:16px}
+form.apply h3{font-size:22px}
+.field{display:grid;gap:6px}
+.field label{font-weight:700;font-size:14.5px}
+.field input,.field select{font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--text)}
+.field input:focus,.field select:focus{border-color:var(--ink)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:13.5px;color:var(--muted)}
+.field textarea{font:inherit;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);color:var(--text);resize:vertical}
+.field textarea:focus{border-color:var(--ink)}
+.field .err{color:#B3361B;font-size:13px;font-weight:600;min-height:0}
+.field.invalid input{border-color:#D9562F}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ok.error{background:#FFF0EC;border-color:#D9562F;color:#7A2A16}
+#applyBtn[disabled]{opacity:.6;cursor:wait}
+.ok{display:none;background:#E6FAF1;border:1px solid var(--code);color:#0F5137;padding:14px 16px;border-radius:12px;font-size:15px}
+.ok.show{display:block}
+
+footer{background:#082824;color:#7FA59B;font-size:14.5px}
+footer a{text-decoration:none;color:#CFE3DC}
+footer a:hover{color:var(--gold)}
+.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;padding:40px 0 32px}
+.foot-brand{display:flex;align-items:center;gap:12px;color:#fff}
+.foot-brand img{width:40px;height:40px;border-radius:11px}
+.foot-brand b{font-family:var(--display);font-size:15px;display:block;line-height:1.1}
+.foot-brand small{font-family:var(--mono);font-size:12px;color:#7FA59B}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:13.5px}
+.dev-sign{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;color:#B3CFC6;padding:8px 14px 8px 10px;border-radius:12px;border:1px solid rgba(139,232,154,.22);background:rgba(255,255,255,.03);position:relative;overflow:hidden;transition:border-color .3s ease, box-shadow .3s ease, color .3s ease}
+.dev-sign::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(139,232,154,.18) 50%,transparent 70%);transform:translateX(-100%);transition:transform .8s ease}
+.dev-sign:hover{border-color:var(--gold);box-shadow:0 0 0 4px rgba(45,180,65,.12),0 10px 30px -10px rgba(45,180,65,.5);color:#fff}
+.dev-sign:hover::before{transform:translateX(100%)}
+.dev-sign .tag{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--gold);color:var(--ink);font-weight:700;font-size:12px}
+.dev-sign b{color:#fff;font-weight:600}
+.dev-sign b em{font-style:normal;background:linear-gradient(90deg,var(--mint,#8BE89A),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dev-sign .caret{width:7px;height:15px;background:var(--code);display:inline-block;animation:blink 1s steps(1) infinite;margin-left:-4px}
+@media (max-width:600px){.foot-bottom{flex-direction:column;align-items:flex-start;padding-bottom:88px}}
+
+
+/* hero visual */
+.hero-visual{position:relative;padding-top:190px}
+.hero-photo{position:absolute;right:0;top:0;width:54%;margin:0;transform:rotate(5deg);background:#fff;padding:8px 8px 30px;border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:3px}
+.hero-photo figcaption{position:absolute;bottom:7px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:12px;color:var(--ink)}
+.hero-visual .term{position:relative;z-index:1;width:78%}
+.hero-visual .term-body{min-height:250px}
+.sticker{position:absolute;z-index:2;right:4%;bottom:-26px;background:var(--gold);color:var(--ink);font-family:var(--display);font-weight:800;font-size:15px;line-height:1.15;padding:14px 16px;border-radius:16px;transform:rotate(-6deg);box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.sticker small{display:block;font-family:var(--mono);font-weight:400;font-size:11px}
+@media (max-width:600px){.hero-visual{padding-top:0}.hero-photo{display:none}.hero-visual .term{width:100%}.sticker{display:none}}
 
 /* gallery */
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:250px;gap:12px}
-.gallery figure{position:relative;margin:0;overflow:hidden;cursor:zoom-in;background:var(--sage)}
-.gallery figure:nth-child(1){grid-row:span 2}
-.gallery figure:nth-child(n+6){display:none}
-.gallery img{width:100%;height:100%;object-fit:cover}
-.gallery figcaption{position:absolute;inset:auto 0 0 0;padding:30px 14px 12px;color:#fff;font-weight:600;font-size:14.5px;background:linear-gradient(transparent,rgba(10,30,27,.75))}
-.gallery figcaption small{display:block;font-weight:400;font-size:12.5px;opacity:.85}
-@media (max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery figure:nth-child(1){grid-column:span 2;grid-row:auto}.gallery figcaption small{display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chips button{font:inherit;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--text)}
+.chips button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gallery{columns:4 240px;column-gap:16px;margin-top:32px}
+.gallery figure{break-inside:avoid;margin:0 0 16px;position:relative;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--paper-2)}
+.gallery figure.hide{display:none}
+.gallery img{width:100%;height:auto;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;color:#fff;font-weight:700;font-size:15px;background:linear-gradient(transparent,rgba(5,30,27,.85))}
+.gallery figcaption small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;opacity:.8}
+
+/* reels */
+.reels-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.reel-nav{display:flex;gap:10px}
+.reel-nav button{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:transparent;cursor:pointer;font-size:20px;color:var(--ink)}
+.reel-nav button:hover{background:var(--ink);color:#fff}
+.reels{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:32px 0 12px;scrollbar-width:thin}
+.reel{border:0;padding:0;cursor:pointer;font:inherit;text-align:left;flex:0 0 200px;scroll-snap-align:start;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;text-decoration:none;color:#fff;background:var(--ink)}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(5,30,27,.9))}
+.reel .play{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;z-index:1}
+.reel .play svg{width:14px;height:14px;fill:var(--ink);margin-left:2px}
+.reel span{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;font-weight:700;font-size:14px;line-height:1.3}
+.reel span small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;opacity:.8;margin-top:4px}
+.reel:hover img{transform:scale(1.05)}
 
 /* news */
-.news{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px}
-.post{display:flex;flex-direction:column;text-decoration:none;color:inherit}
-.post img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.post .body{padding-top:14px;border-top:2px solid var(--brass);margin-top:14px}
-.post time{font-size:14px;color:var(--brass);font-weight:600}
-.post h3{font-size:21px;margin:6px 0 8px}
-.post p{color:var(--muted);font-size:15.5px}
-.post .more{display:inline-block;margin-top:10px;font-weight:600;font-size:14.5px;color:var(--green)}
-.post:hover h3{text-decoration:underline;text-underline-offset:4px}
-.news-more{margin-top:40px}
-@media (max-width:900px){.news{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.news{grid-template-columns:1fr}}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease}
+.post:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(14,61,56,.45)}
+.post img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.post .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.post time{font-family:var(--mono);font-size:12.5px;color:var(--gold-d);font-weight:600}
+.post h3{font-size:18px;margin:8px 0 10px;line-height:1.25}
+.post p{font-size:15px;color:var(--muted);flex:1}
+.post .more{margin-top:16px;font-weight:700;font-size:14.5px;color:var(--ink)}
+.post.feature{grid-column:span 2;flex-direction:row}
+.post.feature img{width:46%;aspect-ratio:auto;height:auto;min-height:360px}
+.post.feature .body{padding:34px;justify-content:center}
+.post.feature h3{font-size:26px}
+.post.hidden{display:none}
+.news-more{display:flex;justify-content:center;margin-top:32px}
 
-/* teachers */
-.teachers{display:grid;grid-template-columns:repeat(5,1fr);gap:32px 20px}
-.teacher .avatar{aspect-ratio:4/5;overflow:hidden;background:var(--sage)!important;display:grid;place-items:center;font-family:var(--serif);font-size:44px;color:var(--green)}
-.teacher .avatar img{width:100%;height:100%;object-fit:cover}
-.teacher h3{font-size:18px;margin-top:14px;line-height:1.25}
-.teacher .role{font-size:14px;color:var(--brass);font-weight:600;margin:4px 0 6px}
-.teacher p{font-size:14.5px;color:var(--muted)}
-.teacher.join .avatar{background:var(--green)!important;color:var(--brass-l)}
-.teacher.join a{color:var(--brass);font-weight:600}
-@media (max-width:1000px){.teachers{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:600px){.teachers{grid-template-columns:1fr 1fr}}
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(92vw,1000px);max-height:92vh;margin:auto;overflow:visible}
+dialog.lb::backdrop{background:rgba(4,22,20,.88)}
+.lb figure{margin:0}
+.lb img{max-width:100%;max-height:78vh;border-radius:14px;margin:0 auto}
+.lb figcaption{color:#fff;margin-top:14px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.lb figcaption a{color:var(--gold);font-weight:700}
+.lb-close{position:fixed;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:24px;cursor:pointer}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.9);font-size:22px;cursor:pointer;color:var(--ink)}
+.lb-prev{left:16px}.lb-next{right:16px}
+dialog.vb{border:0;padding:0;background:transparent;width:min(94vw,440px);margin:auto;overflow:visible}
+dialog.vb::backdrop{background:rgba(4,22,20,.9)}
+.vb-frame{width:100%;max-height:80vh;border-radius:16px;background:#000;display:block}
+.vb-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;color:#fff;font-weight:700}
+.vb-foot a{color:var(--gold)}
 
-/* perks */
-.perks{background:var(--sage)}
-.perk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0 32px}
-.perk{padding:22px 0;border-top:1px solid #C9D6CE}
-.perk h3{font-size:19px;margin-bottom:6px}
-.perk p{color:var(--muted);font-size:15px}
-@media (max-width:900px){.perk-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.perk-grid{grid-template-columns:1fr}}
+.avatar{overflow:hidden}
+.avatar img{width:64px;height:64px;object-fit:cover;border-radius:18px}
 
-/* admission */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);counter-reset:s}
-.step{padding:26px 24px 0 0}
-.step::before{counter-increment:s;content:counter(s);display:block;font-family:var(--serif);font-size:40px;color:var(--brass);line-height:1;margin-bottom:12px}
-.step h3{font-size:20px;margin-bottom:6px}
-.step p{color:var(--muted);font-size:15.5px}
-.docs{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;margin-top:44px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.docs h3{font-size:18px}
-.docs ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.docs li{font-size:14.5px;background:var(--sage);padding:6px 12px}
-.grant{margin-top:44px;display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;background:var(--sage);border-left:4px solid var(--brass);padding:40px}
-.grant h3{font-size:clamp(24px,2.8vw,34px)}
-.grant p{color:var(--muted);margin-top:12px}
-.formula{background:var(--green);color:#fff;padding:22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.8;white-space:pre-wrap}
-.formula .k{color:var(--brass-l)}.formula .c{color:#8FB0A6}.formula .p{color:#fff}
-@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.grant{grid-template-columns:1fr;padding:26px}}
+.teacher.join{background:var(--ink);color:#fff;border-color:var(--ink)}
+.teacher.join p{color:#B3CFC6}.teacher.join .role{color:var(--gold)}
+.teacher.join a{color:var(--gold);font-weight:700}
 
-/* Q&A chat */
-.chat-sec{background:var(--sage)}
+@media (max-width:1080px){.news{grid-template-columns:1fr 1fr}.post.feature{grid-column:span 2}}
+@media (max-width:700px){.news{grid-template-columns:1fr}.post.feature{grid-column:auto;flex-direction:column}.post.feature img{width:100%;min-height:0;aspect-ratio:4/3;height:auto}.post.feature .body{padding:22px 24px 24px}.post.feature h3{font-size:20px}.reel{flex-basis:150px}}
+@media (max-width:600px){.gallery{columns:2;column-gap:10px}.gallery figure{margin-bottom:10px;border-radius:14px}.gallery figcaption{font-size:13px;padding:30px 10px 10px}.gallery figcaption small{display:none}}
+
+
+/* ---------- SAT / AP ---------- */
+.exams{background:radial-gradient(900px 500px at 90% 0%,#1B6158 0%,transparent 60%),radial-gradient(700px 500px at 0% 100%,#145049 0%,transparent 60%),var(--ink);color:#fff;position:relative;overflow:hidden}
+.exams::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(#000,transparent 85%)}
+.exams .wrap{position:relative}
+.exams .lead{color:#B3CFC6}
+.exams .eyebrow{color:var(--gold)}
+.exam-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:56px}
+.exam-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:34px;position:relative;overflow:hidden}
+.exam-card .badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--code);text-transform:uppercase}
+.exam-card h3{font-size:30px;margin:12px 0 8px}
+.exam-card>p{color:#B3CFC6}
+.gauge{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;margin-top:26px}
+.gauge svg{width:240px;height:150px;overflow:visible}
+.gauge .track{fill:none;stroke:rgba(255,255,255,.1);stroke-width:18;stroke-linecap:round}
+.gauge .val{fill:none;stroke:url(#gaugeGrad);stroke-width:18;stroke-linecap:round;transition:stroke-dashoffset .5s cubic-bezier(.2,.7,.2,1)}
+.gauge .total{font-family:var(--display);font-weight:800;font-size:44px;fill:#fff}
+.gauge .cap{font-family:var(--mono);font-size:12px;fill:#7FA59B}
+.sliders{display:grid;gap:18px}
+.slider label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.slider label b{font-family:var(--mono);color:var(--code)}
+.slider input{width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
+.sat-level{margin-top:6px;font-size:14.5px;color:#CFE3DC;min-height:44px}
+.sat-level b{color:var(--gold)}
+.facts-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.facts-row span{font-size:13.5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:7px 12px;border-radius:999px}
+.ap-scale{display:flex;gap:10px;margin-top:24px}
+.ap-scale button{flex:1;aspect-ratio:1;border-radius:18px;border:1.5px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#fff;font-family:var(--display);font-weight:800;font-size:30px;cursor:pointer;transition:background .2s ease, transform .2s ease}
+.ap-scale button:hover{transform:translateY(-3px)}
+.ap-scale button[aria-pressed="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.ap-desc{margin-top:14px;min-height:48px;color:#CFE3DC;font-size:15px}
+.ap-desc b{color:#fff}
+.ap-subjects{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+.ap-subjects span{font-size:14px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);display:flex;gap:8px;align-items:center}
+.ap-subjects span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--code);flex:none}
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;position:relative;counter-reset:r}
+.road::before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:linear-gradient(90deg,var(--gold),var(--code));opacity:.6}
+.road div{position:relative;padding-right:18px}
+.road div::before{counter-increment:r;content:counter(r);width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ink);border:2px solid var(--gold);font-family:var(--display);font-weight:800;font-size:20px;color:var(--gold);position:relative;margin-bottom:16px}
+.road h4{font-family:var(--display);font-size:16px;margin-bottom:6px}
+.road p{font-size:14.5px;color:#B3CFC6}
+.expert{margin-top:22px;display:grid;grid-template-columns:320px 1fr;gap:40px;align-items:center;background:linear-gradient(120deg,rgba(45,180,65,.2),rgba(255,255,255,.04));border:1px solid rgba(139,232,154,.35);border-radius:32px;padding:30px}
+.expert .ph{margin:0;position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#fff;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.expert .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.expert .ph figcaption{position:absolute;left:14px;bottom:14px;background:var(--ink);color:var(--code);font-family:var(--mono);font-weight:600;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid rgba(139,232,154,.4)}
+.expert .ph.noimg{background:linear-gradient(140deg,var(--gold),#1E8F31);display:grid;place-items:center}
+.noimg::before{content:attr(data-initials);font-family:var(--display);font-weight:800;color:var(--ink);line-height:1}
+.expert .ph.noimg::before{font-size:96px}
+.avatar.noimg{background:var(--gold)}.avatar.noimg::before{font-size:22px}
+.expert small{font-family:var(--mono);color:var(--code);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.expert h3{font-size:clamp(26px,3vw,38px);margin:8px 0 10px}
+.expert p{color:#CFE3DC;max-width:620px}
+.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0 18px}
+.ex-stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:16px}
+.ex-stats b{display:block;font-family:var(--display);font-weight:800;font-size:30px;color:var(--gold);line-height:1}
+.ex-stats b small{font-size:15px;color:#B3CFC6;font-family:var(--display);letter-spacing:0;text-transform:none}
+.ex-stats span{display:block;font-size:13.5px;color:#CFE3DC;margin-top:8px;line-height:1.35}
+.ex-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ex-tags span{font-size:13.5px;font-weight:700;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.ex-tags span.hl{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+@media (max-width:980px){.exam-grid{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr;row-gap:28px}.road::before{display:none}.expert{grid-template-columns:240px 1fr;gap:28px}.ex-stats{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.gauge{grid-template-columns:1fr;justify-items:center}.exam-card{padding:24px}.ap-subjects{grid-template-columns:1fr}.road{grid-template-columns:1fr}.expert{grid-template-columns:1fr;padding:20px}.expert .ph{max-width:280px;width:100%;margin:0 auto}.expert .btn{width:100%;justify-content:center}}
+
+/* ---------- visual polish ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--code));z-index:60;transition:width .1s linear}
+.to-top{position:fixed;right:20px;bottom:20px;width:52px;height:52px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 12px 30px -10px rgba(0,0,0,.5);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease, transform .3s ease;z-index:40}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.hero .aurora{position:absolute;inset:-20%;pointer-events:none;background:radial-gradient(40% 35% at 75% 30%,rgba(45,180,65,.28),transparent 70%),radial-gradient(30% 30% at 20% 80%,rgba(108,184,255,.14),transparent 70%);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-4%,3%) scale(1.08)}}
+.exam-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.exam-chips a{font-family:var(--mono);font-size:13px;font-weight:600;text-decoration:none;color:#fff;padding:7px 12px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);transition:background .2s ease}
+.exam-chips a:hover{background:var(--gold);color:var(--ink)}
+.spot{position:relative}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(45,180,65,.16),transparent 45%)}
+.spot:hover::after{opacity:1}
+
+
+/* ---------- language switcher ---------- */
+.lang{display:flex;gap:2px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:3px}
+.lang a{font-family:var(--mono);font-size:12.5px;font-weight:600;color:#CFE3DC;text-decoration:none;padding:6px 9px;border-radius:7px;line-height:1}
+.lang a:hover{color:#fff}
+.lang a[aria-current="page"]{background:var(--gold);color:var(--ink)}
+@media (max-width:1140px){.nav .lang{margin-left:auto}}
+
+/* ---------- visit band ---------- */
+.visit{padding:64px 0;background:var(--gold);color:var(--ink)}
+.visit-in{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+.visit h2{font-size:clamp(26px,3.4vw,40px);margin:0 0 10px}
+.visit p{max-width:620px;color:#0E3D38}
+.visit-cta{display:flex;gap:12px;flex-wrap:wrap}
+.visit .btn-gold{background:var(--ink);color:#fff}
+.visit .btn-gold:hover{background:#145049}
+.visit .btn-ghost{border-color:rgba(14,61,56,.35);color:var(--ink)}
+.visit .btn-ghost:hover{background:rgba(14,61,56,.08)}
+
+/* ---------- questions as a Telegram chat ---------- */
+.chat-sec{background:var(--paper-2)}
 .chat-grid{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:start}
 .q-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.q-chips button{font-size:15px;font-weight:500;text-align:left;padding:11px 16px;border-radius:16px 16px 16px 4px;border:1px solid #C9D6CE;background:#fff;color:var(--ink);cursor:pointer}
-.q-chips button:hover{border-color:var(--green)}
-.q-chips button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.q-chips button{font:inherit;font-size:15px;font-weight:600;text-align:left;padding:11px 16px;border-radius:16px 16px 16px 4px;border:1.5px solid var(--line);background:var(--card);color:var(--text);cursor:pointer;transition:border-color .2s ease, background .2s ease}
+.q-chips button:hover{border-color:var(--ink)}
+.q-chips button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .qa-list{margin-top:28px;display:grid;gap:18px}
-.qa-list dt{font-weight:600}
+.qa-list dt{font-weight:700}
 .qa-list dd{color:var(--muted);margin:4px 0 0}
 .js-chat .qa-list{display:none}
-.phone{display:none;background:#fff;border-radius:30px;border:9px solid var(--green);overflow:hidden;position:sticky;top:100px;box-shadow:0 40px 80px -40px rgba(14,61,56,.5)}
+.phone{display:none;background:#fff;border-radius:34px;border:10px solid var(--ink);box-shadow:0 40px 80px -40px rgba(14,61,56,.6);overflow:hidden;position:sticky;top:96px}
 .js-chat .phone{display:flex;flex-direction:column;height:560px}
-.phone-top{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--green);color:#fff}
+.phone-top{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--ink);color:#fff}
 .phone-top img{width:40px;height:40px;border-radius:50%}
 .phone-top b{display:block;font-size:15px}
-.online{font-size:12.5px;color:var(--brass-l)}
-.chat{flex:1;overflow-y:auto;padding:18px 14px;display:flex;flex-direction:column;gap:10px;background:#E4ECE6}
-.msg{max-width:84%;padding:10px 13px 18px;border-radius:16px;font-size:15px;line-height:1.45;position:relative}
+.online{font-size:12.5px;color:var(--code)}
+.chat{flex:1;overflow-y:auto;padding:18px 14px;display:flex;flex-direction:column;gap:10px;background:#DCE8DA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M20 6l3 8h8l-6 5 2 8-7-5-7 5 2-8-6-5h8z' fill='%230E3D38' fill-opacity='.04'/%3E%3C/svg%3E")}
+.msg{max-width:84%;padding:10px 13px 18px;border-radius:16px;font-size:15px;line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.08)}
 .msg::after{content:attr(data-t);position:absolute;right:10px;bottom:4px;font-size:10.5px;opacity:.55}
 .msg.in{background:#fff;align-self:flex-start;border-bottom-left-radius:4px}
-.msg.out{background:#DDEFD6;align-self:flex-end;border-bottom-right-radius:4px}
+.msg.out{background:#D7F7C2;align-self:flex-end;border-bottom-right-radius:4px}
 .msg.typing{padding:12px 16px;display:flex;gap:4px}
 .msg.typing i{width:7px;height:7px;border-radius:50%;background:#8AA39C;animation:dots 1s infinite}
 .msg.typing i:nth-child(2){animation-delay:.15s}.msg.typing i:nth-child(3){animation-delay:.3s}
 @keyframes dots{0%,80%,100%{opacity:.3}40%{opacity:1}}
-.phone-input{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-top:1px solid #E4ECE6;color:#8AA39C;font-size:14.5px}
-.phone-input i{width:34px;height:34px;border-radius:50%;background:var(--brass)}
+.phone-input{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-top:1px solid #E5ECE3;color:#8AA39C;font-size:14.5px}
+.phone-input i{width:34px;height:34px;border-radius:50%;background:var(--gold)}
 @media (max-width:980px){.chat-grid{grid-template-columns:1fr}.phone{position:static}.js-chat .phone{height:480px}}
 
-/* contact */
-.contact{background:#fff;border-top:1px solid var(--line)}
-.contact>img{display:none}
-.contact .wrap{display:grid;grid-template-columns:1fr 480px;gap:56px;align-items:start}
-.info{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--line)}
-.info a,.info div{display:flex;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.info small{display:block;color:var(--muted);font-size:13px}
-.info b{font-size:17px;font-weight:600;color:var(--green)}
-.info .ic{width:40px;height:40px;border-radius:50%;background:var(--sage);display:grid;place-items:center;flex:none}
-.info .ic svg{width:19px;height:19px;stroke:var(--green);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.info>div:last-child{flex-wrap:wrap;gap:8px;border-bottom:0}
-form.apply{background:var(--sage);border-top:4px solid var(--brass);padding:32px;display:grid;gap:14px}
-form.apply h3{font-size:26px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.field{display:grid;gap:6px}
-.field label{font-weight:600;font-size:14.5px}
-.field input,.field select,.field textarea{font:inherit;padding:13px 14px;border:1px solid #C9D6CE;border-radius:3px;background:#fff;color:var(--ink);width:100%}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:none}
-.field textarea{resize:vertical}
-.field .err{color:#A3321A;font-size:13px;font-weight:600}
-.field.invalid input{border-color:#C4502C}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.form-note{font-size:13.5px;color:var(--muted)}
-.ok{display:none;background:#E6F5EC;border:1px solid #6BB389;color:#0F5137;padding:13px 15px;font-size:15px}
-.ok.show{display:block}
-.ok.error{background:#FFF0EC;border-color:#D9562F;color:#7A2A16}
-#applyBtn{background:var(--green);color:#fff;width:100%}
-#applyBtn[disabled]{opacity:.6;cursor:wait}
-@media (max-width:980px){.contact .wrap{grid-template-columns:1fr}}
-@media (max-width:520px){.row2{grid-template-columns:1fr}form.apply{padding:22px}}
-
-/* dialogs */
-dialog{border:0;padding:0;background:transparent;margin:auto;overflow:visible}
-dialog::backdrop{background:rgba(10,24,21,.9)}
-dialog.lb{max-width:min(92vw,1000px)}
-.lb figure{margin:0}
-.lb img{max-width:100%;max-height:78vh;margin:0 auto}
-.lb figcaption,.vb-foot{color:#fff;margin-top:14px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
-.lb figcaption a,.vb-foot a{color:var(--brass-l);font-weight:600}
-dialog.vb{width:min(94vw,440px)}
-.vb-frame{width:100%;max-height:80vh;background:#000;display:block}
-.lb-close{position:fixed;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--green);font-size:24px;cursor:pointer}
-.lb-nav{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:22px;cursor:pointer}
-.lb-prev{left:16px}.lb-next{right:16px}
-
-/* footer */
-footer{background:#0A2B27;color:var(--soft);font-size:15px}
-footer a{text-decoration:none;color:#E4EEEA}
-footer a:hover{color:var(--brass-l)}
-.foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;padding:48px 0 30px}
-.foot-brand{display:flex;align-items:center;gap:12px;color:#fff}
-.foot-brand img{width:42px;height:42px;border-radius:10px}
-.foot-brand b{display:block;font-family:var(--serif);font-size:20px;line-height:1.1}
-.foot-brand small{font-size:13.5px;color:var(--soft)}
-footer nav{display:flex;gap:22px;flex-wrap:wrap}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 26px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}
-.dev-sign{display:inline-flex;align-items:center;gap:10px;color:var(--soft)}
-.dev-sign .tag{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid var(--brass-l);color:var(--brass-l);font-weight:700;font-size:11px}
-.dev-sign b{color:#fff;font-weight:600}
-.dev-sign b em{font-style:normal;color:var(--brass-l)}
-.dev-sign .caret{display:none}
-
-/* mobile quick bar */
+/* ---------- mobile action bar ---------- */
 .mbar{display:none}
 @media (max-width:700px){
-  section{padding:68px 0}
-  .wrap{padding:0 20px}
-  .sec-head{margin-bottom:30px}
-  .mbar{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:45;background:var(--green);border-radius:10px;padding:8px;box-shadow:0 14px 40px -12px rgba(0,0,0,.5)}
-  .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:11px 6px;border-radius:6px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:45;background:rgba(14,61,56,.96);backdrop-filter:blur(8px);border-radius:18px;padding:8px;box-shadow:0 14px 40px -12px rgba(0,0,0,.5)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 6px;border-radius:12px}
   .mbar a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .mbar a.primary{background:var(--brass);color:#fff}
-  footer{padding-bottom:76px}
+  .mbar a.primary{background:var(--gold);color:var(--ink)}
+  .to-top{bottom:84px}
+  footer{padding-bottom:70px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
+/* reveal */
+.reveal{}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero .pill,.hero h1,.hero .lead,.hero .hero-cta,.hero .exam-chips,.hero-visual{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}.hero .lead{animation-delay:.18s}.hero .hero-cta{animation-delay:.26s}.hero .exam-chips{animation-delay:.32s}.hero-visual{animation-delay:.2s}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1080px){
+  .pillars{grid-template-columns:1fr 1fr}.pillar.it{grid-column:span 2}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .teachers{grid-template-columns:1fr 1fr}
+  .perk-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:repeat(3,1fr);row-gap:40px}
+  .timeline::before{display:none}
+}
+@media (max-width:860px){
+  section{padding:80px 0}
+  .hero{padding-top:120px}
+  .hero-grid,.wotd,.contact-grid,.grant{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+  .levels{grid-template-columns:1fr}
+  .docs{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .pillars,.teachers,.perk-grid,.steps,.bento{grid-template-columns:1fr}
+  .pillar.it,.tile.wide{grid-column:auto}
+  .tile.tall{grid-row:auto}
+  .timeline{grid-template-columns:1fr 1fr}
+  .row2{grid-template-columns:1fr}
+  .grant{padding:28px}
+  .term{font-size:13px}
+  .term-body{min-height:260px}
+  form.apply{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
 </style>
 <link href="index.html" hreflang="uz" rel="alternate"/><link href="ru.html" hreflang="ru" rel="alternate"/><link href="en.html" hreflang="en" rel="alternate"/><meta content="uz_UZ" property="og:locale"/></head>
 <body>
-<header class="hdr" id="hdr">
+<div aria-hidden="true" class="progress" id="progress"></div>
+<!-- NAV -->
+<header class="nav" id="nav">
 <div class="wrap">
-<a aria-label="Zafar International School — boş sahifa" class="mark" href="#top"><img alt="Zafar International School logotipi" height="42" src="assets/logo-256.jpg" width="42"/><span>Zafar International School</span></a>
-<nav aria-label="Asosiy menyu" class="menu" id="menu"><a href="#kun">Bir kun</a><a href="#talim">Ta'lim</a><a href="#sat-ap">SAT · AP</a><a href="#ustozlar">Ustozlar</a><a href="#qabul">Qabul</a><a href="#aloqa">Aloqa</a></nav>
+<a aria-label="Zafar International School — boş sahifa" class="brand" href="#top">
+<img alt="Zafar International School logotipi" src="assets/logo-256.jpg"/>
+<span><b>ZAFAR</b><small>international school</small></span>
+</a>
+<ul class="menu" id="menu">
+<li><a href="#yonalish">Yönalişlar</a></li>
+<li><a href="#sat-ap">SAT · AP</a></li>
+<li><a href="#yutuqlar">Yutuqlar</a></li>
+<li><a href="#ustozlar">Ustozlar</a></li>
+<li><a href="#qabul">Qabul</a></li>
+<li><a href="#aloqa">Aloqa</a></li>
+</ul>
 <div class="lang" data-noi18n="" id="lang"><a aria-current="page" href="index.html" hreflang="uz" lang="uz">UZ</a><a href="ru.html" hreflang="ru" lang="ru">RU</a><a href="en.html" hreflang="en" lang="en">EN</a></div>
-<a class="btn btn-green hdr-cta" href="#aloqa">Ariza qoldiriş</a>
-<button aria-controls="menu" aria-expanded="false" aria-label="Menyuni oçiş" class="burger" id="burger" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<a class="btn btn-gold" href="#aloqa">Ariza qoldiriş</a>
+<button aria-expanded="false" aria-label="Menyuni oçiş" class="burger" id="burger">
+<svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="26"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+</button>
 </div>
 </header>
+<!-- HERO -->
 <section class="hero" id="top">
-<img alt="ZIS öquvçilari sertifikatlarini kötarib turibdi" class="hero-bg" src="assets/campus/sertifikatlar.jpg"/>
+<div aria-hidden="true" class="aurora"></div>
 <div class="wrap">
-<div class="hero-card">
-<p class="hero-tag">2026–2027 öquv yili: qabul oçiq</p>
-<h1>Xalqaro ta'lim. Milliy ildiz.</h1>
-<p class="hero-lead">IT va ingliz tiliga ixtisoslaşgan xususiy maktab: Pre-School va 1–8-sinflar. Birinçi yilning özidayoq respublika TOP-10 maktablari qatorida.</p>
-<div class="cta"><a class="btn btn-green" href="#aloqa">Qabulga yoziliş</a><a class="btn btn-glass" href="tel:+998781137773">78 113 77 73</a></div>
-<button class="play" data-link="https://t.me/zafar_international_school/154" data-src="assets/videos/it-5sinf.mp4" type="button"><i aria-hidden="true"></i><span>IT darsini<br/>videoda köring</span></button>
+<div class="hero-grid">
+<div>
+<span class="pill"><i></i>2026–2027 öquv yili: qabul oçiq</span>
+<h1>Farzandingiz <span class="swap" id="swap">kod</span> tilida ham, <span class="code">English</span>da ham gapiradi.</h1>
+<p class="lead">Zafar International School: IT va ingliz tiliga ixtisoslaşgan xususiy maktab. Xalqaro ta'lim, milliy qadriyatlar asosida. Pre-School va 1–8-sinflar, Oltinköl tumani.</p>
+<div class="hero-cta">
+<a class="btn btn-gold" href="#qabul">Qabul tartibi
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ghost" href="tel:+998781137773">78 113 77 73</a>
+</div>
+<div aria-label="Xalqaro dasturlar" class="exam-chips"><a href="#sat-ap">SAT</a><a href="#sat-ap">AP</a><a href="#yonalish">IELTS</a><a href="#yonalish">IT · Python</a></div>
+</div>
+<div class="hero-visual">
+<figure class="hero-photo"><img alt="ZIS öquvçilari IRN olimpiadasiga yöl olişdan oldin zinapoyada" height="800" src="assets/photos/olimpiada-jamoa.jpg" width="450"/><figcaption>IRN olimpiadasi jamoamiz · 2026</figcaption></figure>
+<div aria-label="Interaktiv terminal: maktab haqida" class="term">
+<div class="term-bar"><span></span><span></span><span></span><em>zis@oltinkol: ~</em></div>
+<div aria-live="polite" class="term-body" id="termBody"></div>
+<div class="term-cmds" data-noi18n="" id="termCmds">
+<button class="on" data-cmd="about">zis --about</button>
+<button data-cmd="it">zis --it</button>
+<button data-cmd="english">zis --english</button>
+<button data-cmd="sat">zis --sat</button>
+<button data-cmd="qabul">zis --qabul</button>
+</div>
+</div>
+<div class="sticker">TOP-10<small>IRN · 4-örin 🏆</small></div>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><b><span data-count="4">4</span><sup>-örin</sup></b><span>IRN imtihoni böyiça respublika TOP-10 maktablari orasida</span></div>
+<div class="stat"><b><span data-count="100">100</span><sup>mln</sup></b><span>sömlik "ZIS Iqtidor Granti" fondi</span></div>
+<div class="stat"><b><span data-count="22">22</span><sup>K+</sup></b><span>Instagram'da kuzatuvçi ota-onalar va öquvçilar</span></div>
+<div class="stat"><b>6–18</b><span>yoş: Pre-School'dan yuqori sinflargaça</span></div>
 </div>
 </div>
 </section>
-<div class="nums">
+<!-- MARQUEE -->
+<div aria-hidden="true" class="marquee">
+<div class="marquee-track" id="marquee"></div>
+</div>
+<!-- PILLARS -->
+<section id="yonalish">
 <div class="wrap">
-<div><b>TOP-10</b><span>IRN imtihonida respublika böyiça 4-örin</span></div>
-<div><b>18</b><span>öquvçi sinfda: har biriga alohida e'tibor</span></div>
-<div><b>800/800</b><span>SAT Math natijali mutaxassis</span></div>
-<div><b>100 mln</b><span>sömlik iqtidor granti fondi</span></div>
-</div>
-</div>
-<section id="kun" style="padding-bottom:80px">
-<div class="wrap sec-head"><h2>ZIS'da bir kun</h2><p class="lede">Nonuştadan uyga ketgunça: har bir soat öylangan. Lentani yon tomonga suring.</p></div>
-<div class="strip">
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/kirish.jpg"/><figcaption><time>08:25</time><span>Kutib oliş va nonuşta</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/doska.jpg"/><figcaption><time>08:30</time><span>Interaktiv darslar boşlanadi</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/it-xona.jpg"/><figcaption><time>IT</time><span>Kompyuter sinfi: mantiq va loyihalar</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/ingliz-darsi.jpg"/><figcaption><time>EN</time><span>Ingliz tili: speaking va listening</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/tushlik.jpg"/><figcaption><time>Tuş</time><span>Muvozanatli issiq tuşlik</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/sayohat.jpg"/><figcaption><time>Şanba</time><span>Sayohatlar, olimpiadalar va tadbirlar</span></figcaption></figure>
-<figure class="moment"><img alt="" loading="lazy" src="assets/campus/ochilish.jpg"/><figcaption><time>16:00</time><span>Afternoon snack va uyga</span></figcaption></figure>
-</div>
-</section>
-<section id="talim" style="padding-top:30px">
-<div class="wrap">
-<div class="sec-head"><h2>Poydevordan yuqori sinflargaça</h2></div>
-<div class="stages">
-<div class="split"><div class="pic"><img alt="Pre-School öquvçilari" loading="lazy" src="assets/campus/oquvchilar.jpg"/></div><div><span class="age">6 yoş</span><h3>Pre-School: poydevor yili</h3><p>Bir yilda bola 1-sinf davlat dasturini tugatadi va kuçli ingliz tili bilimiga ega böladi. Guruhda 18 nafardan ortiq bola bölmaydi.</p></div></div>
-<div class="split"><div class="pic"><img alt="Boşlanğiç sinf darsi" loading="lazy" src="assets/campus/sinfxona.jpg"/></div><div><span class="age">1–4-sinflar</span><h3>Tuşunib öqiydigan bolalar</h3><p>Tayyor javob berilmaydi: bola özi izlanadi va amalda sinab köradi. 22 yillik tajribali ustozlar har bir bolaning sur'atiga moslaşadi.</p></div></div>
-<div class="split"><div class="pic"><img alt="Yuqori sinf IT darsi" loading="lazy" src="assets/campus/it-xona-2.jpg"/></div><div><span class="age">5–8-sinflar</span><h3>IT, matematika va olimpiadalar</h3><p>Çuqurlaştirilgan IT, matematika va ingliz tili. 50 dan ortiq öquvçi IRN olimpiadasida qatnaşdi, 12 nafari iqtidor grantini yutdi.</p></div></div>
-</div>
-</div>
-</section>
-<section class="focus" id="yonalish">
-<div class="wrap">
-<div class="sec-head"><h2>Uç ustun. Bitta kelajak.</h2><p class="lead">Biz bolani faqat imtihonga emas, dunyo bilan erkin muloqot qilişga va texnologiya yaratişga tayyorlaymiz. Ildizi esa ona tilida qoladi.</p></div>
-<div class="focus-grid"><article class="focus-item"><img alt="Kompyuter sinfidagi IT darsi" loading="lazy" src="assets/campus/it-xona-2.jpg"/><h3>IT va informatika</h3><p>Kompyuter sinfida amaliy darslar: bola texnologiyadan foydalanibgina qolmay, uni özi yaratişni örganadi. Mantiqiy fikrlaş va masala yeçiş har kungi maşğulot.</p><ul>
+<h2 class="reveal">Uç ustun. Bitta kelajak.</h2>
+<p class="lead reveal">Biz bolani faqat imtihonga emas, dunyo bilan erkin muloqot qilişga va texnologiya yaratişga tayyorlaymiz. Ildizi esa ona tilida qoladi.</p>
+<div class="pillars">
+<article class="pillar it reveal">
+<span class="tag">01 · Information Technology</span>
+<h3>IT va informatika</h3>
+<p>Kompyuter sinfida amaliy darslar: bola texnologiyadan foydalanibgina qolmay, uni özi yaratişni örganadi. Mantiqiy fikrlaş va masala yeçiş har kungi maşğulot.</p>
+<ul>
 <li>Kompyuter sinfida amaliy maşğulotlar</li>
 <li>5–8-sinflarda IT va informatika darslari</li>
 <li>Algoritmik fikrlaş, loyiha işlari</li>
 <li>Olimpiadalarga tizimli tayyorgarlik</li>
-</ul></article><article class="focus-item"><img alt="Ingliz tili darsi" loading="lazy" src="assets/campus/ingliz-darsi.jpg"/><h3>Ingliz tili</h3><p>Ingliz tilini şunçaki örganmaydi, uni amalda işlatadi. Pre-School'dan boşlab har kuni.</p><ul>
+</ul>
+<span class="glyph">&lt;/&gt;</span>
+</article>
+<article class="pillar reveal">
+<span class="tag">02 · Real English Environment</span>
+<h3>Ingliz tili</h3>
+<p>Ingliz tilini şunçaki örganmaydi, uni amalda işlatadi. Pre-School'dan boşlab har kuni.</p>
+<ul>
 <li>IELTS 7.5 natijali instructor</li>
 <li>Speaking va Listening klublari</li>
 <li>Xalqaro mehmonlar bilan jonli muloqot</li>
 <li>SAT va AP imtihonlariga tayyorlov</li>
-</ul></article><article class="focus-item"><img alt="Davlat bayroği kuni" loading="lazy" src="assets/campus/bayroq.jpg"/><h3>Ildiz va tarbiya</h3><p>Dunyo tillarini örgatamiz, lekin ildizi ona tilida ekanini unutmaymiz. Ingliz va rus tillari barça sinflarda teng öqitiladi.</p><ul>
+</ul>
+<span class="glyph">Aa</span>
+</article>
+<article class="pillar reveal">
+<span class="tag">03 · Milliy yondaşuv</span>
+<h3>Ildiz va tarbiya</h3>
+<p>Dunyo tillarini örgatamiz, lekin ildizi ona tilida ekanini unutmaymiz. Ingliz va rus tillari barça sinflarda teng öqitiladi.</p>
+<ul>
 <li>Ona tili, adabiyot va tarix</li>
 <li>Davlat dasturi töliq</li>
 <li>Odob, mehr va mustaqil fikrlaş</li>
-</ul></article></div>
+</ul>
+<span class="glyph">Ö</span>
+</article>
+</div>
 </div>
 </section>
-<section id="sat-ap">
+<!-- SAT / AP -->
+<section class="exams" id="sat-ap">
 <div class="wrap">
-<div class="sec-head"><h2>SAT va AP: dunyo universitetlariga yöl</h2><p class="lead">AQŞ va dunyoning yetakçi universitetlari qabulda SAT natijasini söraydi, AP fanlari esa öqişni boşlamasdan oldin universitet kreditini olişga imkon beradi. ZIS'da bu yölga tizimli tayyorlaymiz.</p></div>
-<div class="exam-grid"><article class="exam-card">
+<h2 class="reveal">SAT va AP: dunyo universitetlariga yöl</h2>
+<p class="lead reveal">AQŞ va dunyoning yetakçi universitetlari qabulda SAT natijasini söraydi, AP fanlari esa öqişni boşlamasdan oldin universitet kreditini olişga imkon beradi. ZIS'da bu yölga tizimli tayyorlaymiz.</p>
+<div class="exam-grid">
+<article class="exam-card spot reveal">
+<span class="badge">● SAT · Digital</span>
 <h3>Ballingizni sinab köring</h3>
 <p>SAT ikki bölimdan iborat. Har biri 200–800 ball, jami 400–1600. Slayderlarni suring:</p>
 <div class="gauge">
@@ -448,7 +677,9 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 </div>
 </div>
 <div class="facts-row"><span>⏱ ~2 soat 14 daqiqa</span><span>💻 Kompyuterda, adaptiv</span><span>📅 Yiliga bir neça marta</span><span>🎓 College Board</span></div>
-</article><article class="exam-card">
+</article>
+<article class="exam-card spot reveal">
+<span class="badge">● AP · Advanced Placement</span>
 <h3>Universitet fanlari, maktabdayoq</h3>
 <p>AP imtihoni 1 dan 5 gaça baholanadi. Ballni bosing:</p>
 <div aria-label="AP ball şkalasi" class="ap-scale" id="apScale" role="group">
@@ -458,14 +689,18 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <div aria-label="IT va ingliz tili yönalişiga mos AP fanlari" class="ap-subjects">
 <span>Computer Science Principles</span><span>Computer Science A</span><span>Calculus AB</span><span>English Language</span><span>Statistics</span><span>Physics 1</span>
 </div>
-</article></div>
-<div class="exam-card road-card"><h3>Tayyorgarlik yöli</h3><div class="road">
+</article>
+</div>
+<div class="exam-card reveal" style="margin-top:22px">
+<span class="badge">● Tayyorgarlik yöli</span>
+<div class="road">
 <div><h4>Diagnostika</h4><p>Boşlanğiç test: kuçli va zaif tomonlarni aniqlaymiz.</p></div>
 <div><h4>Poydevor</h4><p>Ingliz tili, matematika va mantiq böyiça mustahkam baza.</p></div>
 <div><h4>Strategiya va mock testlar</h4><p>Real formatdagi sinov imtihonlari, vaqtni boşqariş.</p></div>
 <div><h4>Imtihon va universitet</h4><p>Röyxatdan ötiş, imtihon va universitetga ariza bosqiçlari.</p></div>
-</div></div>
-<div class="expert">
+</div>
+</div>
+<div class="expert spot reveal">
 <figure class="ph"><img alt="Baxriddin Davlatmurodov" data-fallback="BD" loading="lazy" src="assets/photos/expert-bd.jpg"/><figcaption>SAT Math · 800/800</figcaption></figure>
 <div>
 <small>Mutaxassis · Matematika va SAT Math</small>
@@ -483,55 +718,219 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 </div>
 </div>
 </section>
-<section class="record" id="yutuqlar">
-<div class="wrap wins">
-<div class="wins-photo"><img alt="IRN olimpiadasi jamoasi" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/></div>
+<!-- DAY -->
+<section class="day">
+<div class="wrap">
+<h2 class="reveal">08:25 dan 16:00 gaça: hammasi öylangan.</h2>
+<p class="lead reveal">Qişki kun tartibi (noyabr–fevral). Pre-School, 1–4 va 5–8-sinflar uçun jadvallar alohida tuziladi.</p>
+<div class="timeline">
+<div class="tl reveal"><time>08:25</time><h3>Nonuşta</h3><p>Maktabda issiq nonuşta 08:25 gaça oçiq.</p></div>
+<div class="tl reveal"><time>08:30</time><h3>Darslar boşlanadi</h3><p>Interfaol metodlar, öyinli ta'lim, amaliyot.</p></div>
+<div class="tl reveal"><time>IT</time><h3>Kompyuter sinfi</h3><p>Informatika va IT: mantiq, algoritm, loyiha.</p></div>
+<div class="tl reveal"><time>Tuş</time><h3>Tuşlik</h3><p>Muvozanatli, foydali taomlar. Menyuni ba'zan bolalar tanlaydi.</p></div>
+<div class="tl reveal"><time>EN</time><h3>English time</h3><p>Speaking, listening, real muloqot.</p></div>
+<div class="tl reveal"><time>16:00</time><h3>Uyga</h3><p>Afternoon snack, keyin avtobus yoki ota-ona bilan uyga.</p></div>
+</div>
+</div>
+</section>
+<!-- LEVELS -->
+<section id="sinflar">
+<div class="wrap">
+<h2 class="reveal">Poydevordan yuqori sinflargaça</h2>
+<div class="levels">
+<article class="level reveal">
+<span class="age">6 yoş · 0-sinf</span>
+<h3>Pre-School</h3>
+<p>Boğçadan keyingi böş yil emas, poydevor yili. Bir yilda bola 1-sinf davlat dasturini tugatadi va kuçli ingliz tili bilimiga ega böladi. Har bir bolaning natijasi alohida ölçanadi.</p>
+<div class="facts"><div><b>18</b><span>bola guruhda, köpaytirilmaydi</span></div><div><b>54/54</b><span>bola bir çorakda harflarni tanidi</span></div></div>
+</article>
+<article class="level reveal">
+<span class="age">1–4-sinflar</span>
+<h3>Boşlanğiç ta'lim</h3>
+<p>Eng murakkab mavzu ham bola tuşunadigan tilda. Tayyor javob berilmaydi: bola özi izlanadi, özi topadi va amalda sinab köradi. Şunda bilim yodda emas, ongda qoladi.</p>
+<div class="facts"><div><b>22</b><span>yillik tajribali ustozlar</span></div><div><b>2</b><span>guruh har sinfda</span></div></div>
+</article>
+<article class="level reveal">
+<span class="age">5–8-sinflar</span>
+<h3>Yuqori sinflar</h3>
+<p>IT, matematika va ingliz tili çuqurlaştiriladi. Olimpiadalar, Zakovat, sayohatlar va loyihalar. Iqtidorli öquvçilar uçun grant tizimi.</p>
+<div class="facts"><div><b>50+</b><span>öquvçi IRN olimpiadasida</span></div><div><b>20%–100%</b><span>grant çegirmasi</span></div></div>
+</article>
+</div>
+</div>
+</section>
+<!-- WINS -->
+<section class="wins" id="yutuqlar">
+<div class="wrap">
+<h2 class="reveal">Birinçi yilning özidayoq</h2>
+<p class="lead reveal">Maktab 2026-yil sentyabrda eşiklarini oçdi. Mana bir neça oydagi natijalar.</p>
+<div class="bento">
+<div class="tile gold wide tall reveal">
 <div>
-<h2>Birinçi yilning özidayoq</h2><p class="lead">Maktab 2026-yil sentyabrda eşiklarini oçdi. Mana bir neça oydagi natijalar.</p>
-<div style="margin-top:32px"><div class="win"><b>TOP-10</b><div><h3>IRN imtihonida respublika böyiça 4-örin</h3><p>IRON olimpiadasi taşkilotçilari maktabga taşrif buyurib, ğoliblarni şaxsan taqdirladi va maktabga maxsus sovrin topşirdi.</p></div></div><div class="win"><b>12</b><div><h3>grant ğolibi</h3><p>Boş grant: 8-sinf öquvçisi, 85,61 ball, öqiş butunlay bepul.</p></div></div><div class="win"><b>284</b><div><h3>nomzod test topşirdi</h3><p>"ZIS Iqtidor Granti"ga 400 dan ortiq öquvçi röyxatdan ötdi.</p></div></div><div class="win"><b>50+</b><div><h3>öquvçi IRN olimpiadasida qatnaşdi</h3><p>Olimpiada uçun barça adabiyotlar olib kelinib, öquv dasturi asosida maxsus tayyorgarlik ötkazildi.</p></div></div></div>
-<div class="also"><div><h3>🤝 Andijon davlat çet tillari instituti bilan hamkorlik memorandumi</h3><p>Ingliz tili ta'limi sifatini yangi bosqiçga olib çiqiş uçun rasmiy hamkorlik.</p></div><div><h3>🇨🇦 Kanadalik professor</h3><p>Mr. Louis Schilder öquvçilar bilan ingliz tilida erkin suhbat qurdi.</p></div><div><h3>🥉 Xalqaro gimnastika</h3><p>Samarqanddagi musobaqada 1-sinf öquvçimiz 3-örinni egalladi.</p></div></div>
+<div class="big">TOP-10</div>
+<h3>IRN imtihonida respublika böyiça 4-örin</h3>
+<p>IRON olimpiadasi taşkilotçilari maktabga taşrif buyurib, ğoliblarni şaxsan taqdirladi va maktabga maxsus sovrin topşirdi.</p>
+</div>
+<span class="src">// noyabr 2026</span>
+</div>
+<div class="tile reveal">
+<div><div class="big">12</div><h3>grant ğolibi</h3><p>Boş grant: 8-sinf öquvçisi, 85,61 ball, öqiş butunlay bepul.</p></div>
+</div>
+<div class="tile reveal">
+<div><div class="big">284</div><h3>nomzod test topşirdi</h3><p>"ZIS Iqtidor Granti"ga 400 dan ortiq öquvçi röyxatdan ötdi.</p></div>
+</div>
+<div class="tile wide reveal">
+<div><h3>🤝 Andijon davlat çet tillari instituti bilan hamkorlik memorandumi</h3><p>Ingliz tili ta'limi sifatini yangi bosqiçga olib çiqiş uçun rasmiy hamkorlik.</p></div>
+<span class="src">// partnership</span>
+</div>
+<div class="tile reveal">
+<div><h3>🇨🇦 Kanadalik professor</h3><p>Mr. Louis Schilder öquvçilar bilan ingliz tilida erkin suhbat qurdi.</p></div>
+</div>
+<div class="tile reveal">
+<div><h3>🥉 Xalqaro gimnastika</h3><p>Samarqanddagi musobaqada 1-sinf öquvçimiz 3-örinni egalladi.</p></div>
+</div>
+<div class="tile wide reveal">
+<div><div class="big">50+</div><h3>öquvçi IRN olimpiadasida qatnaşdi</h3><p>Olimpiada uçun barça adabiyotlar olib kelinib, öquv dasturi asosida maxsus tayyorgarlik ötkazildi.</p></div>
+</div>
 </div>
 </div>
 </section>
-<section id="video" style="padding-bottom:80px">
-<div class="wrap sec-head"><h2>Maktab hayoti videoda</h2><p class="lead" style="margin-top:12px">Kartani bosing: video şu yerning özida oçiladi.</p></div>
-<div class="reels" id="reels"><button class="reel" data-link="https://t.me/zafar_international_school/115" data-src="assets/videos/ochilish.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/ochilish.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Maktab oçilişi<small>2-sentyabr, 2026</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/154" data-src="assets/videos/it-5sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/it-5sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>5-sinf IT darsi<small>Grade 5 IT Lesson</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/153" data-src="assets/videos/english-7sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/english-7sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>7-sinf ingliz tili<small>English lesson</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/167" data-src="assets/videos/it-6sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/it-6sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>6-sinf informatika<small>IT Grade 6</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/339" data-src="assets/videos/irn-sovrin.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/irn-sovrin.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>IRN: maxsus sovrin<small>TOP-10 · 4-örin</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/264" data-src="assets/videos/jim-metod.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/jim-metod.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>5 soniyada jimjitlik<small>Ustoz sirlari</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/175" data-src="assets/videos/tushlik.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/tushlik.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Tuşlik vaqti<small>Lunchtime</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/221" data-src="assets/videos/shirintoylar.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/shirintoylar.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Şirintoy erkatoylar<small>Pre-School</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/292" data-src="assets/videos/chorak-yakuni.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/chorak-yakuni.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Çorak yakunlari<small>Taqdirlaş kuni</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/319" data-src="assets/videos/islom-sivilizatsiya.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/islom-sivilizatsiya.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Islom sivilizatsiyasi markazi<small>Toşkent sayohati</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/323" data-src="assets/videos/beshqozon.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/beshqozon.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>"Beşqozon"da dasturxon<small>Toşkent sayohati</small></span></button><button class="reel" data-link="https://t.me/zafar_international_school/355" data-src="assets/videos/bayroq-kuni.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/bayroq-kuni.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Davlat bayroği kuni<small>18-noyabr</small></span></button></div>
-</section>
+<!-- GALLERY -->
 <section id="lavhalar">
 <div class="wrap">
-<div class="sec-head"><h2>Maktab hayotidan kadrlar</h2><p class="lead">Hammasi bizning Telegram kanalimizdan: darslar, yutuqlar va kundalik hayot. Rasmni bosing, kattalaşadi.</p></div>
-<div class="gallery" id="gallery"><figure data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/250"><img alt="IRN olimpiadasiga yöl" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/><figcaption>IRN olimpiadasiga yöl<small>17-oktabr · 50+ öquvçi</small></figcaption></figure><figure data-cat="Darslar" data-link="https://t.me/zafar_international_school/254"><img alt="Tasviriy san'at darsi" loading="lazy" src="assets/photos/sanat-darsi-1.jpg"/><figcaption>Tasviriy san'at darsi<small>Oygul Faziljanovna bilan</small></figcaption></figure><figure data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/339"><img alt="IRN: maktabga maxsus sovrin" loading="lazy" src="assets/photos/irn-sovrin.jpg"/><figcaption>IRN: maktabga maxsus sovrin<small>13-noyabr · TOP-10, 4-örin</small></figcaption></figure><figure data-cat="Hayot" data-link="https://t.me/zafar_international_school/234"><img alt="Har bir öquvçiga termos sovğa" loading="lazy" src="assets/photos/termos-sovga.jpg"/><figcaption>Har bir öquvçiga termos sovğa<small>Sovuq kunlar ğamxörligi</small></figcaption></figure><figure data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/187"><img alt="Xalqaro gimnastika: 3-örin" loading="lazy" src="assets/photos/gimnastika.jpg"/><figcaption>Xalqaro gimnastika: 3-örin<small>Samarqand · 1-sinf öquvçimiz</small></figcaption></figure></div>
+<h2 class="reveal">Maktab hayotidan kadrlar</h2>
+<p class="lead reveal">Hammasi bizning Telegram kanalimizdan: darslar, yutuqlar va kundalik hayot. Rasmni bosing, kattalaşadi.</p>
+<div aria-label="Rasmlarni saralaş" class="chips reveal" id="chips" role="group">
+<button aria-pressed="true" data-f="all">Barçasi</button>
+<button aria-pressed="false" data-f="Darslar">Darslar</button>
+<button aria-pressed="false" data-f="Yutuqlar">Yutuqlar</button>
+<button aria-pressed="false" data-f="Hayot">Maktab hayoti</button>
+</div>
+<div class="gallery" id="gallery">
+<figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/250"><img alt="IRN olimpiadasiga yöl" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/><figcaption>IRN olimpiadasiga yöl<small>17-oktabr · 50+ öquvçi</small></figcaption></figure>
+<figure class="reveal" data-cat="Darslar" data-link="https://t.me/zafar_international_school/254"><img alt="Tasviriy san'at darsi" loading="lazy" src="assets/photos/sanat-darsi-1.jpg"/><figcaption>Tasviriy san'at darsi<small>Oygul Faziljanovna bilan</small></figcaption></figure>
+<figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/339"><img alt="IRN: maktabga maxsus sovrin" loading="lazy" src="assets/photos/irn-sovrin.jpg"/><figcaption>IRN: maktabga maxsus sovrin<small>13-noyabr · TOP-10, 4-örin</small></figcaption></figure>
+<figure class="reveal" data-cat="Hayot" data-link="https://t.me/zafar_international_school/234"><img alt="Har bir öquvçiga termos sovğa" loading="lazy" src="assets/photos/termos-sovga.jpg"/><figcaption>Har bir öquvçiga termos sovğa<small>Sovuq kunlar ğamxörligi</small></figcaption></figure>
+<figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/187"><img alt="Xalqaro gimnastika: 3-örin" loading="lazy" src="assets/photos/gimnastika.jpg"/><figcaption>Xalqaro gimnastika: 3-örin<small>Samarqand · 1-sinf öquvçimiz</small></figcaption></figure>
+<figure class="reveal" data-cat="Darslar" data-link="https://t.me/zafar_international_school/254"><img alt="Möyqalam va ilhom" loading="lazy" src="assets/photos/sanat-darsi-2.jpg"/><figcaption>Möyqalam va ilhom<small>Art-terapiya maşğuloti</small></figcaption></figure>
+<figure class="reveal" data-cat="Hayot" data-link="https://t.me/zafar_international_school/50"><img alt="Maktab formasi" loading="lazy" src="assets/photos/maktab-formasi.jpg"/><figcaption>Maktab formasi<small>Tasdiqlangan rasmiy forma</small></figcaption></figure>
+<figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/284"><img alt="NextGen xalqaro olimpiadasi finalisti" loading="lazy" src="assets/photos/ominahon-finalist.jpg"/><figcaption>NextGen xalqaro olimpiadasi finalisti<small>Nazirjonova Ominahon</small></figcaption></figure>
+<figure class="reveal" data-cat="Hayot" data-link="https://t.me/zafar_international_school/329"><img alt="Yangi maktab avtobusi" loading="lazy" src="assets/photos/maktab-avtobusi.jpg"/><figcaption>Yangi maktab avtobusi<small>Konditsionerli, xavfsiz</small></figcaption></figure>
+<figure class="reveal" data-cat="Yutuqlar" data-link="https://t.me/zafar_international_school/339"><img alt="Minnatdorçilik maktubi" loading="lazy" src="assets/photos/irn-diplom.jpg"/><figcaption>Minnatdorçilik maktubi<small>IRN Olympiads taşkilotidan</small></figcaption></figure>
+<figure class="reveal" data-cat="Darslar" data-link="https://t.me/zafar_international_school/254"><img alt="Har bir bola — rassom" loading="lazy" src="assets/photos/sanat-darsi-3.jpg"/><figcaption>Har bir bola — rassom<small>Ijodkorlikning çegarasi yöq</small></figcaption></figure>
+<figure class="reveal" data-cat="Darslar" data-link="https://t.me/zafar_international_school/188"><img alt="Olimpiadaga tizimli tayyorgarlik" loading="lazy" src="assets/photos/irn-kitoblar.jpg"/><figcaption>Olimpiadaga tizimli tayyorgarlik<small>IRN Mathematics kitoblari</small></figcaption></figure>
+</div>
 </div>
 </section>
-<section id="yangiliklar" style="padding-top:0">
+<!-- REELS -->
+<section style="background:var(--paper-2);padding-bottom:90px">
 <div class="wrap">
-<div class="sec-head"><h2>Sönggi yangiliklar</h2><p class="lead">Eng muhim voqealar. Töliq tasma uçun Telegram kanalimizga obuna böling.</p></div>
-<div class="news" id="news"><a class="post feature" href="https://t.me/zafar_international_school/339" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/irn-sovrin.jpg"/><div class="body"><time>13-noyabr, 2026</time><h3>Respublika TOP-10 içida 4-örin!</h3><p>IRN imtihonida yuqori natijalar uçun maktabimiz respublikaning eng kuçli 10 ta ta'lim muassasasi qatoridan joy oldi. IRON olimpiadasi taşkilotçilari ğoliblarni şaxsan taqdirlab, maktabga maxsus sovrin topşirdi.</p><span class="more">Telegram'da öqiş</span></div></a><a class="post" href="https://t.me/zafar_international_school/346" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/preschool-04.jpg"/><div class="body"><time>16-noyabr</time><h3>Pre-School 0.4 guruhiga qabul oçildi</h3><p>Navbatda turgan 14 bolaning barçasiga örin bor. Guruh 18 nafar bilan çeklangan. Birinçi dars: 19-noyabr, 09:00.</p><span class="more">Telegram'da öqiş</span></div></a><a class="post" href="https://t.me/zafar_international_school/329" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/maktab-avtobusi.jpg"/><div class="body"><time>11-noyabr</time><h3>Maxsus maktab avtobusi keladi</h3><p>Konditsionerli avtobus, har bola alohida örinda, kamar bilan. Uzoqda yaşovçilar va kiçik sinflarga ustunlik.</p><span class="more">Telegram'da öqiş</span></div></a><a class="post" href="https://t.me/zafar_international_school/328" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/grant-rahmat.jpg"/><div class="body"><time>10-noyabr</time><h3>Iqtidor granti: 12 ğolib aniqlandi</h3><p>100 mln sömlik fond töliq taqsimlandi. Boş grant 8-sinf öquvçisiga: 85,61 ball, öqiş butunlay bepul.</p><span class="more">Telegram'da öqiş</span></div></a><a class="post" href="https://t.me/zafar_international_school/284" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/ominahon-finalist.jpg"/><div class="body"><time>1-noyabr</time><h3>Ominahon — xalqaro olimpiada finalisti</h3><p>NextGen xalqaro olimpiadasining hal qiluvçi bosqiçi. Ğolibni Avstraliyadagi finalga 100% grant kutadi.</p><span class="more">Telegram'da öqiş</span></div></a><a class="post" href="https://t.me/zafar_international_school/250" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/><div class="body"><time>17-oktabr</time><h3>50 dan ortiq öquvçi IRN olimpiadasida</h3><p>Maxsus tayyorgarlikdan söng öquvçilarimiz olimpiadaga yöl oldi. Natija: respublika böyiça 4-örin.</p><span class="more">Telegram'da öqiş</span></div></a></div>
+<div class="reels-head">
+<div>
+<h2 class="reveal" style="margin-bottom:0">ZIS'da bir kun — videoda</h2>
+<p class="lead reveal" style="margin-top:12px">Kartani bosing: video şu yerning özida oçiladi.</p>
+</div>
+<div class="reel-nav"><button aria-label="Orqaga" id="rPrev">←</button><button aria-label="Oldinga" id="rNext">→</button></div>
+</div>
+<div class="reels" id="reels">
+<button class="reel" data-link="https://t.me/zafar_international_school/115" data-src="assets/videos/ochilish.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/ochilish.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Maktab oçilişi<small>2-sentyabr, 2026</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/154" data-src="assets/videos/it-5sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/it-5sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>5-sinf IT darsi<small>Grade 5 IT Lesson</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/153" data-src="assets/videos/english-7sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/english-7sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>7-sinf ingliz tili<small>English lesson</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/167" data-src="assets/videos/it-6sinf.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/it-6sinf.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>6-sinf informatika<small>IT Grade 6</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/339" data-src="assets/videos/irn-sovrin.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/irn-sovrin.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>IRN: maxsus sovrin<small>TOP-10 · 4-örin</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/264" data-src="assets/videos/jim-metod.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/jim-metod.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>5 soniyada jimjitlik<small>Ustoz sirlari</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/175" data-src="assets/videos/tushlik.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/tushlik.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Tuşlik vaqti<small>Lunchtime</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/221" data-src="assets/videos/shirintoylar.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/shirintoylar.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Şirintoy erkatoylar<small>Pre-School</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/292" data-src="assets/videos/chorak-yakuni.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/chorak-yakuni.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Çorak yakunlari<small>Taqdirlaş kuni</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/319" data-src="assets/videos/islom-sivilizatsiya.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/islom-sivilizatsiya.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Islom sivilizatsiyasi markazi<small>Toşkent sayohati</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/323" data-src="assets/videos/beshqozon.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/beshqozon.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>"Beşqozon"da dasturxon<small>Toşkent sayohati</small></span></button>
+<button class="reel" data-link="https://t.me/zafar_international_school/355" data-src="assets/videos/bayroq-kuni.mp4" type="button"><img alt="" loading="lazy" src="assets/videos/bayroq-kuni.jpg"/><i class="play"><svg viewbox="0 0 10 12"><path d="M0 0l10 6-10 6z"></path></svg></i><span>Davlat bayroği kuni<small>18-noyabr</small></span></button>
+</div>
+</div>
+</section>
+<!-- NEWS -->
+<section id="yangiliklar">
+<div class="wrap">
+<h2 class="reveal">Sönggi yangiliklar</h2>
+<p class="lead reveal">Eng muhim voqealar. Töliq tasma uçun Telegram kanalimizga obuna böling.</p>
+<div class="news" id="news">
+<a class="post reveal feature" href="https://t.me/zafar_international_school/339" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/irn-sovrin.jpg"/><div class="body"><time>13-noyabr, 2026</time><h3>Respublika TOP-10 içida 4-örin!</h3><p>IRN imtihonida yuqori natijalar uçun maktabimiz respublikaning eng kuçli 10 ta ta'lim muassasasi qatoridan joy oldi. IRON olimpiadasi taşkilotçilari ğoliblarni şaxsan taqdirlab, maktabga maxsus sovrin topşirdi.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/346" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/preschool-04.jpg"/><div class="body"><time>16-noyabr</time><h3>Pre-School 0.4 guruhiga qabul oçildi</h3><p>Navbatda turgan 14 bolaning barçasiga örin bor. Guruh 18 nafar bilan çeklangan. Birinçi dars: 19-noyabr, 09:00.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/329" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/maktab-avtobusi.jpg"/><div class="body"><time>11-noyabr</time><h3>Maxsus maktab avtobusi keladi</h3><p>Konditsionerli avtobus, har bola alohida örinda, kamar bilan. Uzoqda yaşovçilar va kiçik sinflarga ustunlik.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/328" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/grant-rahmat.jpg"/><div class="body"><time>10-noyabr</time><h3>Iqtidor granti: 12 ğolib aniqlandi</h3><p>100 mln sömlik fond töliq taqsimlandi. Boş grant 8-sinf öquvçisiga: 85,61 ball, öqiş butunlay bepul.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/284" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/ominahon-finalist.jpg"/><div class="body"><time>1-noyabr</time><h3>Ominahon — xalqaro olimpiada finalisti</h3><p>NextGen xalqaro olimpiadasining hal qiluvçi bosqiçi. Ğolibni Avstraliyadagi finalga 100% grant kutadi.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/250" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/olimpiada-jamoa.jpg"/><div class="body"><time>17-oktabr</time><h3>50 dan ortiq öquvçi IRN olimpiadasida</h3><p>Maxsus tayyorgarlikdan söng öquvçilarimiz olimpiadaga yöl oldi. Natija: respublika böyiça 4-örin.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/254" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/sanat-darsi-1.jpg"/><div class="body"><time>17-oktabr</time><h3>"Art terapiya party" va sevimli ustoz</h3><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom Oygul Faziljanovna ota-onalar va bolalar bilan birga ijod qildi.</p><span class="more">Telegram'da öqiş</span></div></a>
+<a class="post reveal" href="https://t.me/zafar_international_school/234" rel="noopener" target="_blank"><img alt="" loading="lazy" src="assets/photos/termos-sovga.jpg"/><div class="body"><time>13-oktabr</time><h3>Har bir öquvçiga termos sovğa</h3><p>Sovuq kunlar boşlanişi bilan maktab barça öquvçilarga sifatli termos sovğa qildi.</p><span class="more">Telegram'da öqiş</span></div></a>
+</div>
 <div class="news-more"><a class="btn btn-ink" href="https://t.me/zafar_international_school" rel="noopener" target="_blank">Barça yangiliklar Telegram'da</a></div>
 </div>
 </section>
+<!-- TEACHERS -->
 <section id="ustozlar">
 <div class="wrap">
-<div class="sec-head"><h2>Kuçli ustozlar, kuçli kelajak</h2><p class="lead">Har şanba ustoz va xodimlar uçun trening ötkaziladi. Biz bolani "röyxatdagi raqam" deb emas, alohida şaxs deb köramiz.</p></div>
-<div class="teachers"><article class="teacher"><div class="avatar"><img alt="" src="assets/photos/muhayyo-ustoz.jpg" style="object-position:44% 30%"/></div><div><h3>Rahimova Muhayyo Dilmurodovna</h3><div class="role">Ona tili va adabiyot · oliy toifa</div><p>"Yil öqituvçisi – 2026" Respublika körik-tanlovi ğolibi, Milliy sertifikat A+. 18 yillik tajriba.</p></div></article><article class="teacher"><div class="avatar"><img alt="" src="assets/photos/abboskhon-ustoz.jpg" style="object-position:50% 40%"/></div><div><h3>Abboskhon Şarafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking könikmalari.</p></div></article><article class="teacher"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Abdurahimova Şoira Şamsiddinovna</h3><div class="role">Boşlanğiç sinf</div><p>22 yillik tajriba. Har bir bolaning örganiş tezligiga mos individual yondaşuv.</p></div></article><article class="teacher"><div class="avatar"><img alt="" src="assets/photos/ruxsora-ustoz.jpg" style="object-position:50% 30%"/></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boşlanğiç sinf</div><p>Öyin, amaliy maşğulot va interaktiv usullar: bola javobni özi topadi.</p></div></article><article class="teacher"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boşlanğiç sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article><article class="teacher"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar ğolibi.</p></div></article><article class="teacher"><div class="avatar"><img alt="" data-fallback="BD" src="assets/photos/expert-bd-sq.jpg"/></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 öquvçini SAT Math'da 700+ natijaga olib çiqqan, 5 yillik tajriba.</p></div></article><article class="teacher"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulçexra Muhammadjonova</h3><div class="role">Boşlanğiç sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvçan va öziga işongan şaxs tarbiyalaydi.</p></div></article><article class="teacher join"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qöşiling</h3><div class="role">Oçiq vakansiyalar</div><p>Raqobatbardoş maoş, KPI bonus, bepul treninglar va tuşlik. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></article></div>
+<h2 class="reveal">Kuçli ustozlar, kuçli kelajak</h2>
+<p class="lead reveal">Har şanba ustoz va xodimlar uçun trening ötkaziladi. Biz bolani "röyxatdagi raqam" deb emas, alohida şaxs deb köramiz.</p>
+<div class="teachers">
+<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/muhayyo-ustoz.jpg" style="object-position:44% 30%"/></div><div><h3>Rahimova Muhayyo Dilmurodovna</h3><div class="role">Ona tili va adabiyot · oliy toifa</div><p>"Yil öqituvçisi – 2026" Respublika körik-tanlovi ğolibi, Milliy sertifikat A+. 18 yillik tajriba.</p></div></article>
+<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/abboskhon-ustoz.jpg" style="object-position:50% 40%"/></div><div><h3>Abboskhon Şarafutdinov</h3><div class="role">English instructor</div><p>IELTS 7.5, Speaking 8.5. Erkin muloqot, Listening va Speaking könikmalari.</p></div></article>
+<article class="teacher reveal"><div class="avatar" style="background:var(--code)">SA</div><div><h3>Abdurahimova Şoira Şamsiddinovna</h3><div class="role">Boşlanğiç sinf</div><p>22 yillik tajriba. Har bir bolaning örganiş tezligiga mos individual yondaşuv.</p></div></article>
+<article class="teacher reveal"><div class="avatar"><img alt="" src="assets/photos/ruxsora-ustoz.jpg" style="object-position:50% 30%"/></div><div><h3>Ruxsora Abdujalilova</h3><div class="role">Boşlanğiç sinf</div><p>Öyin, amaliy maşğulot va interaktiv usullar: bola javobni özi topadi.</p></div></article>
+<article class="teacher reveal"><div class="avatar" style="background:#C9B8FF">PD</div><div><h3>Dehqonova Piroya Erkinovna</h3><div class="role">Boşlanğiç sinf</div><p>7 yillik tajriba. Innovatsion metodlar, TIMSS uslubidagi mini-testlar, vizual materiallar.</p></div></article>
+<article class="teacher reveal"><div class="avatar" style="background:#FFB4C8">OF</div><div><h3>Oygul Faziljanovna</h3><div class="role">Tasviriy san'at</div><p>Zulfiya nomidagi davlat mukofoti sovrindori, 17 yillik tajribali rassom, xalqaro tanlovlar ğolibi.</p></div></article>
+<article class="teacher reveal"><div class="avatar"><img alt="" data-fallback="BD" src="assets/photos/expert-bd-sq.jpg"/></div><div><h3>Baxriddin Davlatmurodov</h3><div class="role">Matematika va SAT Math</div><p>SAT Math 800/800, Matematika A+. 100 öquvçini SAT Math'da 700+ natijaga olib çiqqan, 5 yillik tajriba.</p></div></article>
+<article class="teacher reveal"><div class="avatar" style="background:var(--gold)">GM</div><div><h3>Gulçexra Muhammadjonova</h3><div class="role">Boşlanğiç sinf</div><p>27 yillik tajriba. Baho ortidan quvmaydigan, qiziquvçan va öziga işongan şaxs tarbiyalaydi.</p></div></article>
+<article class="teacher join reveal"><div class="avatar" style="background:var(--gold)">+</div><div><h3>Jamoamizga qöşiling</h3><div class="role">Oçiq vakansiyalar</div><p>Raqobatbardoş maoş, KPI bonus, bepul treninglar va tuşlik. <a href="https://t.me/HRD_ZIS" rel="noopener" target="_blank">@HRD_ZIS</a></p></div></article>
+</div>
 </div>
 </section>
+<!-- WORD OF THE DAY -->
+<section style="padding-top:0">
+<div class="wrap wotd">
+<div>
+<h2 class="reveal">Har kuni bitta yangi söz.</h2>
+<p class="lead reveal">ZIS öquvçilari ingliz tilini har kuni kiçik qadamlar bilan özlaştiradi. Kartani bosing: tarjima va misol oçiladi.</p>
+<div class="wotd-ctrl reveal">
+<button aria-label="Oldingi söz" id="wPrev">Oldingi</button>
+<button aria-label="Keyingi söz" id="wNext">Keyingi</button>
+</div>
+</div>
+<div aria-label="Söz kartasini aylantiriş" class="flip reveal" id="flip" role="button" tabindex="0">
+<div class="flip-inner">
+<div class="face front"><small>ENGLISH · <span id="wN">1/8</span></small><div><div class="w" id="wEn"></div><div class="ph" id="wPh"></div></div><small>bosing ↻</small></div>
+<div class="face back"><small>ÖZBEKÇA</small><div><div class="w" id="wUz"></div><p class="ex" id="wEx"></p></div><small>bosing ↻</small></div>
+</div>
+</div>
+</div>
+</section>
+<!-- PERKS -->
 <section class="perks">
 <div class="wrap">
-<div class="sec-head"><h2>Ota-ona xotirjam bölişi uçun</h2></div>
-<div class="perk-grid"><div class="perk"><h3>Maktab avtobusi</h3><p>Konditsionerli, har bola alohida örinda, kamar bilan.</p></div><div class="perk"><h3>3 mahal ovqat</h3><p>Nonuşta, tuşlik va afternoon snack. Muvozanatli menyu.</p></div><div class="perk"><h3>Şaxsiy şkaf</h3><p>Oğir sumka yöq: darsliklar maktabda qoladi.</p></div><div class="perk"><h3>Darsliklar bepul</h3><p>Barça sinflarni maktabning özi darslik bilan ta'minlaydi.</p></div><div class="perk"><h3>Click orqali tölov</h3><p>Uydan turib, ilova orqali qulay tölov.</p></div><div class="perk"><h3>Aloqa markazi</h3><p>Har bir murojaat qayd etiladi va javobsiz qolmaydi.</p></div><div class="perk"><h3>Xavfsizlik</h3><p>Mustaqil kelib-ketiş faqat ota-ona tilxati bilan.</p></div><div class="perk"><h3>Sayohat va tadbirlar</h3><p>Islom sivilizatsiyasi markazi, Toşkent sayohati, Zakovat.</p></div></div>
+<h2 class="reveal">Ota-ona xotirjam bölişi uçun</h2>
+<div class="perk-grid">
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><rect height="11" rx="2" width="18" x="3" y="6"></rect><path d="M3 11h18M7 17v2M17 17v2"></path></svg></div><h3>Maktab avtobusi</h3><p>Konditsionerli, har bola alohida örinda, kamar bilan.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><path d="M4 11h16M6 11V7a6 6 0 0 1 12 0v4M5 11l1 9h12l1-9"></path></svg></div><h3>3 mahal ovqat</h3><p>Nonuşta, tuşlik va afternoon snack. Muvozanatli menyu.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><rect height="18" rx="2" width="14" x="5" y="3"></rect><path d="M12 3v18M9 11v2M15 11v2"></path></svg></div><h3>Şaxsiy şkaf</h3><p>Oğir sumka yöq: darsliklar maktabda qoladi.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2zM8 7h6"></path></svg></div><h3>Darsliklar bepul</h3><p>Barça sinflarni maktabning özi darslik bilan ta'minlaydi.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><rect height="20" rx="3" width="12" x="6" y="2"></rect><path d="M11 18h2"></path></svg></div><h3>Click orqali tölov</h3><p>Uydan turib, ilova orqali qulay tölov.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><h3>Aloqa markazi</h3><p>Har bir murojaat qayd etiladi va javobsiz qolmaydi.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div><h3>Xavfsizlik</h3><p>Mustaqil kelib-ketiş faqat ota-ona tilxati bilan.</p></div>
+<div class="perk reveal"><div class="ic"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path></svg></div><h3>Sayohat va tadbirlar</h3><p>Islom sivilizatsiyasi markazi, Toşkent sayohati, Zakovat.</p></div>
+</div>
 </div>
 </section>
+<!-- ADMISSION -->
 <section id="qabul">
 <div class="wrap">
-<div class="sec-head"><h2>Tanlov: sifatning boşlanişi</h2><p class="lead">Pre-School va 1–8-sinflarga qabul oçiq. Örinlar soni çeklangan. Natija bolaning kelajagi haqidagi hukm emas: har bir bola öz vaqtida oçiladi.</p></div>
+<h2 class="reveal">Tanlov: sifatning boşlanişi</h2>
+<p class="lead reveal">Pre-School va 1–8-sinflarga qabul oçiq. Örinlar soni çeklangan. Natija bolaning kelajagi haqidagi hukm emas: har bir bola öz vaqtida oçiladi.</p>
 <div class="steps">
-<div class="step"><h3>Ariza qoldiring</h3><p>Quyidagi forma, telefon yoki @ZISaloqa orqali.</p></div>
-<div class="step"><h3>Akademik test</h3><p>2–8-sinflar uçun. Jami 3 ta imkoniyat beriladi.</p></div>
-<div class="step"><h3>Psixologik suhbat</h3><p>Ota-ona va öquvçi bilan. 0–1-sinflar töğridan-töğri suhbatga.</p></div>
-<div class="step"><h3>Şartnoma</h3><p>Muvaffaqiyatli ötganlar bilan şartnoma rasmiylaştiriladi.</p></div>
+<div class="step reveal"><h3>Ariza qoldiring</h3><p>Quyidagi forma, telefon yoki @ZISaloqa orqali.</p></div>
+<div class="step reveal"><h3>Akademik test</h3><p>2–8-sinflar uçun. Jami 3 ta imkoniyat beriladi.</p></div>
+<div class="step reveal"><h3>Psixologik suhbat</h3><p>Ota-ona va öquvçi bilan. 0–1-sinflar töğridan-töğri suhbatga.</p></div>
+<div class="step reveal"><h3>Şartnoma</h3><p>Muvaffaqiyatli ötganlar bilan şartnoma rasmiylaştiriladi.</p></div>
 </div>
-<div class="docs">
+<div class="docs reveal">
 <h3>Kerakli hujjatlar</h3>
 <ul>
 <li>Tuğilganlik guvohnomasi (asli)</li>
@@ -541,7 +940,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <li>Tibbiy daftarça</li>
 </ul>
 </div>
-<div class="grant">
+<div class="grant reveal">
 <div>
 <h3>100 000 000 sömlik grant: örin uçun emas, ball uçun.</h3>
 <p>5–8-sinf öquvçilari uçun. Matematika, ingliz tili, mantiq va öqib tuşuniş. Öquvçi boşqalar bilan emas, özi bilan kuraşadi. Natija va intizom saqlansa, grant keyingi davrlarda ham saqlanadi.</p>
@@ -555,6 +954,20 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 </div>
 </div>
 </section>
+<!-- VISIT -->
+<section class="visit">
+<div class="wrap visit-in">
+<div>
+<h2>Maktabni öz közingiz bilan köring</h2>
+<p>Sinfxonalar, kompyuter xonasi, oşxona va ustozlar bilan tanişing. Taşrif vaqtini aloqa markazimiz bilan kelişib olasiz.</p>
+</div>
+<div class="visit-cta">
+<a class="btn btn-gold" data-consult="Maktabga taşrif buyurmoqçiman" href="#aloqa">Taşrifga yoziliş</a>
+<a class="btn btn-ghost" href="tel:+998781137773">78 113 77 73</a>
+</div>
+</div>
+</section>
+<!-- QUESTIONS (Telegram-style chat) -->
 <section class="chat-sec" id="savollar">
 <div class="wrap chat-grid">
 <div>
@@ -583,20 +996,24 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 </div>
 </div>
 </section>
+<!-- CONTACT -->
 <section class="contact" id="aloqa">
-<img alt="" loading="lazy" src="assets/campus/bayroq.jpg"/>
-<div class="wrap">
-<div><h2>Kelib, öz közingiz bilan köring.</h2><p class="lead">"Yuz marta eşitgandan bir marta körgan yaxşi." Maktab bilan tanişing, savollaringizga xotirjam javob oling.</p><div class="info">
-<a href="tel:+998781137773"><span class="ic"><svg viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><span><small>Telefon</small><b>+998 78 113 77 73</b></span></a>
-<a href="https://t.me/ZISaloqa" rel="noopener" target="_blank"><span class="ic"><svg viewbox="0 0 24 24"><path d="M22 3L2 11l7 2 2 7 4-5 5 4z"></path><path d="M9 13l13-10"></path></svg></span><span><small>Aloqa markazi · Telegram</small><b>@ZISaloqa</b></span></a>
-<a href="https://yandex.uz/maps/org/zafar_international_school/184743663201" rel="noopener" target="_blank"><span class="ic"><svg viewbox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span><small>Manzil · möljal: Poçta binosi</small><b>Oltinköl t., Çinobod köçasi, 7</b></span></a>
-<div style="flex-wrap:wrap;gap:10px">
+<div class="wrap contact-grid">
+<div>
+<h2 class="reveal">Kelib, öz közingiz bilan köring.</h2>
+<p class="lead reveal">"Yuz marta eşitgandan bir marta körgan yaxşi." Maktab bilan tanişing, savollaringizga xotirjam javob oling.</p>
+<div class="info">
+<a class="reveal" href="tel:+998781137773"><span class="ic"><svg viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg></span><span><small>Telefon</small><b>+998 78 113 77 73</b></span></a>
+<a class="reveal" href="https://t.me/ZISaloqa" rel="noopener" target="_blank"><span class="ic"><svg viewbox="0 0 24 24"><path d="M22 3L2 11l7 2 2 7 4-5 5 4z"></path><path d="M9 13l13-10"></path></svg></span><span><small>Aloqa markazi · Telegram</small><b>@ZISaloqa</b></span></a>
+<a class="reveal" href="https://yandex.uz/maps/org/zafar_international_school/184743663201" rel="noopener" target="_blank"><span class="ic"><svg viewbox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span><small>Manzil · möljal: Poçta binosi</small><b>Oltinköl t., Çinobod köçasi, 7</b></span></a>
+<div class="reveal" style="flex-wrap:wrap;gap:10px">
 <a class="btn btn-ghost" href="https://t.me/zafar_international_school" rel="noopener" style="padding:10px 16px;font-size:14px" target="_blank">Telegram kanal</a>
 <a class="btn btn-ghost" href="https://www.instagram.com/zafar_international_school" rel="noopener" style="padding:10px 16px;font-size:14px" target="_blank">Instagram</a>
 <a class="btn btn-ghost" href="https://youtube.com/@zafar_school" rel="noopener" style="padding:10px 16px;font-size:14px" target="_blank">YouTube</a>
 </div>
-</div></div>
-<form class="apply" id="apply" novalidate="">
+</div>
+</div>
+<form class="apply reveal" id="apply" novalidate="">
 <h3>Qabulga ariza</h3>
 <div class="row2">
 <div class="field"><label for="parent">Ota-ona ismi</label><input autocomplete="name" id="parent" maxlength="80" name="parent" required=""/><small class="err" data-for="parent"></small></div>
@@ -622,7 +1039,8 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <button aria-label="Oldingi rasm" class="lb-nav lb-prev" id="lbPrev">←</button>
 <button aria-label="Keyingi rasm" class="lb-nav lb-next" id="lbNext">→</button>
 <figure><img alt="" id="lbImg"/><figcaption><span id="lbCap"></span><a id="lbLink" rel="noopener" target="_blank">Telegram'da köriş</a></figcaption></figure>
-</dialog><dialog aria-label="Videoni köriş" class="vb" id="vb">
+</dialog>
+<dialog aria-label="Videoni köriş" class="vb" id="vb">
 <button aria-label="Yopiş" class="lb-close" id="vbClose">×</button>
 <video class="vb-frame" controls="" id="vbVideo" playsinline="" preload="none"></video>
 <div class="vb-foot"><span id="vbCap"></span><a id="vbLink" rel="noopener" target="_blank">Telegram'da oçiş</a></div>
@@ -632,6 +1050,7 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 <a href="https://t.me/ZISaloqa" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M22 3L2 11l7 2 2 7 4-5 5 4z"></path></svg>Telegram</a>
 <a class="primary" href="#aloqa">Ariza qoldiriş</a>
 </nav>
+<button aria-label="Sahifa boşiga qaytiş" class="to-top" id="toTop">↑</button>
 <footer>
 <div class="wrap">
 <div class="foot-top">
