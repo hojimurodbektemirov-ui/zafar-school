@@ -497,10 +497,19 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 
 
 /* ---------- teachers (credential-first cards) ---------- */
-.t-filter{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 26px}
+.t-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:28px 0 22px}
+.t-filter{display:flex;flex-wrap:wrap;gap:8px}
+.t-nav{display:flex;gap:10px}
+.t-nav button{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);font-size:20px;cursor:pointer}
+.t-nav button:hover{background:var(--ink);color:#fff}
+.t-nav button:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink)}
 .t-filter button{font:inherit;font-weight:700;font-size:14.5px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;color:var(--text)}
 .t-filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tgrid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:6px;cursor:grab;user-select:none}
+.tgrid::-webkit-scrollbar{display:none}
+.tgrid.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.tgrid img{-webkit-user-drag:none;pointer-events:none}
+.tcard{flex:0 0 calc((100% - 54px)/4.3);scroll-snap-align:start}
 .tcard{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
 .tcard[hidden]{display:none}
 .t-cred{background:var(--ink);color:#fff;padding:22px 22px 52px;min-height:140px}
@@ -534,8 +543,8 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 #tdList li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 #tdLink{justify-self:start}
 #tdLink[hidden]{display:none}
-@media (max-width:1050px){.tgrid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:620px){.tgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 10px;scroll-padding:0 16px;scrollbar-width:none}.tcard{flex:0 0 80%;scroll-snap-align:center}.t-cred{min-height:0}}
+@media (max-width:1050px){.tcard{flex-basis:calc((100% - 36px)/2.4)}}
+@media (max-width:620px){.tgrid{gap:12px;margin:0 -16px;padding:0 16px 10px;scroll-padding:0 16px}.tcard{flex-basis:80%}.t-cred{min-height:0}.t-nav{display:none}}
 @media (max-width:440px){.brand small{display:none}}
 
 /* reveal */
@@ -914,8 +923,11 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 <div class="wrap">
 <h2 class="reveal">Kuçli ustozlar, kuçli kelajak</h2>
 <p class="lead reveal">Har şanba ustoz va xodimlar uçun trening ötkaziladi. Biz bolani "röyxatdagi raqam" deb emas, alohida şaxs deb köramiz.</p>
+<div class="t-bar">
 <div aria-label="Ustozlarni saralaş" class="t-filter" id="tFilter" role="group">
 <button aria-pressed="true" data-f="all" type="button">Barçasi</button><button aria-pressed="false" data-f="boshl" type="button">Boşlanğiç sinf</button><button aria-pressed="false" data-f="til" type="button">Tillar</button><button aria-pressed="false" data-f="math" type="button">Matematika va SAT</button><button aria-pressed="false" data-f="sanat" type="button">San'at</button>
+</div>
+<div class="t-nav"><button aria-label="Orqaga" id="tPrev" type="button">←</button><button aria-label="Oldinga" id="tNext" type="button">→</button></div>
 </div>
 <div class="tgrid" id="tGrid">
 <article class="tcard" data-cat="til" data-link="https://t.me/zafar_international_school/100">

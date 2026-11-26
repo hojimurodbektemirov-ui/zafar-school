@@ -218,6 +218,22 @@
     document.querySelectorAll('#tFilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     tcards.forEach(c => { c.hidden = b.dataset.f !== 'all' && c.dataset.cat !== b.dataset.f; });
   }));
+  /* teachers row: arrows, mouse drag, keyboard */
+  const tg = document.getElementById('tGrid'), tPrev = document.getElementById('tPrev'), tNext = document.getElementById('tNext');
+  if (tg){
+    const step = () => { const c = tg.querySelector('.tcard:not([hidden])'); return c ? c.getBoundingClientRect().width + 18 : 300; };
+    const upd = () => { if (!tPrev) return; tPrev.disabled = tg.scrollLeft < 4; tNext.disabled = tg.scrollLeft + tg.clientWidth >= tg.scrollWidth - 4; };
+    tPrev?.addEventListener('click', () => tg.scrollBy({left:-step(), behavior:reduce?'auto':'smooth'}));
+    tNext?.addEventListener('click', () => tg.scrollBy({left:step(), behavior:reduce?'auto':'smooth'}));
+    tg.addEventListener('scroll', upd, {passive:true}); addEventListener('resize', upd); upd();
+    document.querySelectorAll('#tFilter button').forEach(b => b.addEventListener('click', () => { tg.scrollLeft = 0; setTimeout(upd, 50); }));
+    // drag with the mouse (touch already scrolls natively)
+    let down = false, sx = 0, sl = 0, moved = false;
+    tg.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0 || e.target.closest('button')) return; down = true; moved = false; sx = e.clientX; sl = tg.scrollLeft; });
+    addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4){ moved = true; tg.classList.add('dragging'); } tg.scrollLeft = sl - dx; });
+    addEventListener('pointerup', () => { if (!down) return; down = false; if (moved){ tg.classList.remove('dragging'); const w = step(); tg.scrollTo({left:Math.round(tg.scrollLeft / w) * w, behavior:reduce?'auto':'smooth'}); } });
+    tg.addEventListener('click', e => { if (moved){ e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+  }
   const tdlg = document.getElementById('tdlg');
   if (tdlg){
     tcards.forEach(c => c.querySelector('.t-open').addEventListener('click', () => {
