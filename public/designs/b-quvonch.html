@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Zafar International School · Dizayn B</title>
+<meta content="noindex" name="robots"/>
+<link href="../assets/logo-256.jpg" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&amp;family=Golos+Text:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--leaf:#2DB441;--deep:#0E3D38;--sun:#FFC83D;--mint:#E8F7EC;--ink:#17302B;--muted:#56706A;--white:#fff;
+  --head:"Rubik",system-ui,sans-serif;--body:"Golos Text",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);font-size:17px;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--deep);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;margin-bottom:14px}
+.lede{font-size:19px;color:var(--muted);max-width:620px}
+section{padding:90px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 26px;border-radius:999px;font-family:var(--head);font-weight:700;font-size:17px;text-decoration:none;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-sun{background:var(--sun);color:var(--deep);box-shadow:0 6px 0 #D9A51F}
+.btn-deep{background:var(--deep);color:#fff;box-shadow:0 6px 0 #062420}
+.btn-white{background:#fff;color:var(--deep);box-shadow:0 6px 0 rgba(0,0,0,.15)}
+
+/* top */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:80px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--head);font-weight:800;font-size:22px;color:var(--deep)}
+.logo img{width:48px;height:48px;border-radius:14px}
+.top nav{display:flex;gap:26px;font-family:var(--head);font-weight:600}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--leaf)}
+@media (max-width:980px){.top nav{display:none}.top .btn{padding:12px 18px;font-size:15px}}
+
+/* hero */
+.hero{padding:40px 0 100px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:var(--mint);color:var(--deep);font-family:var(--head);font-weight:700;padding:8px 16px;border-radius:999px;font-size:15px}
+.hero h1{font-size:clamp(42px,6.2vw,80px);font-weight:800;color:var(--deep);margin:22px 0}
+.hero p{font-size:20px;color:var(--muted);max-width:520px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.art{position:relative;height:560px}
+.blob{position:absolute;border-radius:50%}
+.b1{width:420px;height:420px;background:var(--sun);right:10px;top:40px}
+.b2{width:180px;height:180px;background:var(--leaf);left:10px;bottom:20px}
+.arch{position:absolute;right:60px;top:0;width:330px;height:470px;border-radius:200px 200px 28px 28px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -30px rgba(14,61,56,.5)}
+.arch img,.circle img{width:100%;height:100%;object-fit:cover}
+.circle{position:absolute;left:30px;top:150px;width:220px;height:220px;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 20px 40px -20px rgba(14,61,56,.5)}
+.sticker{position:absolute;right:0;bottom:40px;background:var(--deep);color:#fff;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--head);font-weight:800;font-size:30px;line-height:1;transform:rotate(-10deg)}
+.sticker small{display:block;font-size:13px;font-weight:600;margin-top:6px;color:var(--sun)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.art{height:440px;max-width:460px;margin:0 auto;width:100%}.b1{width:320px;height:320px}.arch{width:250px;height:360px;right:20px}.circle{width:160px;height:160px;left:0;top:140px}.sticker{width:120px;height:120px;font-size:24px}}
+
+/* why strip */
+.why{background:var(--deep);color:#fff;padding:0;border-radius:40px;margin:0 16px}
+.why .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:46px;padding-bottom:46px}
+.why div{padding:0 22px;border-left:2px dashed rgba(255,255,255,.18)}
+.why div:first-child{border-left:0}
+.why b{font-family:var(--head);font-size:44px;font-weight:800;color:var(--sun);display:block;line-height:1}
+.why span{display:block;margin-top:8px;color:#CFE3DC;font-size:15.5px}
+@media (max-width:820px){.why .wrap{grid-template-columns:1fr 1fr;row-gap:30px}.why div:nth-child(3){border-left:0}}
+
+/* stages */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{border-radius:32px;padding:30px;overflow:hidden;position:relative;min-height:470px;display:flex;flex-direction:column}
+.card h3{font-size:30px;font-weight:800;margin:8px 0 10px}
+.card .age{font-family:var(--head);font-weight:700;font-size:15px;background:rgba(255,255,255,.6);padding:6px 12px;border-radius:999px;align-self:flex-start}
+.card p{font-size:16px}
+.card img{margin-top:auto;border-radius:22px;height:210px;object-fit:cover;width:100%}
+.c1{background:var(--sun);color:var(--deep)}
+.c2{background:var(--mint);color:var(--deep)}
+.c3{background:var(--leaf);color:#fff}.c3 .age{background:rgba(255,255,255,.2)}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.card{min-height:0}}
+
+/* focus */
+.focus{background:var(--mint);border-radius:40px;margin:0 16px}
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.f{background:#fff;border-radius:28px;padding:30px}
+.f .ic{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:22px;margin-bottom:18px}
+.f h3{font-size:24px;font-weight:800;color:var(--deep);margin-bottom:8px}
+.f p{color:var(--muted)}
+@media (max-width:900px){.focus-grid{grid-template-columns:1fr}}
+
+/* expert */
+.expert{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.ex-photo{position:relative}
+.ex-photo img{border-radius:220px 220px 32px 32px;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;width:100%;max-width:440px;background:#eee}
+.ex-photo .sticker{bottom:-10px;right:10px;background:var(--sun);color:var(--deep)}
+.ex-photo .sticker small{color:var(--deep)}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
+.badges span{background:var(--mint);color:var(--deep);font-family:var(--head);font-weight:700;padding:10px 16px;border-radius:999px;font-size:15px}
+@media (max-width:900px){.expert{grid-template-columns:1fr}}
+
+/* gallery */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:14px;margin-top:40px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:24px}
+.mosaic .tall{grid-row:span 2}
+.mosaic .wide{grid-column:span 2}
+@media (max-width:820px){.mosaic{grid-template-columns:1fr 1fr;grid-auto-rows:170px}}
+
+/* teachers */
+.polas{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
+.pola{background:#fff;padding:12px 12px 20px;border-radius:18px;box-shadow:0 14px 34px -18px rgba(14,61,56,.45)}
+.pola:nth-child(odd){transform:rotate(-1.5deg)}.pola:nth-child(even){transform:rotate(1.5deg)}
+.pola img,.pola .ph{border-radius:12px;aspect-ratio:1;object-fit:cover;width:100%}
+.pola .ph{background:var(--sun);display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:48px;color:var(--deep)}
+.pola h3{font-size:18px;font-weight:700;color:var(--deep);margin-top:12px}
+.pola span{font-size:14.5px;color:var(--muted)}
+@media (max-width:900px){.polas{grid-template-columns:1fr 1fr}}
+
+/* admission */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;counter-reset:s}
+.step{background:#fff;border:3px solid var(--deep);border-radius:28px;padding:26px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--sun);font-family:var(--head);font-weight:800;font-size:24px;color:var(--deep);margin-bottom:14px}
+.step h3{font-size:21px;font-weight:800;color:var(--deep)}
+.step p{color:var(--muted);font-size:15.5px;margin-top:6px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+.bus{background:var(--sun);border-radius:40px;margin:0 16px;padding:0;overflow:hidden}
+.bus .wrap{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:30px;padding-top:56px;padding-bottom:56px}
+.bus h2{color:var(--deep)}
+.bus p{color:var(--deep);font-size:18px}
+.bus .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.bus img{border-radius:28px;transform:rotate(2deg);box-shadow:0 30px 50px -30px rgba(0,0,0,.4)}
+@media (max-width:820px){.bus .wrap{grid-template-columns:1fr}}
+
+footer{padding:60px 0 30px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .logo{font-size:20px}
+footer .dev{font-family:var(--head);font-weight:600;color:var(--deep);text-decoration:none;background:var(--mint);padding:8px 14px;border-radius:999px}
+
+.vs{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;gap:4px;background:var(--deep);padding:6px;border-radius:999px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.vs a{color:#CFE3DC;text-decoration:none;font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;font-family:var(--head)}
+.vs a[aria-current]{background:var(--sun);color:var(--deep)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<a class="logo" href="#"><img alt="" src="../assets/logo-256.jpg"/>ZAFAR school</a>
+<nav aria-label="Asosiy menyu"><a href="#bosqichlar">Sinflar</a><a href="#yonalish">Yönalişlar</a><a href="#ustozlar">Ustozlar</a><a href="#hayot">Maktab hayoti</a><a href="#qabul">Qabul</a></nav>
+<a class="btn btn-sun" href="#qabul">Ariza qoldiriş</a>
+</div>
+</header>
+<section class="hero">
+<div class="wrap">
+<div>
+<span class="tag">2026–2027 öquv yiliga qabul oçiq</span>
+<h1>Bilim bilan quvonadigan maktab</h1>
+<p>Pre-School va 1–8-sinflar. IT va ingliz tili har kuni, 3 mahal issiq ovqat, maktab avtobusi va har bir bolaga e'tibor.</p>
+<div class="cta"><a class="btn btn-deep" href="#qabul">Qabulga yoziliş</a><a class="btn btn-white" href="tel:+998781137773">78 113 77 73</a></div>
+</div>
+<div aria-hidden="true" class="art">
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="arch"><img alt="" src="img/oquvchilar.jpg"/></div>
+<div class="circle"><img alt="" src="img/doska.jpg"/></div>
+<div class="sticker">TOP-10<small>IRN · 4-örin</small></div>
+</div>
+</div>
+</section>
+<div class="why">
+<div class="wrap">
+<div><b>18</b><span>öquvçi sinfda, köpaytirilmaydi</span></div>
+<div><b>3 mahal</b><span>issiq va muvozanatli ovqat</span></div>
+<div><b>100 mln</b><span>sömlik iqtidor granti fondi</span></div>
+<div><b>6–18</b><span>yoş: Pre-School'dan yuqori sinflargaça</span></div>
+</div>
+</div>
+<section id="bosqichlar">
+<div class="wrap">
+<h2>Har bir yoşga öz yöli</h2>
+<p class="lede">Bola maktabga quvonç bilan keladi, bilim bilan qaytadi.</p>
+<div class="cards">
+<article class="card c1"><span class="age">6 yoş</span><h3>Pre-School</h3><p>Bir yilda 1-sinf dasturi va kuçli ingliz tili. Guruhda 18 nafardan ortiq bola yöq.</p><img alt="" loading="lazy" src="img/oquvchilar.jpg"/></article>
+<article class="card c2"><span class="age">1–4-sinflar</span><h3>Boşlanğiç</h3><p>Öyin, amaliyot va interaktiv doska: bola javobni özi topadi.</p><img alt="" loading="lazy" src="img/sinfxona.jpg"/></article>
+<article class="card c3"><span class="age">5–8-sinflar</span><h3>Yuqori sinflar</h3><p>IT, matematika, ingliz tili, olimpiadalar va grant tizimi.</p><img alt="" loading="lazy" src="img/it-xona-2.jpg"/></article>
+</div>
+</div>
+</section>
+<section class="focus" id="yonalish">
+<div class="wrap">
+<h2>Nimani yaxşi örgatamiz</h2>
+<div class="focus-grid">
+<div class="f"><div class="ic" style="background:var(--deep);color:var(--sun)">&lt;/&gt;</div><h3>IT va informatika</h3><p>Kompyuter sinfida amaliy darslar, algoritmlar va loyihalar. Olimpiadalarga tizimli tayyorgarlik.</p></div>
+<div class="f"><div class="ic" style="background:var(--sun);color:var(--deep)">Aa</div><h3>Ingliz tili</h3><p>Har kuni, Pre-School'dan boşlab. IELTS 7.5 natijali instructor, Speaking va Listening klublari.</p></div>
+<div class="f"><div class="ic" style="background:var(--leaf);color:#fff">SAT</div><h3>SAT va AP</h3><p>Dunyo universitetlariga tayyorgarlik: diagnostika, individual reja va real formatdagi mock testlar.</p></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap expert">
+<div class="ex-photo"><img alt="Baxriddin Davlatmurodov" loading="lazy" src="../assets/photos/expert-bd.jpg"/><div class="sticker">800<small>SAT Math</small></div></div>
+<div>
+<span class="tag">SAT Math mutaxassisi</span>
+<h2 style="margin-top:16px">Baxriddin Davlatmurodov</h2>
+<p class="lede">100 nafar öquvçini SAT Math'da 700+ natijaga olib çiqqan va 200 dan ortiq öquvçining universitetga kirişiga yordam bergan. 5 yillik tajriba.</p>
+<div class="badges"><span>SAT Math 800/800</span><span>Matematika A+</span><span>Target International School tajribasi</span></div>
+<a class="btn btn-deep" href="https://t.me/ZISaloqa">Konsultatsiyaga yoziliş</a>
+</div>
+</div>
+</section>
+<section id="hayot" style="padding-top:0">
+<div class="wrap">
+<h2>Bizda har kun bayram</h2>
+<p class="lede">Darslar, sayohatlar va kiçik ğalabalar: hammasi Telegram kanalimizdan.</p>
+<div class="mosaic">
+<img alt="Maktab kiriş eşigi" class="tall" loading="lazy" src="img/kirish.jpg"/>
+<img alt="Öquvçilar sertifikatlar bilan" class="wide" loading="lazy" src="img/sertifikatlar.jpg"/>
+<img alt="Tuşlik" loading="lazy" src="img/tushlik.jpg"/>
+<img alt="Kompyuter sinfi" class="tall" loading="lazy" src="img/it-xona.jpg"/>
+<img alt="Tasviriy san'at darsi" loading="lazy" src="../assets/photos/sanat-darsi-2.jpg"/>
+<img alt="Gimnastika musobaqasi" loading="lazy" src="../assets/photos/gimnastika.jpg"/>
+<img alt="Davlat bayroği kuni" class="wide" loading="lazy" src="img/bayroq.jpg"/>
+<img alt="Termos sovğasi" loading="lazy" src="../assets/photos/termos-sovga.jpg"/>
+</div>
+</div>
+</section>
+<section id="ustozlar" style="padding-top:0">
+<div class="wrap">
+<h2>Mehribon va kuçli ustozlar</h2>
+<div class="polas">
+<div class="pola"><img alt="" loading="lazy" src="../assets/photos/muhayyo-ustoz.jpg"/><h3>Muhayyo Rahimova</h3><span>"Yil öqituvçisi – 2026" ğolibi</span></div>
+<div class="pola"><img alt="" loading="lazy" src="../assets/photos/abboskhon-ustoz.jpg"/><h3>Abboskhon Şarafutdinov</h3><span>Ingliz tili · IELTS 7.5</span></div>
+<div class="pola"><img alt="" loading="lazy" src="../assets/photos/ruxsora-ustoz.jpg"/><h3>Ruxsora Abdujalilova</h3><span>Boşlanğiç sinf</span></div>
+<div class="pola"><div class="ph">OF</div><h3>Oygul Faziljanovna</h3><span>Tasviriy san'at · 17 yil</span></div>
+</div>
+</div>
+</section>
+<section id="qabul" style="padding-top:0">
+<div class="wrap">
+<h2>Qabul: tört oddiy qadam</h2>
+<div class="steps">
+<div class="step"><h3>Ariza</h3><p>Telefon yoki @ZISaloqa orqali.</p></div>
+<div class="step"><h3>Test</h3><p>2–8-sinflar uçun, 3 ta imkoniyat.</p></div>
+<div class="step"><h3>Suhbat</h3><p>Ota-ona va bola bilan.</p></div>
+<div class="step"><h3>Şartnoma</h3><p>Xuş kelibsiz!</p></div>
+</div>
+</div>
+</section>
+<div class="bus">
+<div class="wrap">
+<div>
+<h2>Mehmonimiz böling</h2>
+<p>Sinfxonalar, kompyuter xonasi va oşxonani öz közingiz bilan köring. Oltinköl t., Çinobod köçasi, 7.</p>
+<div class="cta"><a class="btn btn-deep" href="https://t.me/ZISaloqa">Taşrifga yoziliş</a><a class="btn btn-white" href="tel:+998781137773">78 113 77 73</a></div>
+</div>
+<img alt="Zafar International School maktab avtobusi" loading="lazy" src="../assets/photos/maktab-avtobusi.jpg"/>
+</div>
+</div>
+<footer>
+<div class="wrap">
+<a class="logo" href="#"><img alt="" src="../assets/logo-256.jpg"/>ZAFAR school</a>
+<span>© 2026 ZIS. All rights reserved.</span>
+<a class="dev" href="http://xojimurodbektemirov.uz/">Developed by Master Xojimurod</a>
+</div>
+</footer>
+<nav aria-label="Dizayn variantlari" class="vs"><a href="a-akademiya.html">A</a><a aria-current="page" href="b-quvonch.html">B</a><a href="c-kampus.html">C</a><a href="../index.html">D</a><a href="index.html">Barçasi</a></nav>
+</body>
+</html>
