@@ -1726,5 +1726,121 @@
  "Ustozlarni saralash": {
   "ru": "Фильтр учителей",
   "en": "Filter teachers"
+ },
+ "<a href=\"#it\">IT</a>": {
+  "ru": "<a href=\"#it\">IT</a>",
+  "en": "<a href=\"#it\">IT</a>"
+ },
+ "<a href=\"#sat-ap\">SAT</a><a href=\"#sat-ap\">AP</a><a href=\"#yonalish\">IELTS</a><a href=\"#it\">IT · Python</a>": {
+  "ru": "<a href=\"#sat-ap\">SAT</a><a href=\"#sat-ap\">AP</a><a href=\"#yonalish\">IELTS</a><a href=\"#it\">IT · Python</a>",
+  "en": "<a href=\"#sat-ap\">SAT</a><a href=\"#sat-ap\">AP</a><a href=\"#yonalish\">IELTS</a><a href=\"#it\">IT · Python</a>"
+ },
+ "// IT yo'nalishi": {
+  "ru": "// IT-направление",
+  "en": "// IT track"
+ },
+ "Kelajak kasblarini <em>bugun</em> o'rganamiz": {
+  "ru": "Профессии будущего изучаем <em>сегодня</em>",
+  "en": "Learning tomorrow's careers <em>today</em>"
+ },
+ "Dasturlash, sun'iy intellekt va raqamli savodxonlik: o'quvchilar dars davomida haqiqiy loyihalar yaratadi va xalqaro sertifikatga tayyorlanadi.": {
+  "ru": "Программирование, искусственный интеллект и цифровая грамотность: на уроках ученики создают настоящие проекты и готовятся к международному сертификату.",
+  "en": "Coding, artificial intelligence and digital literacy: in class, students build real projects and prepare for an international certificate."
+ },
+ "<b>Xojimurod Bektemirov</b><span>IT yo'nalishi rahbari · AI va dasturlash murabbiyi</span>": {
+  "ru": "<b>Ходжимурод Бектемиров</b><span>Руководитель IT-направления · наставник по AI и программированию</span>",
+  "en": "<b>Xojimurod Bektemirov</b><span>Head of IT · AI and coding mentor</span>"
+ },
+ "<b>6 yil</b><span>IT ta'limida tajriba</span>": {
+  "ru": "<b>6 лет</b><span>опыта в IT-образовании</span>",
+  "en": "<b>6 years</b><span>in IT education</span>"
+ },
+ "<b>50+</b><span>yaratilgan IT loyihalar</span>": {
+  "ru": "<b>50+</b><span>созданных IT-проектов</span>",
+  "en": "<b>50+</b><span>IT projects built</span>"
+ },
+ "<b>6-o'rin</b><span>\"One Million Prompters\" TOP-100</span>": {
+  "ru": "<b>6-е место</b><span>«One Million Prompters», ТОП-100</span>",
+  "en": "<b>6th place</b><span>\"One Million Prompters\" TOP-100</span>"
+ },
+ "Respublika sovrindori<small>One Million Prompters</small>": {
+  "ru": "Призёр республики<small>One Million Prompters</small>",
+  "en": "National prize winner<small>One Million Prompters</small>"
+ },
+ "Malayziya · Singapur · Turkiya<small>xalqaro malaka oshirish</small>": {
+  "ru": "Малайзия · Сингапур · Турция<small>международная стажировка</small>",
+  "en": "Malaysia · Singapore · Türkiye<small>international training</small>"
+ },
+ "ASTRUM Certified<small>IT Educator</small>": {
+  "ru": "ASTRUM Certified<small>IT Educator</small>",
+  "en": "ASTRUM Certified<small>IT Educator</small>"
+ },
+ "IC3 Digital Literacy<small>Global Standard 6</small>": {
+  "ru": "IC3 Digital Literacy<small>Global Standard 6</small>",
+  "en": "IC3 Digital Literacy<small>Global Standard 6</small>"
+ },
+ "<span>✓ ASTRUM Certified IT Educator · milliy sertifikat</span><span>✓ IC3 Digital Literacy · GS6 · xalqaro sertifikat</span><span>✓ One Million Prompters · respublika bosqichi sovrindori</span>": {
+  "ru": "<span>✓ ASTRUM Certified IT Educator · национальный сертификат</span><span>✓ IC3 Digital Literacy · GS6 · международный сертификат</span><span>✓ One Million Prompters · призёр республиканского этапа</span>",
+  "en": "<span>✓ ASTRUM Certified IT Educator · national certificate</span><span>✓ IC3 Digital Literacy · GS6 · international certificate</span><span>✓ One Million Prompters · national round prize winner</span>"
+ },
+ "1–4 sinf": {
+  "ru": "1–4 класс",
+  "en": "Grades 1–4"
+ },
+ "Scratch va robototexnika": {
+  "ru": "Scratch и робототехника",
+  "en": "Scratch and robotics"
+ },
+ "O'yin orqali algoritm va mantiqiy fikrlash.": {
+  "ru": "Алгоритмы и логика через игру.",
+  "en": "Algorithms and logical thinking through play."
+ },
+ "5–7 sinf": {
+  "ru": "5–7 класс",
+  "en": "Grades 5–7"
+ },
+ "Python va veb-sayt": {
+  "ru": "Python и веб-сайты",
+  "en": "Python and websites"
+ },
+ "Birinchi dastur, o'yin va shaxsiy sayt.": {
+  "ru": "Первая программа, игра и личный сайт.",
+  "en": "First program, a game and a personal website."
+ },
+ "8–11 sinf": {
+  "ru": "8–11 класс",
+  "en": "Grades 8–11"
+ },
+ "Sun'iy intellekt": {
+  "ru": "Искусственный интеллект",
+  "en": "Artificial intelligence"
+ },
+ "Prompt-muhandislik va AI bilan real loyihalar.": {
+  "ru": "Промпт-инжиниринг и реальные проекты с AI.",
+  "en": "Prompt engineering and real AI projects."
+ },
+ "Sertifikat": {
+  "ru": "Сертификат",
+  "en": "Certificate"
+ },
+ "IC3 Digital Literacy": {
+  "ru": "IC3 Digital Literacy",
+  "en": "IC3 Digital Literacy"
+ },
+ "Xalqaro raqamli savodxonlik sertifikatiga tayyorlov.": {
+  "ru": "Подготовка к международному сертификату цифровой грамотности.",
+  "en": "Preparation for the international digital literacy certificate."
+ },
+ "<a href=\"#yonalish\">Yo'nalishlar</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#it\">IT</a><a href=\"#ustozlar\">Ustozlar</a><a href=\"#qabul\">Qabul</a><a href=\"#aloqa\">Aloqa</a>": {
+  "ru": "<a href=\"#yonalish\">Направления</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#it\">IT</a><a href=\"#ustozlar\">Учителя</a><a href=\"#qabul\">Приём</a><a href=\"#aloqa\">Контакты</a>",
+  "en": "<a href=\"#yonalish\">Programs</a><a href=\"#sat-ap\">SAT · AP</a><a href=\"#it\">IT</a><a href=\"#ustozlar\">Teachers</a><a href=\"#qabul\">Admissions</a><a href=\"#aloqa\">Contact</a>"
+ },
+ "Xojimurod Bektemirov": {
+  "ru": "Ходжимурод Бектемиров",
+  "en": "Xojimurod Bektemirov"
+ },
+ "IT yo'nalishi": {
+  "ru": "IT-направление",
+  "en": "IT track"
  }
 }

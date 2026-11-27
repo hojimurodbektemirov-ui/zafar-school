@@ -368,6 +368,40 @@ dialog.vb::backdrop{background:rgba(4,22,20,.9)}
 .exams{background:radial-gradient(900px 500px at 90% 0%,#1B6158 0%,transparent 60%),radial-gradient(700px 500px at 0% 100%,#145049 0%,transparent 60%),var(--ink);color:#fff;position:relative;overflow:hidden}
 .exams::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(#000,transparent 85%)}
 .exams .wrap{position:relative}
+
+/* IT section */
+.itx{background:radial-gradient(800px 600px at 78% 35%,#1d4fd8 0%,transparent 60%),radial-gradient(600px 500px at 5% 100%,#0b2a7a 0%,transparent 60%),#06123a;color:#fff;overflow:hidden;position:relative}
+.itx::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 70% 40%,#000,transparent 70%)}
+.itx .wrap{position:relative}
+.itx-giant{position:absolute;right:20px;top:-10px;font:900 340px/.8 var(--display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(108,184,255,.35);pointer-events:none;user-select:none}
+.itx-top{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);align-items:center;gap:20px}
+.itx .eyebrow{color:var(--code)}
+.itx h2 em{font-style:normal;color:var(--code)}
+.itx .lead{color:#B9C8F0}
+.itx-name{margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+.itx-name b{font:800 28px/1.2 var(--display);display:block}
+.itx-name span{color:#9FB2E8;font-size:15px}
+.itx-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.itx-stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+.itx-stats b{font:800 30px var(--display);display:block}
+.itx-stats span{display:block;font-size:13px;line-height:1.4;color:#B9C8F0}
+.itx-photo{position:relative;align-self:end;min-width:0;margin:0 -60px -40px 0}
+.itx-photo img{width:100%;height:auto;max-width:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5));mask-image:linear-gradient(#000 82%,transparent);-webkit-mask-image:linear-gradient(#000 82%,transparent)}
+.itx-chip{position:absolute;background:#fff;color:var(--text);border-radius:14px;padding:10px 14px;font-weight:700;font-size:14px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:flex;gap:10px;align-items:center;animation:itxFloat 6s ease-in-out infinite}
+.itx-chip i{font-style:normal;font-size:20px}
+.itx-chip small{display:block;font:500 12px var(--body);color:var(--muted)}
+.itx-chip.c1{left:-30px;top:90px}.itx-chip.c2{right:40px;top:40px;animation-delay:-1.5s}.itx-chip.c3{left:-40px;top:330px;animation-delay:-3s}.itx-chip.c4{right:60px;top:380px;animation-delay:-4.5s}
+@keyframes itxFloat{50%{transform:translateY(-8px)}}
+.itx-certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:70px;position:relative;z-index:2}
+.itx-certs span{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:10px 16px;font:600 13px var(--mono);color:#DCE6FF}
+.itx-tracks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.itx-tracks article{border-radius:18px;padding:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.itx-tracks small{font:600 12px var(--mono);letter-spacing:.06em;color:var(--code)}
+.itx-tracks h3{font:700 18px/1.2 var(--display);margin:10px 0 8px}
+.itx-tracks p{font-size:14px;line-height:1.5;color:#B9C8F0}
+@media (prefers-reduced-motion:reduce){.itx-chip{animation:none}}
+@media (max-width:980px){.itx-top{grid-template-columns:minmax(0,1fr)}.itx-photo{margin:20px auto -30px;max-width:560px}.itx-giant{font-size:220px;top:auto;bottom:520px}.itx-tracks{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.itx-stats{grid-template-columns:1fr 1fr 1fr;gap:8px}.itx-stats div{padding:12px}.itx-stats b{font-size:22px}.itx-stats span{font-size:12px}.itx-photo{margin:16px -16px -20px;overflow:hidden}.itx-photo img{width:150%;margin-left:-25%}.itx-chip{font-size:12px;padding:7px 10px;gap:7px}.itx-chip i{font-size:16px}.itx-chip small{font-size:11px}.itx-chip.c1{left:6px;top:40%}.itx-chip.c2{right:6px;top:52%;left:auto}.itx-chip.c3{left:6px;top:auto;bottom:16%}.itx-chip.c4{right:6px;top:auto;bottom:5%}.itx-giant{display:none}.itx-certs{margin-top:44px}.itx-tracks{grid-template-columns:1fr}}
 .exams .lead{color:#B3CFC6}
 .exams .eyebrow{color:var(--gold)}
 .exam-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:56px}
@@ -607,6 +641,7 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 <ul class="menu" id="menu">
 <li><a href="#yonalish">Направления</a></li>
 <li><a href="#sat-ap">SAT · AP</a></li>
+<li><a href="#it">IT</a></li>
 <li><a href="#yutuqlar">Достижения</a></li>
 <li><a href="#ustozlar">Учителя</a></li>
 <li><a href="#qabul">Приём</a></li>
@@ -633,7 +668,7 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24" width="18"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-ghost" href="tel:+998781137773">78 113 77 73</a>
 </div>
-<div aria-label="Международные программы" class="exam-chips"><a href="#sat-ap">SAT</a><a href="#sat-ap">AP</a><a href="#yonalish">IELTS</a><a href="#yonalish">IT · Python</a></div>
+<div aria-label="Международные программы" class="exam-chips"><a href="#sat-ap">SAT</a><a href="#sat-ap">AP</a><a href="#yonalish">IELTS</a><a href="#it">IT · Python</a></div>
 </div>
 <div class="hero-visual">
 <figure class="hero-photo"><img alt="Ученики ZIS на лестнице перед отъездом на олимпиаду IRN" height="800" src="assets/photos/olimpiada-jamoa.jpg" width="450"/><figcaption>Наша команда на олимпиаде IRN · 2026</figcaption></figure>
@@ -769,6 +804,39 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 <div class="ex-tags"><span class="hl">SAT Math — 800/800</span><span class="hl">Математика — A+</span><span>Национальные и зарубежные университеты</span></div>
 <a class="btn btn-gold" data-consult="Нужна консультация по SAT/AP (Бахриддин Давлатмуродов)" href="#aloqa">Записаться на консультацию</a>
 </div>
+</div>
+</div>
+</section>
+<!-- IT -->
+<section class="itx" id="it">
+<div class="wrap">
+<div aria-hidden="true" class="itx-giant">IT</div>
+<div class="itx-top">
+<div>
+<p class="eyebrow reveal">IT-направление</p>
+<h2 class="reveal">Профессии будущего изучаем <em>сегодня</em></h2>
+<p class="lead reveal">Программирование, искусственный интеллект и цифровая грамотность: на уроках ученики создают настоящие проекты и готовятся к международному сертификату.</p>
+<div class="itx-name reveal"><b>Ходжимурод Бектемиров</b><span>Руководитель IT-направления · наставник по AI и программированию</span></div>
+<div class="itx-stats reveal">
+<div><b>6 лет</b><span>опыта в IT-образовании</span></div>
+<div><b>50+</b><span>созданных IT-проектов</span></div>
+<div><b>6-е место</b><span>«One Million Prompters», ТОП-100</span></div>
+</div>
+</div>
+<div class="itx-photo">
+<img alt="Ходжимурод Бектемиров" height="925" loading="lazy" src="assets/photos/xojimurod-cut.webp" width="1182"/>
+<div class="itx-chip c1"><i aria-hidden="true">🏆</i><div>Призёр республики<small>One Million Prompters</small></div></div>
+<div class="itx-chip c2"><i aria-hidden="true">🌏</i><div>Малайзия · Сингапур · Турция<small>международная стажировка</small></div></div>
+<div class="itx-chip c3"><i aria-hidden="true">🎓</i><div>ASTRUM Certified<small>IT Educator</small></div></div>
+<div class="itx-chip c4"><i aria-hidden="true">🌐</i><div>IC3 Digital Literacy<small>Global Standard 6</small></div></div>
+</div>
+</div>
+<div class="itx-certs reveal"><span>✓ ASTRUM Certified IT Educator · национальный сертификат</span><span>✓ IC3 Digital Literacy · GS6 · международный сертификат</span><span>✓ One Million Prompters · призёр республиканского этапа</span></div>
+<div class="itx-tracks reveal">
+<article><small>1–4 класс</small><h3>Scratch и робототехника</h3><p>Алгоритмы и логика через игру.</p></article>
+<article><small>5–7 класс</small><h3>Python и веб-сайты</h3><p>Первая программа, игра и личный сайт.</p></article>
+<article><small>8–11 класс</small><h3>Искусственный интеллект</h3><p>Промпт-инжиниринг и реальные проекты с AI.</p></article>
+<article><small>Сертификат</small><h3>IC3 Digital Literacy</h3><p>Подготовка к международному сертификату цифровой грамотности.</p></article>
 </div>
 </div>
 </section>
@@ -1169,7 +1237,7 @@ dialog.tdlg .t-cred{border-radius:16px;min-height:0;padding:18px 20px}
 <div class="wrap">
 <div class="foot-top">
 <a class="foot-brand" href="#top"><img alt="" src="assets/logo-256.jpg"/><span><b>ZAFAR</b><small>Международное образование с национальным подходом</small></span></a>
-<nav aria-label="Нижнее меню"><a href="#yonalish">Направления</a><a href="#sat-ap">SAT · AP</a><a href="#ustozlar">Учителя</a><a href="#qabul">Приём</a><a href="#aloqa">Контакты</a></nav>
+<nav aria-label="Нижнее меню"><a href="#yonalish">Направления</a><a href="#sat-ap">SAT · AP</a><a href="#it">IT</a><a href="#ustozlar">Учителя</a><a href="#qabul">Приём</a><a href="#aloqa">Контакты</a></nav>
 </div>
 <div class="foot-bottom"><span>© 2026 ZIS. All rights reserved.</span> <a class="dev-sign" href="http://xojimurodbektemirov.uz/" rel="noopener" target="_blank" title="Автор сайта"><span class="tag">&lt;/&gt;</span><span>Developed by <b><em>Master Xojimurod</em></b></span><i aria-hidden="true" class="caret"></i></a></div>
 </div>

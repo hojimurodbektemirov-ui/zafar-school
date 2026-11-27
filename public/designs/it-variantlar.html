@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IT bo'limi: variantlar</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E3D38; --ink-2:#145049; --paper:#F2F5F0; --paper-2:#E4EBE2; --card:#fff;
+  --text:#14213D; --muted:#5A6478; --line:#D2DCCF; --gold:#2DB441; --gold-d:#17772A;
+  --code:#8BE89A; --sky:#6CB8FF; --coral:#FF7A59;
+  --display:"Unbounded",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:var(--body);color:var(--text);background:var(--paper)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.vlabel{font:700 14px var(--mono);background:#111;color:#fff;padding:10px 32px;letter-spacing:.08em}
+img{display:block;max-width:100%}
+h2{font:800 clamp(30px,4vw,52px)/1.05 var(--display);letter-spacing:-.02em}
+.tracks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tracks article{border-radius:18px;padding:22px}
+.tracks small{font:600 12px var(--mono);letter-spacing:.06em;opacity:.7}
+.tracks h4{font:700 18px/1.2 var(--display);margin:10px 0 8px}
+.tracks p{font-size:14px;line-height:1.5;opacity:.85}
+
+/* ===== A: SAHNA ===== */
+.va{background:radial-gradient(800px 600px at 75% 40%,#1d4fd8 0%,transparent 60%),radial-gradient(600px 500px at 10% 100%,#0b2a7a 0%,transparent 60%),#06123a;color:#fff;overflow:hidden;position:relative;padding:90px 0 80px}
+.va::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 70% 40%,#000,transparent 70%)}
+.va .wrap{position:relative}
+.va-top{display:grid;grid-template-columns:.95fr 1.15fr;align-items:end;gap:20px;min-height:620px}
+.va .giant{position:absolute;right:20px;top:-10px;font:900 340px/0.8 var(--display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(108,184,255,.35);pointer-events:none}
+.va .eyebrow{font:600 13px var(--mono);color:var(--code);letter-spacing:.12em}
+.va h2{margin:16px 0 18px}
+.va h2 em{font-style:normal;color:var(--code)}
+.va .lead{color:#B9C8F0;font-size:18px;line-height:1.6;max-width:520px}
+.va .name{margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+.va .name b{font:800 28px var(--display);display:block}
+.va .name span{color:#9FB2E8;font-size:15px}
+.va .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.va .stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+.va .stats b{font:800 30px var(--display);color:#fff;display:block}
+.va .stats span{font-size:13px;color:#B9C8F0}
+.va .photo{position:relative;align-self:end;margin:0 -60px -40px 0}
+.va .photo img{width:100%;max-width:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5));mask-image:linear-gradient(#000 82%,transparent)}
+.va .chip{position:absolute;background:#fff;color:var(--text);border-radius:14px;padding:10px 14px;font-weight:700;font-size:14px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:flex;gap:10px;align-items:center}
+.va .chip i{font-style:normal;font-size:20px}
+.va .chip small{display:block;font:500 12px var(--body);color:var(--muted)}
+.va .c1{left:-30px;top:90px}.va .c2{right:40px;top:40px}.va .c3{left:-40px;top:330px}.va .c4{right:60px;top:380px}
+.va .certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:70px;position:relative;z-index:2}
+.va .certs span{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:10px 16px;font:600 13px var(--mono);color:#DCE6FF}
+.va .tracks{margin-top:26px}
+.va .tracks article{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+
+/* ===== B: TERMINAL ===== */
+.vb{background:var(--paper);padding:90px 0}
+.vb .eyebrow{font:600 13px var(--mono);color:var(--gold-d);letter-spacing:.12em}
+.vb h2{margin:14px 0 40px;max-width:820px}
+.vb-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:stretch}
+.vb .arch{position:relative;background:linear-gradient(160deg,var(--gold),var(--ink));border-radius:320px 320px 28px 28px;overflow:hidden;min-height:600px;display:flex;align-items:flex-end;justify-content:center}
+.vb .arch::before{content:"{ }";position:absolute;top:20px;left:50%;transform:translateX(-50%);font:800 200px var(--mono);color:rgba(255,255,255,.12)}
+.vb .arch img{position:relative;width:150%;max-width:none;margin-bottom:-4px}
+.vb .tag{position:absolute;left:18px;bottom:18px;right:18px;background:rgba(255,255,255,.95);border-radius:18px;padding:16px 18px}
+.vb .tag b{font:800 20px var(--display);display:block}
+.vb .tag span{color:var(--muted);font-size:14px}
+.term{background:#0B1220;border-radius:24px;color:#D6E2FF;font:14px/1.75 var(--mono);overflow:hidden;box-shadow:0 30px 60px rgba(14,61,56,.25)}
+.term .bar{display:flex;gap:8px;padding:14px 18px;background:#141d33}
+.term .bar i{width:12px;height:12px;border-radius:50%;background:#FF5F57}.term .bar i:nth-child(2){background:#FEBC2E}.term .bar i:nth-child(3){background:#28C840}
+.term .bar span{margin-left:12px;color:#7d8bb0;font-size:12px}
+.term pre{padding:22px 26px;white-space:pre-wrap;font:inherit}
+.term .p{color:var(--code)}.term .k{color:var(--sky)}.term .s{color:#FFD479}.term .c{color:#6b7896}
+.term .big{font:800 34px var(--display);color:#fff;display:block;margin:4px 0}
+.vb .tracks{margin-top:22px}
+.vb .tracks article{background:var(--card);border:1px solid var(--line)}
+.vb .tracks article:nth-child(1){border-top:5px solid var(--coral)}.vb .tracks article:nth-child(2){border-top:5px solid var(--sky)}.vb .tracks article:nth-child(3){border-top:5px solid var(--gold)}.vb .tracks article:nth-child(4){border-top:5px solid #9B6BFF}
+
+/* ===== C: JURNAL MUQOVASI ===== */
+.vc{background:#F7F3EA;padding:80px 0}
+.vc .cover{position:relative;border-radius:30px;overflow:hidden;background:var(--ink);min-height:680px;color:#fff}
+.vc .cover .bigname{position:absolute;left:0;right:0;top:34px;text-align:center;font:900 clamp(60px,10.5vw,150px)/.85 var(--display);letter-spacing:-.05em;color:var(--code);text-transform:uppercase}
+.vc .cover .bigname small{display:block;font:600 14px var(--mono);letter-spacing:.3em;color:#fff;margin-bottom:12px}
+.vc .cover img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:88%;width:auto;max-width:none;filter:drop-shadow(0 20px 50px rgba(0,0,0,.45))}
+.vc .lines{position:absolute;top:250px;width:270px;display:grid;gap:22px}
+.vc .lines.l{left:40px}.vc .lines.r{right:40px;text-align:right}
+.vc .lines b{font:800 40px/1 var(--display);display:block}
+.vc .lines span{font-size:14px;color:#CFE3DB;line-height:1.4}
+.vc .ribbon{position:absolute;left:0;right:0;bottom:0;background:var(--gold);color:#05241f;padding:14px 0;font:700 15px var(--mono);white-space:nowrap;overflow:hidden}
+.vc .ribbon span{display:inline-block;padding-left:20px;animation:run 30s linear infinite}
+@keyframes run{to{transform:translateX(-100%)}}
+.vc .below{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-top:40px;align-items:start}
+.vc .below .eyebrow{font:600 13px var(--mono);color:var(--gold-d);letter-spacing:.12em}
+.vc .below h2{font-size:38px;margin:12px 0}
+.vc .below p{color:var(--muted);line-height:1.6}
+.vc .tracks{grid-template-columns:repeat(2,1fr)}
+.vc .tracks article{background:#fff;border:1px solid #E6DFCF}
+.vc .tracks article b{font:800 40px var(--display);color:var(--paper-2);float:right;line-height:1}
+</style>
+</head>
+<body>
+
+<div class="vlabel">VARIANT A · "SAHNA"</div>
+<section class="va">
+  <div class="wrap">
+    <div class="giant" aria-hidden="true">IT</div>
+    <div class="va-top">
+      <div>
+        <p class="eyebrow">// IT YO'NALISHI</p>
+        <h2>Kelajak kasblarini <em>bugun</em> o'rganamiz</h2>
+        <p class="lead">Dasturlash, sun'iy intellekt va raqamli savodxonlik: o'quvchilar dars davomida haqiqiy loyihalar yaratadi va xalqaro sertifikatga tayyorlanadi.</p>
+        <div class="name"><b>Xojimurodbek Temirov</b><span>IT yo'nalishi rahbari · AI va dasturlash murabbiyi</span></div>
+        <div class="stats">
+          <div><b>6 yil</b><span>IT ta'limida tajriba</span></div>
+          <div><b>50+</b><span>IT loyiha yaratgan</span></div>
+          <div><b>TOP-6</b><span>"One Million Prompters" TOP-100</span></div>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="../assets/photos/xojimurod-cut.webp" alt="">
+        <div class="chip c1"><i>🏆</i><div>Respublika sovrindori<small>One Million Prompters</small></div></div>
+        <div class="chip c2"><i>🌏</i><div>Malayziya · Singapur · Turkiya<small>xalqaro malaka oshirish</small></div></div>
+        <div class="chip c3"><i>🎓</i><div>ASTRUM Certified<small>IT Educator</small></div></div>
+        <div class="chip c4"><i>🌐</i><div>IC3 Digital Literacy<small>Global Standard 6</small></div></div>
+      </div>
+    </div>
+    <div class="certs"><span>✓ ASTRUM Certified IT Educator</span><span>✓ IC3 Digital Literacy · GS6</span><span>✓ One Million Prompters · 6-o'rin</span><span>✓ Malayziya · Singapur · Turkiya</span></div>
+    <div class="tracks">
+      <article><small>1–4 SINF</small><h4>Scratch va robototexnika</h4><p>O'yin orqali algoritm va mantiq.</p></article>
+      <article><small>5–7 SINF</small><h4>Python va veb-sayt</h4><p>Birinchi dastur va shaxsiy sayt.</p></article>
+      <article><small>8–11 SINF</small><h4>Sun'iy intellekt</h4><p>Prompt-muhandislik, AI loyihalar.</p></article>
+      <article><small>SERTIFIKAT</small><h4>IC3 Digital Literacy</h4><p>Xalqaro sertifikatga tayyorlov.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="vlabel">VARIANT B · "TERMINAL"</div>
+<section class="vb">
+  <div class="wrap">
+    <p class="eyebrow">// IT YO'NALISHI</p>
+    <h2>Kod yozadigan, AI bilan ishlaydigan avlod</h2>
+    <div class="vb-grid">
+      <div class="arch">
+        <img src="../assets/photos/xojimurod-cut.webp" alt="">
+        <div class="tag"><b>Xojimurodbek Temirov</b><span>IT yo'nalishi rahbari · 6 yillik tajriba</span></div>
+      </div>
+      <div class="term">
+        <div class="bar"><i></i><i></i><i></i><span>zis@it:~ — whoami</span></div>
+<pre><span class="p">$</span> whoami
+<span class="big">Xojimurodbek Temirov</span><span class="c"># IT yo'nalishi rahbari, AI va dasturlash murabbiyi</span>
+
+<span class="p">$</span> cat tajriba.txt
+<span class="k">experience</span>  = <span class="s">"6 yil"</span>
+<span class="k">projects</span>    = <span class="s">"50+ IT loyiha"</span>
+<span class="k">training</span>    = [<span class="s">"Malayziya"</span>, <span class="s">"Singapur"</span>, <span class="s">"Turkiya"</span>]
+
+<span class="p">$</span> ls yutuqlar/
+🏆 One_Million_Prompters — respublika bosqichi sovrindori
+🥇 TOP-100 ichida 6-o'rin
+
+<span class="p">$</span> ls sertifikatlar/
+✓ ASTRUM Certified IT Educator  <span class="c"># milliy</span>
+✓ IC3 Digital Literacy · GS6    <span class="c"># xalqaro</span>
+
+<span class="p">$</span> <span class="k">echo</span> <span class="s">"Har bir o'quvchi — yaratuvchi"</span>▌</pre>
+      </div>
+    </div>
+    <div class="tracks">
+      <article><small>1–4 SINF</small><h4>Scratch va robototexnika</h4><p>O'yin orqali algoritm va mantiq.</p></article>
+      <article><small>5–7 SINF</small><h4>Python va veb-sayt</h4><p>Birinchi dastur va shaxsiy sayt.</p></article>
+      <article><small>8–11 SINF</small><h4>Sun'iy intellekt</h4><p>Prompt-muhandislik, AI loyihalar.</p></article>
+      <article><small>SERTIFIKAT</small><h4>IC3 Digital Literacy</h4><p>Xalqaro sertifikatga tayyorlov.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="vlabel">VARIANT C · "JURNAL MUQOVASI"</div>
+<section class="vc">
+  <div class="wrap">
+    <div class="cover">
+      <div class="bigname"><small>ZIS · IT YO'NALISHI</small>Xojimurod</div>
+      <div class="lines l">
+        <div><b>6 yil</b><span>IT ta'limida tajriba</span></div>
+        <div><b>50+</b><span>yaratilgan IT loyihalar</span></div>
+        <div><b>3</b><span>davlatda malaka oshirish: Malayziya, Singapur, Turkiya</span></div>
+      </div>
+      <div class="lines r">
+        <div><b>6-o'rin</b><span>"One Million Prompters" milliy tanlovi, TOP-100</span></div>
+        <div><b>ASTRUM</b><span>Certified IT Educator, milliy sertifikat</span></div>
+        <div><b>IC3</b><span>Digital Literacy, Global Standard 6</span></div>
+      </div>
+      <img src="../assets/photos/xojimurod-cut.webp" alt="">
+      <div class="ribbon"><span>PYTHON · WEB · SUN'IY INTELLEKT · PROMPT ENGINEERING · ROBOTOTEXNIKA · IC3 · SCRATCH · PYTHON · WEB · SUN'IY INTELLEKT · PROMPT ENGINEERING · ROBOTOTEXNIKA · IC3 · SCRATCH · PYTHON · WEB · SUN'IY INTELLEKT · PROMPT ENGINEERING · ROBOTOTEXNIKA · IC3 · SCRATCH · </span></div>
+    </div>
+    <div class="below">
+      <div><p class="eyebrow">// IT YO'NALISHI</p><h2>Xojimurodbek Temirov</h2><p>IT yo'nalishi rahbari. 6 yildan beri bolalarga dasturlash va sun'iy intellektni o'rgatadi, "One Million Prompters" respublika bosqichi sovrindori.</p></div>
+      <div class="tracks">
+        <article><b>01</b><small>1–4 SINF</small><h4>Scratch va robototexnika</h4><p>O'yin orqali algoritm va mantiq.</p></article>
+        <article><b>02</b><small>5–7 SINF</small><h4>Python va veb-sayt</h4><p>Birinchi dastur va shaxsiy sayt.</p></article>
+        <article><b>03</b><small>8–11 SINF</small><h4>Sun'iy intellekt</h4><p>Prompt-muhandislik, AI loyihalar.</p></article>
+        <article><b>04</b><small>SERTIFIKAT</small><h4>IC3 Digital Literacy</h4><p>Xalqaro sertifikatga tayyorlov.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

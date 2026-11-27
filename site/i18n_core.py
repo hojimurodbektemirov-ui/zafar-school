@@ -62,7 +62,7 @@ def units(soup):
 # ---- Uzbek: current Latin -> improved alphabet (O‘→Ö, G‘→Ğ, Sh→Ş, Ch→Ç) ----
 APOS = "[‘’ʻʼ'`]"
 KEEP = {  # English / brand words that must not be transliterated
- 'english','school','international','speaking','listening','reading','writing','language','teacher','teachers','research','technology',
+ 'scratch', 'english','school','international','speaking','listening','reading','writing','language','teacher','teachers','research','technology',
  'friendship','lunchtime','lunch','change','challenge','check','children','each','much','such','which','teach','coach','search','chat',
  'show','shop','fresh','wish','flash','dashboard','bachelor','scholarship','champion','chess','chemistry','physics','machine','english,',
  'environment','information','placement','partner','instructor','coding','engineering','learning','thinking','king','spring','string',
