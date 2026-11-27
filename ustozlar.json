@@ -1,5 +1,41 @@
 [
   {
+    "ism": "Xojimurod Bektemirov",
+    "rasm": "xojimurod.jpg",
+    "yonalish": "it",
+    "uz": {
+      "lavozim": "IT yo'nalishi rahbari · AI va dasturlash",
+      "yutuq": "6-o'rin",
+      "yutuq_izoh": "One Million Prompters · TOP-100",
+      "fazilatlar": [
+        "6 yillik tajriba, 50+ IT loyiha",
+        "ASTRUM Certified IT Educator, IC3"
+      ],
+      "batafsil": "IT yo'nalishi rahbari. 6 yillik tajriba, 50 dan ortiq IT loyiha. Malayziya, Singapur va Turkiyada malaka oshirgan. \"One Million Prompters\" milliy tanlovi respublika bosqichi sovrindori (TOP-100 da 6-o'rin). ASTRUM Certified IT Educator milliy sertifikati va IC3 Digital Literacy (Global Standard 6) xalqaro sertifikati egasi."
+    },
+    "ru": {
+      "ism": "Ходжимурод Бектемиров",
+      "lavozim": "Руководитель IT-направления · AI и программирование",
+      "yutuq": "6-е",
+      "yutuq_izoh": "место · One Million Prompters, ТОП-100",
+      "fazilatlar": [
+        "6 лет опыта, 50+ IT-проектов",
+        "ASTRUM Certified IT Educator, IC3"
+      ],
+      "batafsil": "Руководитель IT-направления. 6 лет опыта, более 50 IT-проектов. Стажировки в Малайзии, Сингапуре и Турции. Призёр республиканского этапа национального конкурса «One Million Prompters» (6-е место в ТОП-100). Национальный сертификат ASTRUM Certified IT Educator и международный сертификат IC3 Digital Literacy (Global Standard 6)."
+    },
+    "en": {
+      "lavozim": "Head of IT · AI and coding",
+      "yutuq": "6th place",
+      "yutuq_izoh": "One Million Prompters · TOP-100",
+      "fazilatlar": [
+        "6 years of experience, 50+ IT projects",
+        "ASTRUM Certified IT Educator, IC3"
+      ],
+      "batafsil": "Head of the IT track. 6 years of experience and more than 50 IT projects. Professional training in Malaysia, Singapore and Türkiye. Prize winner of the national round of the \"One Million Prompters\" contest (6th place in the TOP-100). Holds the national ASTRUM Certified IT Educator certificate and the international IC3 Digital Literacy (Global Standard 6) certificate."
+    }
+  },
+  {
     "ism": "Rahimova Muhayyo Dilmurodovna",
     "rasm": "muhayyo.jpg",
     "yonalish": "til",

@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FILE = os.path.join(ROOT, 'ustozlar.json')
 IMG_DIR = os.path.join(ROOT, 'public', 'assets', 'teachers')
-CATS = {'boshl', 'til', 'math', 'sanat'}
+CATS = {'boshl', 'til', 'math', 'it', 'sanat'}
 FIELDS = ('lavozim', 'yutuq', 'yutuq_izoh', 'batafsil')
 
 def fail(msg):

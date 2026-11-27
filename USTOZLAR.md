@@ -37,7 +37,7 @@ O'zgarishni saqlaganingizdan 1–2 daqiqa o'tib sayt o'zi yangilanadi.
 |---|---|
 | `ism` | To'liq ism-familiya |
 | `rasm` | 1-qadamda yuklangan fayl nomi, harfma-harf bir xil |
-| `yonalish` | Saralash tugmasi: `boshl` (Boshlang'ich sinf), `til` (Tillar), `math` (Matematika va SAT), `sanat` (San'at) |
+| `yonalish` | Saralash tugmasi: `boshl` (Boshlang'ich sinf), `til` (Tillar), `math` (Matematika va SAT), `it` (IT), `sanat` (San'at) |
 | `video` | Ixtiyoriy. Telegramdagi video tanishuv havolasi. Kerak bo'lmasa qatorni o'chiring |
 | `yutuq` | Kartadagi katta yozuv: `7.5`, `800`, `22 yil` |
 | `yutuq_izoh` | Katta yozuv ostidagi kichik matn |
