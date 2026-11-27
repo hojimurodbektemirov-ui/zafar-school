@@ -16,6 +16,11 @@ SRC = open(os.path.join(HERE, 'index.src.html'), encoding='utf-8').read()
 I18N_PATH = os.path.join(HERE, 'i18n.json')
 PAGES = {'uz': 'index.html', 'ru': 'ru.html', 'en': 'en.html'}
 LOCALE = {'uz': 'uz_UZ', 'ru': 'ru_RU', 'en': 'en_US'}
+SITE = 'https://zafar-school.uz/'
+
+def url(page):
+    return SITE + ('' if page == 'index.html' else page)
+
 TAGS = re.compile(r'<\s*(/?)\s*([a-zA-Z0-9]+)')
 
 def seed():
@@ -80,8 +85,10 @@ def translate(lang, tr):
     soup.html['lang'] = lang
     head = soup.head
     for code, page in PAGES.items():
-        link = soup.new_tag('link', rel='alternate', hreflang=code, href=page)
-        head.append(link)
+        head.append(soup.new_tag('link', rel='alternate', hreflang=code, href=url(page)))
+    head.append(soup.new_tag('link', rel='alternate', hreflang='x-default', href=url('index.html')))
+    head.append(soup.new_tag('link', rel='canonical', href=url(PAGES[lang])))
+    head.append(soup.new_tag('meta', property='og:url', content=url(PAGES[lang])))
     head.append(soup.new_tag('meta', property='og:locale', content=LOCALE[lang]))
     for a in soup.select('#lang a'):
         if a.get('hreflang') == lang:
@@ -128,4 +135,8 @@ if __name__ == '__main__':
         html = html.replace(mark, teachers.cards(lang, btn, to_new_alphabet).lstrip(), 1)
         open(os.path.join(PUB, page), 'w', encoding='utf-8').write(html)
         print(f'public/{page}: {len(html)//1024} KB')
-    print('public/js/t.{uz,ru,en}.js written')
+    open(os.path.join(PUB, 'robots.txt'), 'w').write(f'User-agent: *\nDisallow: /admin/\nDisallow: /designs/\nSitemap: {SITE}sitemap.xml\n')
+    alt = ''.join(f'<xhtml:link rel="alternate" hreflang="{c}" href="{url(p)}"/>' for c, p in PAGES.items())
+    sm = ''.join(f'<url><loc>{url(p)}</loc>{alt}</url>' for p in PAGES.values())
+    open(os.path.join(PUB, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' + sm + '</urlset>\n')
+    print('public/js/t.{uz,ru,en}.js, robots.txt, sitemap.xml written')
